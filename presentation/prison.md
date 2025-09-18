@@ -14,7 +14,7 @@ header:
 ---
 
 ## With Emphasis on Artificial Intelligence Applications
-- Hadi Sadoghi Yazdi : PhD in Electronics, Expert Consultant in Machine Vision/Learning and Data Systems
+- <a href="https://h-sadoghi.github.io/" style="text-decoration:underline; color:blue;" target="_blank"><strong>Hadi Sadoghi Yazdi</strong></a> : PhD in Electronics, Expert Consultant in Machine Vision/Learning and Data Systems
 - Affilation and institute:
     - Professor of Electrical and Computer Engineering, Ferdowsi University of Mashhad  
     - Director of Pattern Recognition Laboratory
@@ -130,7 +130,7 @@ header:
 ### Deployment
 - Deploy on CCTV with AI accelerators (e.g., NVIDIA Jetson).
 - Pilot testing in controlled prison settings.
-- Conduct ethical audits (GDPR-like policies, bias checks).
+- Conduct ethical audits (GDPR <a href="https://gdpr-info.eu/" style="text-decoration:underline; color:green;" target="_blank"><strong>(General Data Protection Regulation)</strong></a>-like policies, bias checks).
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
     <img src="/assets/Presentationimages/prison/Deployment1.png" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
@@ -157,7 +157,7 @@ header:
 
 ## Challenges and Mitigations
 - **Privacy Concerns**: GDPR-like policies, data anonymization.
-- **AI Bias**: Diverse training data, fairness algorithms.
+- <a href="https://hadisadoghiyazdi1971.github.io/physics/machine%20learning/What-Bias/" style="text-decoration:underline; color:green;" target="_blank"><strong>AI Bias</strong></a>: Diverse training data, fairness algorithms.
 - **False Positives**: Fine-tune models with prison-specific data.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
