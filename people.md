@@ -304,3 +304,47 @@ Mostafa Sabzekar received the B.S. degree in computer engineering from Kharzami 
   </figure>
 
 </div>
+
+<!-- Block 1: متن چپ ، تصویر راست -->
+<div style="display:flex; direction:ltr; flex-direction:row; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+  <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+
+<a href="https://scholar.google.com/citations?user=Zx-aNNgAAAAJ&hl=en" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Mahnaz Razavi</strong> </a>is an accomplished AI expert with a background in artificial intelligence, specializing in this field since 2017. He earned his Masters degree in Artificial Intelligence from Ferdowsi University of Mashhad, Iran, under the supervision of Prof. Sadoghi Yazdi.
+
+ </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/Razavi_Mahnaz.JPG" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> AI expert with a background in Machine Learning</em></figcaption>
+  </figure>
+
+</div>
+
+<!-- Block 2: تصویر چپ ، متن راست -->
+<div style="display:flex; direction:ltr; flex-direction:row-reverse; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+  <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+<a href="https://hawaii.ziti.uni-heidelberg.de/members/kazem_shekofteh/" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Kazem Shekofteh</strong> </a>is a postdoctoral research fellow at the Institute of Computer Engineering at Heidelberg University. His research interests focus on GPU computing, performance analysis of parallel programs and high performance computing in Bioinformatics. Previously, he was an assistant professor at Shandiz Institute of Higher Education, Mashhad, Iran. He got his PhD and MSc degree from Ferdowsi University of Mashhad, Iran in 2019. In late 2016, he was awarded a visiting scholarship at Heidelberg University. He has published papers in outstanding journals such as IEEE Transactions on Parallel and Distributed Systems. He has been serving as co-chair for the Workshop on IoT, Edge, and Mobile for Embedded Machine Learning (ITEM) 2022/23, student volunteer co-chair for IEEE CLUSTER 2022, program committee member for CCGRID2023, ICPP 2023, CANDAR 2023, poster committee member for SC2023, and also frequently providing reviews for established journals, such as IEEE TPDS, JPDC, and Supercomputing. He earned his Ph.D. degree in Software under the Consultant of Prof. Sadoghi Yazdi from Ferdowsi University of Mashhad.
+  </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/Shekofteh.JPG" alt="sabzekar" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> postdoctoral research fellow at the Institute of Computer Engineering at Heidelberg University</em></figcaption>
+  </figure>
+
+</div>
+
+<!-- Block 1: متن چپ ، تصویر راست -->
+<div style="display:flex; direction:ltr; flex-direction:row; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+  <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+<a href="https://scholar.google.com/citations?hl=en&user=2ltvcuMAAAAJ&view_op=list_works&sortby=pubdate" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Zabihzadeh</strong> </a> is currently an Associate Professor of Computer Engineering at Hakim Sabzevari University, Iran. He earned his Ph.D. degree in Artificial Intelligence under the Consultant of Prof. Sadoghi Yazdi from Ferdowsi University of Mashhad.
+
+ </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/Zabihzadeh.JPG" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> Associate Professor of Computer Engineering at Hakim Sabzevari University</em></figcaption>
+  </figure>
+</div>

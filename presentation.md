@@ -52,7 +52,7 @@ header:
            style="width: 100%; height: 200px; object-fit: cover; display: block;">
       <div class="project-content" style="padding: 10px;">
         <h3 class="project-title" style="font-size: 16px; font-weight: bold; margin: 0 0 10px;">
-          Prison
+          Prison 
         </h3>
       </div>
     </a>
