@@ -137,6 +137,13 @@ author:
     - label: "University Profile"
       icon: "fas fa-university"
       url: "http://prof.um.ac.ir/h-sadoghi/"
+    - label: "AI Systems Architect"
+      icon: "fas fa-network-wired"
+      url: "http://hadisadoghiyazdi1971.github.io/"
+    - label: "Scientific Profile"
+      icon: "fas fa-graduation-cap"
+      url: "https://h-sadoghi.github.io/"
+
 
 
 
