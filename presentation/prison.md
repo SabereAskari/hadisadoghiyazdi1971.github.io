@@ -50,7 +50,7 @@ header:
 - Achieve 90%+ accuracy in detecting crowd-based anomalies.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/prison/objective.jpg" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/prison/objective.JPG" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   AI-based real-time anomaly detection in prison CCTV
@@ -83,7 +83,7 @@ header:
 **India**: <a href="https://www.newindianexpress.com/cities/delhi/2024/Aug/16/tihar-installs-1248-cctvs-with-facial-recognition" style="text-decoration:underline; color:green;" target="_blank"><strong>Tihar Jail</strong></a>, one of the largest prison complexes in India, has been implementing a facial recognition, anomaly system and enhance security.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/prison/jail.png" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/prison/Jail.png" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   Tihar installs 1,248 CCTVs with facial recognition
@@ -97,7 +97,7 @@ header:
 - **Example**: <a href="https://arxiv.org/abs/2409.05383" style="text-decoration:underline; color:green;" target="_blank"><strong>Deep Learning for Video Anomaly Detection: A Review</strong></a>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/prison/DataCollectionReview.jpg" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/prison/DataCollectionReview.JPG" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   Illustrations of frame-level (Top) and pixel-level (Bottom) output
@@ -161,7 +161,7 @@ header:
 - **False Positives**: Fine-tune models with prison-specific data.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/prison/concerns.png" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/prison/concerns.jpg" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   Privacy, fairness, and accuracy: GDPR-like privacy with anonymization, bias mitigation through diverse data and fairness algorithms, and reduced false positives via prison-specific fine-tuning.
@@ -185,7 +185,7 @@ header:
 - <a href="https://www.skysafe.io/industries/correctional-facilities" style="text-decoration:underline; color:green;" target="_blank"><strong>Guarding the Perimeter</strong></a>: Drone Detection and Neutralization in Prisons
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/prison/drone.png" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/prison/drone.jpg" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   Protect Your Correctional Facility From Drone Threats

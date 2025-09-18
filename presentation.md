@@ -46,7 +46,7 @@ header:
   <!-- پروژه present 2-->
   <div class="project-card" style="width: calc(33.33% - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
     <a href="/presentation/prison/" style="text-decoration: none; color: inherit;">
-      <img src="/assets/Presentationimages/prison/prison_1.jpg" 
+      <img src="/assets/Presentationimages/prison/prison_1.JPG" 
            alt="Presentation2" 
            class="project-image"
            style="width: 100%; height: 200px; object-fit: cover; display: block;">
