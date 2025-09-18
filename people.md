@@ -348,3 +348,59 @@ Mostafa Sabzekar received the B.S. degree in computer engineering from Kharzami 
     <figcaption><em> Associate Professor of Computer Engineering at Hakim Sabzevari University</em></figcaption>
   </figure>
 </div>
+
+<!-- Block 2: تصویر چپ ، متن راست -->
+<div style="display:flex; direction:ltr; flex-direction:row-reverse; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+  <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+<a href="https://ca.linkedin.com/in/shafighparsazad" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Shafigh Parsazad</strong> </a>Senior Software Engineer at Rue Gilt Groupe, Canada 
+ Excellent understanding and practical expertise in clean architecture design at the enterprise level. Some skills of <a href="https://rocketreach.co/shafigh-parsazad-email_62974011" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Shafigh </strong> </a> : Python · Java · C# · C++ · JavaScript, Amazon Web Services (AWS) · Terraform
+  </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/shafighparsazad.jpg" alt="sabzekar" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> AI expert with a background in Machine Learning</em></figcaption>
+  </figure>
+
+</div>
+
+<!-- Block 1: متن چپ ، تصویر راست -->
+<div style="display:flex; direction:ltr; flex-direction:row; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+  <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+<a href="https://scholar.google.com/citations?user=BqjygGYAAAAJ&hl=en" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong> Dr. Morteza Pakdaman</strong> </a> is an Assistant Professor in the mathematical Science Department at Atmospheric Science and Meteorological Research Center (ASMERC), Climatological Research Center (CRI), Mashhad, Iran. He works with PR Lab in Artificial Intelligence Feild at Ferdowsi University of Mashhad under the supervision of Professor Sadoghi Yazdi. 
+ </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/Pakdaman.JPG" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> Assistant Professor in the mathematical Science Department</em></figcaption>
+  </figure>
+</div>
+ 
+!-- Block 2: تصویر چپ ، متن راست -->
+<div style="display:flex; direction:ltr; flex-direction:row-reverse; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+<div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+<a href="https://scholar.google.com/citations?user=hqTIvlgAAAAJ&hl=en" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Dr. Ali Mehrizi</strong> </a>earned his Ph.D. under the supervision of Professor Hadi Sadoghi Yazdi at Ferdowsi University of Mashhad. He is currently a lecturer in the Computer Engineering Department at Ferdowsi University of Mashhad. His areas of expertise include distributed adaptive learning, probabilistic hypothesis-based learning, and time series analysis.
+  </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/Mehrizi.jpg" alt="sabzekar" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> Lecturer in the Computer Engineering Department at Ferdowsi University of Mashhad</em></figcaption>
+  </figure>
+</div>
+<!-- Block 1: متن چپ ، تصویر راست -->
+<div style="display:flex; direction:ltr; flex-direction:row; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+  <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
+<a href="https://scholar.google.com/citations?user=FfGPvWUAAAAJ&hl=en" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong> Dr. Atieh Gharib</strong> </a> is an expert AI researcher with a Ph.D. in Artificial Intelligence from Ferdowsi University of Mashhad, Iran, under the supervision of Prof. Sadoghi Yazdi. She specializes in Machine Learning, Statistical Learning Theory, Pattern Recognition, and Deep Learning. These areas of expertise, combined with her exceptional problem-solving skills, have made her an influential member of the Pattern Recognition lab. With extensive experience in developing distributed learning algorithms for graph networks and time series analysis, she combines strong theoretical foundations with practical applications. 
+Her current research focuses on integrating AI and machine learning techniques in computer vision, medical image processing, and Natural Language Processing (NLP) applications.
+
+ </div>
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Peopleimages/Gharib.JPG" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em> AI expert with a background in Machine Learning</em></figcaption>
+  </figure>
+</div>
