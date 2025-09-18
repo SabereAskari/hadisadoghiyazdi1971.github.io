@@ -24,7 +24,7 @@ header:
     <img src="/assets/Presentationimages/prison/Prison_AI_Security_System_Nature_Inspired.jpg" alt="prisonheader1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
-  Prison with AI
+  Identification of Behavior in Prison with AI
 </div>
 
 ## Table of Contents
@@ -40,6 +40,7 @@ header:
 - [Expected Outcomes](#expected-outcomes)
 - [Additional Service Offerings](#additional-service-offerings)
 - [References](#references)
+- [Contact Me](#contact-me)
 
 ## Introduction
 
@@ -195,3 +196,18 @@ header:
 - AI surveillance systems in China, Hong Kong, Singapore (2023 reports).
 - UK Altcourse prison: Avigilon software (2022).
 - India Punjab jails: AI CCTV deployment (2024).
+
+## Contact Me
+
+<div style="text-align: center;">
+    <p><strong>Hadi Sadoghi Yazdi</strong></p>
+    <p>AI and Data Specialist</p>
+    <p>Email: <a href="mailto:h-sadoghi@um.ac.ir" style="text-decoration:underline; color:green;">h-sadoghi@um.ac.ir</a></p>
+    <p>Phone: <a href="tel:+985138805117" style="text-decoration:underline; color:green;">+98-51-38805117</a></p>
+    <p>
+    Website: 
+        <a href="https://h-sadoghi.github.io/" style="text-decoration: underline; color: green;" target="_blank">https://h-sadoghi.github.io/</a> | 
+        <a href="https://hadisadoghiyazdi1971.github.io/" style="text-decoration: underline; color: green;" target="_blank">https://hadisadoghiyazdi1971.github.io/</a>
+        </p>
+    
+</div>
