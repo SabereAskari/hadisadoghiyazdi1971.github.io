@@ -378,7 +378,7 @@ Mostafa Sabzekar received the B.S. degree in computer engineering from Kharzami 
   </figure>
 </div>
  
-!-- Block 2: تصویر چپ ، متن راست -->
+<!-- Block 2: تصویر چپ ، متن راست -->
 <div style="display:flex; direction:ltr; flex-direction:row-reverse; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
 
 <div style="flex:1; min-width:260px; text-align:justify;" dir="auto">
