@@ -16,18 +16,20 @@ header:
     <strong style="font-weight: 900;">list of AI tools</strong>
 </div>
 
-
+<!--1-->
 <div class="english-text">
-
 <strong>Retrieval Augmented Generation</strong>
 </div>
-
 <a href="/teaching/studenteffort/toolkit/rag" style="text-decoration:underline; color:green;" target="_blank"><strong> تولید تقویت‌شده با بازیابی</strong></a>
 
+<!--2-->
 <div class="english-text">
-
 <strong>Kalman Filter</strong>
 </div>
-
 <a href="/teaching/studenteffort/toolkit/KF" style="text-decoration:underline; color:green;" target="_blank"><strong> فیلتر کالمن</strong></a>
 
+<!--3-->
+<div class="english-text">
+<strong>Indoor Positioning System</strong>
+</div>
+<a href="/teaching/studenteffort/toolkit/IPS" style="text-decoration:underline; color:green;" target="_blank"><strong> موقعیت یابی درون ساختمان</strong></a>
