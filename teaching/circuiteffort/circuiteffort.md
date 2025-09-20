@@ -1,11 +1,10 @@
 ---
-layout: single
-title: "Circuit Analysis Effort"
-permalink: /teaching/studenteffort/circuiteffort
-author_profile: false
-classes: wide
-sidebar:
-  nav: "teaching"
+layout: persian  # یا single با کلاس rtl-layout
+classes: wide rtl-layout
+dir: rtl
+title: "تلاشهای دانشجویان درس مدار و الکترونیک"
+permalink: /teaching/studenteffort/circuiteffort/
+author_profile: true
 header:
   overlay_image: "/assets/images/background.jpg"
   overlay_filter: 0.3
@@ -13,6 +12,19 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-# Enduring Efforts of Students
-## in Circuits and Electronics
-The dedication and effort of students in circuit and electronics courses are nothing short of inspiring. Through hands-on projects, rigorous problem-solving, and creative experimentation, these students lay a solid foundation in the intricate world of electronics that remains with them for years to come. They approach complex concepts like circuit analysis, semiconductor physics, and device behavior with persistence and curiosity, often pushing the boundaries of their understanding. This journey is marked by hours of collaboration and individual discovery, making each project a testament to their growth and determination. Their work is not only essential for their academic success but also contributes to the ongoing advancements in technology, echoing through industries and research for many years.
+# تلاش‌های ماندگار دانشجویان
+ در مدارها و الکترونیک فداکاری و تلاش دانشجویان در دروس مدار و الکترونیک چیزی جز الهام‌بخش نیست. این دانشجویان از طریق پروژه‌های عملی، حل مسئله دقیق و آزمایش‌های خلاقانه، پایه محکمی در دنیای پیچیده الکترونیک بنا می‌کنند که سال‌های سال با آنها باقی می‌ماند. آنها با پشتکار و کنجکاوی به مفاهیم پیچیده‌ای مانند تحلیل مدار، فیزیک نیمه‌هادی‌ها و رفتار دستگاه‌ها نزدیک می‌شوند و اغلب مرزهای درک خود را جابجا می‌کنند. این سفر با ساعت‌ها همکاری و کشف فردی مشخص می‌شود و هر پروژه را به گواهی بر رشد و عزم آنها تبدیل می‌کند. کار آنها نه تنها برای موفقیت تحصیلی آنها ضروری است، بلکه به پیشرفت‌های مداوم در فناوری نیز کمک می‌کند و سال‌هاست که در صنایع و تحقیقات منعکس می‌شود.
+
+ <div class="english-text">
+    <strong style="font-weight: 900;">لیست تلاش دانشجویان درس مدار و الکترونیک</strong>
+</div>
+
+<!--1-->
+<div class="english-text">
+<strong>مقاومت و خازن </strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/ResistorCapacitor" style="text-decoration:underline; color:green;" target="_blank"><strong> مقاومت و خازن</strong></a>
+
+ 
+
+
