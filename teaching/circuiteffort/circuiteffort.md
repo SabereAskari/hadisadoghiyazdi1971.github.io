@@ -26,5 +26,15 @@ header:
 <a href="/teaching/studenteffort/circuiteffort/ResistorCapacitor" style="text-decoration:underline; color:green;" target="_blank"><strong> مقاومت و خازن</strong></a>
 
  
+<!--2-->
+<div class="english-text">
+<strong>رفتار منابع ولتاژ در حالت موازی </strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/paralellvoltagesource" style="text-decoration:underline; color:green;" target="_blank"><strong> رفتار منابع ولتاژ در حالت موازی</strong></a>
 
-
+<!--3-->
+<div class="english-text">
+<strong>منابع ولتاژ موازی در سیستم‌های دنیای واقعی </strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/realparalellvoltagesource" style="text-decoration:underline; color:green;" target="_blank"><strong> منابع ولتاژ موازی در سیستم‌های دنیای واقعی
+</strong></a>
