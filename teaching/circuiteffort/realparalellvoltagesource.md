@@ -43,7 +43,7 @@ header:
 
 دو منبع را در نظر بگیرید:
 
-![Circuit1](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/C1.PNG)
+![Circuit1](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/C1.png)
 
 ولتاژ خروجی ترکیبی به صورت زیر محاسبه می‌شود:
 
@@ -71,11 +71,11 @@ $$
 
 ### 2.2 تقسیم نابرابر بار
 
-در حالت ایده‌آل، هر منبع ولتاژ باید بخش مساوی از جریان بار را تأمین کند. در واقعیت، تفاوت‌ها در مقاومت داخلی و طراحی باعث می‌شود یک منبع بار بیشتری نسبت به دیگری حمل کند. این عدم تعادل منجر به过热، تخریب زودهنگام و کاهش بازدهی می‌شود.
+در حالت ایده‌آل، هر منبع ولتاژ باید بخش مساوی از جریان بار را تأمین کند. در واقعیت، تفاوت‌ها در مقاومت داخلی و طراحی باعث می‌شود یک منبع بار بیشتری نسبت به دیگری حمل کند. این عدم تعادل منجر تخریب زودهنگام و کاهش بازدهی می‌شود.
 
 ### 2.3 جریان معکوس و تغذیه برگشتی
 
-اگر یک منبع به دلیل خرابی داخلی یا تخلیه، افت ولتاژ داشته باشد، منابع دیگر ممکن است جریان را به داخل آن برانند. این می‌تواند یک منبع تغذیه را به یک بار ناخواسته تبدیل کند و در موارد شدید خطر过热، آتش‌سوزی یا انفجار را به همراه داشته باشد.
+اگر یک منبع به دلیل خرابی داخلی یا تخلیه، افت ولتاژ داشته باشد، منابع دیگر ممکن است جریان را به داخل آن برانند. این می‌تواند یک منبع تغذیه را به یک بار ناخواسته تبدیل کند و در موارد شدید آتش‌سوزی یا انفجار را به همراه داشته باشد.
 
 ## کاربردها و معماری‌های دنیای واقعی
 
@@ -84,7 +84,7 @@ $$
 استارت زدن با کابل (Jump-start) یک کاربرد مستقیم از منابع ولتاژ موازی است. وقتی دو باتری 12 ولتی به هم متصل می‌شوند، باتری سالم‌تر، باتری ضعیف‌تر را تقویت می‌کند. اگر ولتاژها تطابق نداشته باشند، جریان‌های ورودی بالا می‌تواند رخ دهد.
 
 خودروهای مدرن شامل آلترناتورهای هوشمند و مدارهای محافظتی برای مدیریت چنین خطراتی هستند. محافظت در برابر جریان معکوس و فیوزها به جلوگیری از تغذیه برگشتی و اطمینان از ایمنی کمک می‌کنند.
-![Jumpstart](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/Jumpstart.PNG)
+![Jumpstart](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/Jumpstart.png)
 
 ### 3.2 وسایل نقلیه الکتریکی (EVs)
 
@@ -100,7 +100,7 @@ $$
 
 سایه‌اندازی یا تخریب یک پنل بر خروجی جریان تأثیر می‌گذارد. برای کاهش این اثر، دیودهای بای‌پس در پنل‌ها گنجانده شده‌اند تا از جریان معکوس از پنل‌های دیگر جلوگیری کنند. کنترل‌کننده‌های ردیابی نقطه حداکثر توان (MPPT) بار را تنظیم می‌کنند تا توان استخراج شده از آرایه را به حداکثر برسانند.
 
-![Solarpanel](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/SolarPanel.PNG)
+![Solarpanel](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/SolarPanel.png)
 
 ### 3.4 مراکز داده و منابع تغذیه افزونه
 
@@ -118,7 +118,7 @@ $$
 
 برای غلبه بر این، کنترل‌کننده‌های دیود ایده‌آل از MOSFET‌های controlled توسط IC های dedicated برای شبیه‌سازی یک دیود با تقریباً بدون افت ولتاژ استفاده می‌کنند. این IC ها شرایط جریان مستقیم در مقابل معکوس را detect کرده و MOSFET را بر این اساس روشن یا خاموش می‌کنند و بازدهی را بهبود می‌بخشند.
 
-![MOSFET](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/Mosfet.PNG)
+![MOSFET](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/Mosfet.png)
 
 ### 4.2 کنترل‌کننده‌های تقسیم بار فعال
 
@@ -126,7 +126,7 @@ $$
 
 این سیستم‌ها اغلب شامل مقاومت‌های شنت برای سنجش جریان و تقویت‌کننده‌های عملیاتی یا کنترل‌کننده‌های دیجیتال برای مدیریت حلقه فیدبک هستند. این روش تعادل حرارتی را تضمین می‌کند و طول عمر مؤلفه را延长 می‌دهد.
 
-![Loadsharing](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/LoadShare.PNG)
+![Loadsharing](/assets/Courseimages/CircuitElectronicsImages/ParallelVoultageSourcesInRealWorldSystems/LoadShare.png)
 
 ### 4.3 سیستم‌های مدیریت باتری (BMS)
 

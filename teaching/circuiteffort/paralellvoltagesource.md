@@ -54,7 +54,7 @@ header:
 
 **مثال:**
 
-![Circuit1](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C1.PNG)
+![Circuit1](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C1.png)
 
 در مورد مدار بالا، جریان کل flowing از مقاومت برابر با 2A خواهد بود، بنابراین هر منبع ولتاژ اگر یکسان و ایده‌آل باشند، 1A تأمین می‌کنند.
 
@@ -80,7 +80,7 @@ V_{\text{out}} = \frac{\frac{V_1}{r_1} + \frac{V_2}{r_2}}{\frac{1}{r_1} + \frac{
 $$
 
 ### مثال
-![Circuit2](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C2.PNG)
+![Circuit2](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C2.png)
 $$
 V_{\text{out}} = \frac{\frac{12.1}{0.2} + \frac{12.0}{0.1}}{\frac{1}{0.2} + \frac{1}{0.1}} = \frac{60.5 + 120}{5 + 10} = \frac{180.5}{15} = 12.03\,\text{V}
 $$
@@ -129,13 +129,13 @@ $$
 - از مقاومت‌ها برای دفع شارژ اضافی از سلول‌های با ولتاژ بالاتر استفاده می‌کند.
 - ساده و ارزان، اما انرژی را به صورت گرما هدر می‌دهد و به کندی کار می‌کند.
 - معمولاً در بسته‌های کوچک و طراحی‌های حساس به هزینه استفاده می‌شود.
-![Picture1](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C3.PNG)
+![Picture1](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C3.png)
 
 ### 2. توازن فعال (Active Balancing)
 - شارژ را از سلول‌های با ولتاژ بالاتر به سلول‌های با ولتاژ پایین‌تر منتقل می‌کند.
 - کارآمدتر از توازن غیرفعال، انرژی را حفظ می‌کند و عمر بسته می‌دهد.
 - در وسایل نقلیه الکتریکی و سیستم‌های ذخیره‌سازی انرژی بزرگ استفاده می‌شود.
-![Picture2](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C4.PNG)
+![Picture2](/assets/Courseimages/CircuitElectronicsImages/VoltageSourcesInParallel/C4.png)
 
 **چرا مهم است:**
 توازن سلول تضمین می‌کند که همه سلول‌ها جریان را به طور یکنواخت‌تری تقسیم می‌کنند، از شارژ بیش از حد/دشارژ بیش از حد جلوگیری می‌کند و ایمنی و طول عمر بسته را بهبود می‌بخشد.
