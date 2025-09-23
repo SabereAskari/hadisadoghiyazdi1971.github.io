@@ -38,3 +38,11 @@ header:
 </div>
 <a href="/teaching/studenteffort/circuiteffort/realparalellvoltagesource" style="text-decoration:underline; color:green;" target="_blank"><strong> منابع ولتاژ موازی در سیستم‌های دنیای واقعی
 </strong></a>
+
+<!--4-->
+<div class="english-text">
+<strong>Gas Sensors: Types, Principles, and Applications</strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/mq2_gas_sensor" style="text-decoration:underline; color:green;" target="_blank"><strong> Gas Sensors: Types, Principles, and Applications
+</strong></a>
+
