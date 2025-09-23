@@ -18,12 +18,12 @@ header:
   </div>
   <div class="projects-grid">
     <div class="project-card">
-      <a href="/teaching/researchertoolkit/patterneffort">
+      <a href="/teaching/researchertoolkit/circuit_tools">
         <img src="{{ '/assets/images/MLSignalToolkits.jpg' | relative_url }}" 
              alt="Pattern Recognition" 
              class="project-image">
         <div class="project-content">
-          <h3 class="project-title">Machine Learning & Signal Processing</h3>
+          <h3 class="project-title">Circuit & Electronic</h3>
         </div>
       </a>
     </div>
