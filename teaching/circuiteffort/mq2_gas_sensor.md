@@ -4,7 +4,6 @@ classes: wide
 title: "Gas Sensors: Types, Principles, and Applications"
 permalink: /teaching/studenteffort/circuiteffort/mq2_gas_sensor/
 author_profile: true
-slug: "Gas-Sensors-Types-Principles-and-Applications"
 header:
   overlay_image: "/assets/images/background.jpg"
   overlay_filter: 0.3
