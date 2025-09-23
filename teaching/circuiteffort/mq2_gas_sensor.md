@@ -19,7 +19,7 @@ Contact address: [mahdi.ahmadi.6th@gmail.com](mailto:mahdi.ahmadi.6th@gmail.com)
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Mahdi.jpg" alt="my picture" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Mahdi.jpg" alt="my picture" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 
@@ -99,7 +99,7 @@ For example, methane reacts with oxygen on the sensor, releasing pinned electron
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Semiconductor-Gas-Sensor.jpg" alt="Semiconductor Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Semiconductor-Gas-Sensor.jpg" alt="Semiconductor Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -132,7 +132,7 @@ Gas diffuses through a dust-proof diaphragm, reaches a working electrode, reacts
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Electrochemical-gas-sensor.jpg" alt="Electrochemical Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Electrochemical-gas-sensor.jpg" alt="Electrochemical Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -163,7 +163,7 @@ Methane vibrates at 333KHz (3.3μm). Different molecules absorb different IR fre
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Spectrum.jpg" alt="NDIR Gas Sensor" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Spectrum.jpg" alt="NDIR Gas Sensor" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -196,7 +196,7 @@ Since the catalytic gas sensor platinum resistance is usually wrapped by porous 
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/catalytic-gas-sensor.jpg" alt=" Catalytic Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/catalytic-gas-sensor.jpg" alt=" Catalytic Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -244,7 +244,7 @@ A Photoionization gas sensor (PID) works by using photoion-ionized gas to detect
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/PID-gas-sensor.jpg" alt="Photoionization Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/PID-gas-sensor.jpg" alt="Photoionization Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -272,7 +272,7 @@ A thermal conductivity gas sensor is a device that can sense a certain gas in th
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Thermal-Conductivity-Gas-Sensor.jpg" alt="Thermal Conductivity Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Thermal-Conductivity-Gas-Sensor.jpg" alt="Thermal Conductivity Gas Sensors" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -304,7 +304,7 @@ During work, a certain gas sample is periodically taken from the sampling device
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Gas-Chromatograph-Analyzer.jpg" alt="Gas Chromatograph Analyzer" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Gas-Chromatograph-Analyzer.jpg" alt="Gas Chromatograph Analyzer" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -344,7 +344,7 @@ The **MQ2 sensor** is one of the most popular sensors in the MQ family. It belon
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/mq26pin.jpg" alt="MQ2 Gas Sensor" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/mq26pin.jpg" alt="MQ2 Gas Sensor" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -375,7 +375,7 @@ The MQ2 is a **heater-driven** sensor, meaning it relies on internal heat to det
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Parts-Hardware-Overview.jpg" alt="External View of mq2" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Parts-Hardware-Overview.jpg" alt="External View of mq2" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -394,7 +394,7 @@ A copper-plated clamp ring holds the mesh securely and connects it to the body o
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/insidemq2-.jpg" alt="Internal View (Protective Mesh Removed)" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/insidemq2-.jpg" alt="Internal View (Protective Mesh Removed)" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -428,7 +428,7 @@ The sensing element inside the MQ2 sensor appears as a small **ceramic tube**. I
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/Sensing-Element-.png" alt="Materials and Function of the Sensing Element" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Sensing-Element-.png" alt="Materials and Function of the Sensing Element" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -456,7 +456,7 @@ The sensing element inside the MQ2 sensor appears as a small **ceramic tube**. I
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/6-module-mq-2-gas-sensor-internal-design-01.jpg" alt="Internal design of MQ2 sensor-schema" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/6-module-mq-2-gas-sensor-internal-design-01.jpg" alt="Internal design of MQ2 sensor-schema" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -487,7 +487,7 @@ When you power on an **MQ2 gas sensor**, it begins by **heating up its internal 
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Working.gif" alt="Detection" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Working.gif" alt="Detection" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -529,7 +529,7 @@ This analog voltage is fed to an **LM393 comparator**, which compares it to a **
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Output.gif" alt="Digital Output Behavior" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Output.gif" alt="Digital Output Behavior" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -547,7 +547,7 @@ This digital signal can be used to **trigger alarms**, activate relays, or **sen
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/MQ2-Sensor-LM393-Comparator-with-Sensitivity-Adjustment-pot.jpg" alt="Sensitivity Adjustment" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/MQ2-Sensor-LM393-Comparator-with-Sensitivity-Adjustment-pot.jpg" alt="Sensitivity Adjustment" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -562,7 +562,7 @@ This digital signal can be used to **trigger alarms**, activate relays, or **sen
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/MQ2-Sensor-Power-and-Status-LEDs.jpg" alt="Indicator LEDs" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/MQ2-Sensor-Power-and-Status-LEDs.jpg" alt="Indicator LEDs" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -595,7 +595,7 @@ This setup enables threshold-based triggering.
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/comp.png" alt="LM393 comparator circuit" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/comp.png" alt="LM393 comparator circuit" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
@@ -612,7 +612,7 @@ The **MQ2 gas sensor module** is easy to use and requires only **four pins** for
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/PySpiceinstallation/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Module-Pinout-.jpg" alt="MQ2 Gas Sensor Module Pinout" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/MQ2-Gas-Sensor-Module-Pinout-.jpg" alt="MQ2 Gas Sensor Module Pinout" style="width: 50%; height: 50%; object-fit: contain;">
   </div>
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
