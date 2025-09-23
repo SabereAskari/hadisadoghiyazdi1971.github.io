@@ -2,7 +2,7 @@
 layout: persian  # یا single با کلاس rtl-layout
 classes: wide rtl-layout
 dir: rtl
-title: "ML tools"
+title: "Circuit and Elecronic tools"
 permalink: /teaching/studenteffort/toolkit/circuit_tools/
 author_profile: true
 header:
