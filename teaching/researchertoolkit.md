@@ -18,7 +18,7 @@ header:
   </div>
   <div class="projects-grid">
     <div class="project-card">
-      <a href="/teaching/researchertoolkit/circuit_tools">
+      <a href="/teaching/studenteffort/toolkit/circuit_tools">
         <img src="{{ '/assets/images/MLSignalToolkits.jpg' | relative_url }}" 
              alt="Pattern Recognition" 
              class="project-image">
