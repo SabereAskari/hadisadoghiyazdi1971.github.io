@@ -1,10 +1,15 @@
 ---
+layout: single  # یا single با کلاس rtl-layout
+classes: wide 
 title: "Gas Sensors: Types, Principles, and Applications"
-date: 
-categories: []
-tags: []
+permalink: /teaching/studenteffort/circuiteffort/mq2_gas_sensor/
+author_profile: true
 slug: "Gas-Sensors-Types-Principles-and-Applications"
-math: true
+header:
+  overlay_image: "/assets/images/background.jpg"
+  overlay_filter: 0.3
+  overlay_color: "#5e616c"
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
 ## Mahdi Ahmadi 
