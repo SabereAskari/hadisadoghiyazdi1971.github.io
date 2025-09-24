@@ -76,7 +76,9 @@ This document contains a categorized list of student theses and dissertations, o
 * **Improving the function of facial expression recognition using the canonical Kalman filter equation training with the help of DLMS filter.** by Vajiheh Salehinezhad (2021-03-09)
 * **Labeling facial images for face recognition applications in real-world environments.** by Nasim Hamidipour (2018-09-29)
 * **Automated spatial-temporal region of interest detection.** by Mahnaz Razavi (2018-09-22)
-* **Driver’s abnormal behavior detection using deep neural network on single board computer.** by Seyedmohammad Hosseini (2018-09-17)
+* <a href="https://hadisadoghiyazdi1971.github.io/teaching/studenteffort/toolkit/Abnormal/" style="text-decoration:none; color:green;" target="_blank">
+      <strong>Driver’s abnormal behavior detection using deep neural network on single board computer.</strong>
+    </a> by Seyedmohammad Hosseini (2018-09-17)
 * **Design and construction of an intelligent system detection violations of stationary vehicle with moving camera.** by Marzieh Mohammadi (2018-09-17)
 * **Image annotation with combination of concept-dependent encoder-decoder models.** by Milad Bahrami (2017-09-21)
 * **Automatic image annotation using hierarchical alternating least squares.** by Fadhel mohammed jawad Al - ibadi (2017-09-11)
