@@ -76,9 +76,9 @@ My academic journey is built on the dedication and creativity of my students. Si
 
 As a Professor at Ferdowsi University of Mashhad, I am passionate about advancing research in machine learning, pattern recognition, signal processing, and image processing. I mentor students on innovative research projects and teach courses that bridge theory and practice. As Director of the Pattern Recognition Laboratory, I lead efforts to push the boundaries of these fields.
 
-I welcome collaborators and students to propose projects that align with our lab’s mission. Explore our ongoing work in the [**Projects**](/projects/) and [**Publications**](/publications/) sections of this site, and feel free to contact me to discuss potential collaborations.
+I welcome collaborators and students to propose projects that align with our lab’s mission. Explore our ongoing work in the [**Projects**](/projects/) and <a href="https://scholar.google.com/citations?user=wEBTP4oAAAAJ&hl=en" style="text-decoration:none; color:green;" target="_blank">  <strong>Publications</strong>
+    </a>sections of this site, and feel free to contact me to discuss potential collaborations.
 
----
 
 --
 ## Education
