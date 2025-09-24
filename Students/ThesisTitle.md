@@ -15,6 +15,9 @@ header:
 When visiting this page, you can find theses and dissertations categorized by your interests in **Artificial Intelligence and Machine Learning**. The projects are organized across diverse domains, including **Financial AI, Image Processing, Computer Vision, Adaptive Learning, and Intelligent Networks**.
 
 Whether you're looking for work on time series forecasting, market behavior modeling, indoor positioning, or data classification and clustering, you can easily find projects that match your academic interests. The list is structured to help you quickly identify both the research topic and the academic level (M.Sc. or Ph.D.) of each project at a glance.
+You can view articles extracted from the students' work at: <a href="https://scholar.google.com/citations?user=wEBTP4oAAAAJ&hl=en" style="text-decoration:none; color:green;" target="_blank">  <strong> Hadi Sadoghi Yazdi Google Scholar</strong>
+    </a>
+
 
 
 ## Student Research Projects
