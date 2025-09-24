@@ -121,7 +121,9 @@ I welcome collaborators and students to propose projects that align with our lab
 
 ### Dean of the Faculty
 **Hakim Sabzevari University**, Sabzevar, Iran (2006–2007)  
-- Led faculty initiatives, overseeing academic and administrative functions.
+- Leading faculty members, overseeing the educational and administrative performance of the faculty.
+**Vice President for Research, Faculty of Engineering**, Ferdowsi University of Mashhad (2023-24)
+- All academic and administrative research and technology duties of the faculty, including research development, faculty affairs, and resource allocation.
 
 ## Connect with Me
 
