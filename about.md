@@ -9,8 +9,9 @@ header:
   overlay_filter: 0.3
   overlay_color: "#5e616c"
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  icon: "/assets/images/Professor_Sadoghi_Academic_Icon.png"
 ---
+
+<!-- icon: "/assets/images/Professor_Sadoghi_Academic_Icon.png" -->
 
 
 I am Hadi Sadoghi Yazdi, a Professor of Electrical and Computer Engineering at Ferdowsi University of Mashhad.  
