@@ -11,8 +11,13 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
+# Graduate Projects in Artificial Intelligence : Pattern Recognition Lab
+When visiting this page, you can find theses and dissertations categorized by your interests in **Artificial Intelligence and Machine Learning**. The projects are organized across diverse domains, including **Financial AI, Image Processing, Computer Vision, Adaptive Learning, and Intelligent Networks**.
 
-# Student Research Projects
+Whether you're looking for work on time series forecasting, market behavior modeling, indoor positioning, or data classification and clustering, you can easily find projects that match your academic interests. The list is structured to help you quickly identify both the research topic and the academic level (M.Sc. or Ph.D.) of each project at a glance.
+
+
+## Student Research Projects
 
 This document contains a categorized list of student theses and dissertations, organized by academic level and then by research topic.
 
@@ -20,25 +25,25 @@ This document contains a categorized list of student theses and dissertations, o
 
 ## Ph.D. Dissertations
 
-### **Financial AI & Time Series**
+#### **Financial AI & Time Series**
 * **Financial time series forecasting through experience-based adaptive learning.** by Ali Mehrizi (2024-09-19)
 * **Efficient portfolio selection using adaptive Markowitz space.** by Vahid Golmah (2024-09-19)
 * **Interactive and imitative dynamic modeling for financial time series forecasting using stochastic differential equations.** by Hamidreza Mortezapour (2023-09-20)
 * **Financial time series forecasting using deep state models based on stochastic differential equation.** by Elaheh Soleymanpour (2023-05-15)
 
-### **Adaptive Learning & Networks**
+#### **Adaptive Learning & Networks**
 * **Bias modification in learning to rank systems based on the distributions of multi-point views.** by Sanaz Keshvari (2023-12-27)
 * **Upgrading single/multi-task distributed adaptive networks utilizing the optimizer's curse concept.** by Atieh Gharib (2023-02-26)
 * **Distributed learning in adaptive networks based on diversity.** by Alireza Naeimi sadigh (2021-01-26)
 * **Active learning in input and parameter space.** by Hossein Ghafarian (2019-07-20)
 * **Synergistic learning over adaptive networks.** by Soheila Ashkezari toussi (2018-12-10)
 
-### **Image & Vision Processing**
+#### **Image & Vision Processing**
 * **HVS-based JND adapted robust image watermarking resilient to learnt attacks.** by Balsam Abughirbn (2025-02-05)
 * **Detection and recognition the authenticity of similar regions in the image based on multi-scale approach.** by Manaf Alhaidery (2022-09-22)
 * **Bayesian filter based on the wisdom of crowds in the presence of biased annotation.** by Behzad Bakhtiari (2018-11-03)
 
-### **Classification & Robust Learning**
+#### **Classification & Robust Learning**
 * **Robust classification models with high generalization and low training time for uncertain data.** by Yahya Forghani (2014-06-25)
 * **Scalable multiclass classifier model based on data complexity.** by Hamid reza Ghaffary (2012-03-15)
 
@@ -46,12 +51,12 @@ This document contains a categorized list of student theses and dissertations, o
 
 ## M.Sc. Theses
 
-### **Indoor Positioning & Localization**
+#### **Indoor Positioning & Localization**
 * **Indoor positioning based on the fusion of Wi-Fi fingerprinting and visual information with optimized keyframe selection.** by Farkhondeh Arzi (2025-02-15)
 * **Indoor localization through the fusion of Wi-Fi fingerprinting and inertial sensors.** by Javad Saghi (2024-09-18)
 * **Indoor positioning using Wi-Fi fingerprinting.** by Mohammad amin Naji meidani (2024-09-16)
 
-### **Time Series & Financial Forecasting**
+#### **Time Series & Financial Forecasting**
 * **Presenting a hybrid model for predicting urban traffic based on the theory of three phases of traffic and graph neural network.** by Seyed majid Hosseini (2024-09-17)
 * **Layer aware autoencoder for stock market sequence prediction.** by Razieh Amini (2024-02-18)
 * **Time series forecasting using deep learning and prior knowledge.** by Seyed hossein Nazm bojnordi (2024-02-17)
@@ -63,7 +68,7 @@ This document contains a categorized list of student theses and dissertations, o
 * **Short-term traffic speed prediction using an interval type II fuzzy radial basis function neural network with an extended Kalman filter smoother and fuzzy controller.** by Fatemeh Anbari (2017-09-16)
 * **Deductive Kalman filter; used in additive abrupt change detection.** by Seyedmohammadali Majidianvari (2013-03-10)
 
-### **Image Processing & Computer Vision**
+#### **Image Processing & Computer Vision**
 * **Anomaly detection using a one-class classifier based on implicit convex hull and ensemble learning.** by Yousof Ghalenoei (2024-09-18)
 * **An attention based multi-column convolutional neural network for crowd counting.** by Mahdi Hashemi (2023-09-10)
 * **Determining the decision function of classification problems using boundary data detection and reduction for large datasets.** by Amin Akhlaghi (2022-09-22)
@@ -77,7 +82,7 @@ This document contains a categorized list of student theses and dissertations, o
 * **Automatic image annotation using hierarchical alternating least squares.** by Fadhel mohammed jawad Al - ibadi (2017-09-11)
 * **Automatic image annotation using block principal pivoting method.** by Hazim mohammad ali issa Al-rikabi (2017-09-11)
 
-### **Classification & Clustering**
+#### **Classification & Clustering**
 * **Adaptive kernel density estimation based on GMM model and clustering.** by Mohammad sadegh Ahmadi (2022-09-22)
 * **Visualization of trading volume data based on clustering.** by Javad Jafari (2022-09-22)
 * **Robust SVDD classifier using rescaled hinge loss.** by Rasool Makassees (2019-01-09)
@@ -88,7 +93,7 @@ This document contains a categorized list of student theses and dissertations, o
 * **A gravitation based classification.** by Shafigh Parsazad (2011-08-14)
 * **C4.5 decision tree based on SVM cost function.** by Nima Salehi moghaddami (2010-08-01)
 
-### **Learning & Recommender Systems**
+#### **Learning & Recommender Systems**
 * **Learning signals with robust distributed adaptive filter.** by Mohmmadjafar Karimi bavani (2022-02-13)
 * **Proposing a recommender system based on Bayesian clustering using side information.** by Fatemeh Rashidi (2020-11-08)
 * **Rescaled hinge on-line learning of similarity/distance criteria for outlier data resistant using rescaled hinge loss function.** by Amer kareem Tuama (2019-12-22)
@@ -107,7 +112,7 @@ This document contains a categorized list of student theses and dissertations, o
 * **Adaptive neuron based on kernel least mean square with constraint growth.** by Zahra Khandan khademoreza (2012-08-06)
 * **Measurement model estimation in particle filter using KLMS.** by Hamideh Haeri (2012-07-15)
 
-### **Miscellaneous**
+#### **Miscellaneous**
 * **Approximation of distribution functions with Renyi divergence.** by Farzaneh Namdar siuky (2018-09-12)
 * **Interacting multiple model algorithm with combined estimation coefficient.** by Reza Nourbakhsh (2017-09-21)
 * **Written informal sentiment representation using fusion of similar word vectors for sentiment classification.** by Fariba Yari (2017-09-16)
