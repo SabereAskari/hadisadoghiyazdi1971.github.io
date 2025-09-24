@@ -13,6 +13,8 @@ main:
     url: /people/
   - title: "Teaching"
     url: /teaching/
+  - title: "Students"
+    url: /ThesisTitle/
 
 teaching:
   - title: "Circuit Effort"
