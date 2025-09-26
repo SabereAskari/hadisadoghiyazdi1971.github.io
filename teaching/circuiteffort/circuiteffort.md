@@ -46,3 +46,8 @@ header:
 <a href="/teaching/studenteffort/circuiteffort/mq2_gas_sensor" style="text-decoration:underline; color:green;" target="_blank"><strong> Gas Sensors: Types, Principles, and Applications
 </strong></a>
 
+<!--5-->
+<div class="english-text">
+<strong>IoT-Enabled Gas Leakage Detector</strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/iot_enabled_gas_leakage_detector" style="text-decoration:underline; color:green;" target="_blank"><strong> IoT-Enabled Gas Leakage Detector </strong></a>
