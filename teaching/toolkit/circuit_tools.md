@@ -34,8 +34,14 @@ header:
 </div>
 <a href="/teaching/studenteffort/toolkit/force_sensor" style="text-decoration:underline; color:green;" target="_blank"><strong> سنسور سنجش نیرو</strong></a>
 
-<!--3-->
+<!--4-->
 <div class="english-text">
 <strong>liquid level sensor</strong>
 </div>
 <a href="/teaching/studenteffort/toolkit/liquid_level_sensor" style="text-decoration:underline; color:green;" target="_blank"><strong> سنسور سنجش سطح مایع</strong></a>
+
+<!--5-->
+<div class="english-text">
+<strong>SchemDraw</strong>
+</div>
+<a href="/teaching/studenteffort/toolkit/SchemDraw" style="text-decoration:underline; color:green;" target="_blank"><strong> SchemDraw رسم مدار  با</strong></a>
