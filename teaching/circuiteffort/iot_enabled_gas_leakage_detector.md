@@ -18,7 +18,7 @@ Contact address: [mahdi.ahmadi.6th@gmail.com](mailto:mahdi.ahmadi.6th@gmail.com)
 
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
   <div style="flex: 1;">
-    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Mahdi.jpg" alt="my picture" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Courseimages/CircuitElectronicsImages/MQ2_Gas_Sensor/Mahdi.jpg" alt="my picture" style="width: 20%; height: 20%; object-fit: contain;">
   </div>
 </div>
 
