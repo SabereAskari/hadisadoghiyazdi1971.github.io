@@ -57,3 +57,15 @@ header:
 <strong>Battery Model</strong>
 </div>
 <a href="/teaching/studenteffort/circuiteffort/batterymodel" style="text-decoration:underline; color:green;" target="_blank"><strong>  مدل باتری</strong></a>
+
+<!--6-->
+<div class="english-text">
+<strong>Capacitor Part 1</strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/capacitor0" style="text-decoration:underline; color:green;" target="_blank"><strong> فصل اول خازن</strong></a>
+
+<!--7-->
+<div class="english-text">
+<strong>Capacitor Part 2</strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/capacitor" style="text-decoration:underline; color:green;" target="_blank"><strong> فصل دوم خازن</strong></a>
