@@ -51,3 +51,9 @@ header:
 <strong>IoT-Enabled Gas Leakage Detector</strong>
 </div>
 <a href="/teaching/studenteffort/circuiteffort/iot_enabled_gas_leakage_detector" style="text-decoration:underline; color:green;" target="_blank"><strong> IoT-Enabled Gas Leakage Detector </strong></a>
+
+<!--5-->
+<div class="english-text">
+<strong>Battery Model</strong>
+</div>
+<a href="/teaching/studenteffort/circuiteffort/batterymodel" style="text-decoration:underline; color:green;" target="_blank"><strong>  مدل باتری</strong></a>
