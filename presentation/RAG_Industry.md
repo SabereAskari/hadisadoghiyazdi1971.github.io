@@ -23,7 +23,7 @@ header:
 - عضو SCIIP - قطب علمی محاسبات نرم و پردازش اطلاعات هوشمند
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/FUMAIIndustryAssistant1.jpg" alt="RAG1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/FUMAIIndustryAssistant1.jpg" alt="RAG1" style="width: 30%; height: 30%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   دستیار هوشمند ارتباط با صنعت دانشگاه فردوسی مشهد
@@ -60,7 +60,7 @@ header:
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/Rajabi2.jpg" alt="challeng1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/Rajabi2.jpg" alt="challeng1" style="width: 30%; height: 30%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   هدر رفت توان بدنه اجرایی و مدیریت
@@ -82,7 +82,7 @@ header:
 -  دستورالعمل امتیازدهی طرح‌های برون دانشگاهی (جزئیات محاسبه)
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/challeng3.jpg" alt="challeng1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/challeng3.jpg" alt="challeng1" style="width: 30%; height: 30%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   غرق در آیین نامه ها
@@ -176,7 +176,7 @@ header:
 
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/SmartIndustryAssistant.jpg" alt="Architecture1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/SmartIndustryAssistant.jpg" alt="Architecture1" style="width: 30%; height: 30%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   معماری دستیار هوشمند ارتباط با صنعت
