@@ -176,7 +176,7 @@ header:
 
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/SmartIndustryAssistant.jpg" alt="Architecture1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/SmartIndustryAssistant.jpg" alt="Architecture1" style="width: 80%; height: 80%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   معماری دستیار هوشمند ارتباط با صنعت
