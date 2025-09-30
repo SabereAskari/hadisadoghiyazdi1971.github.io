@@ -1,5 +1,5 @@
 ---
-ayout: persian  # یا single با کلاس rtl-layout
+layout: persian  # یا single با کلاس rtl-layout
 classes: wide rtl-layout
 dir: rtl
 title: "دستیار هوشمند برای ارتباط با صنعت دانشگاه فردوسی مشهد"
