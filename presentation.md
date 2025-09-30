@@ -58,8 +58,21 @@ header:
     </a>
   </div>
 
-  <!-- پروژه ۳ -->
-  
+  <!-- present ۳ -->
+  <div class="project-card" style="width: calc(33.33% - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+    <a href="/presentation/RAG_Industry/" style="text-decoration: none; color: inherit;">
+      <img src="/assets/Presentationimages/prison/FUMAIIndustryAssistant1.jpg" 
+           alt="Presentation3" 
+           class="project-image"
+           style="width: 100%; height: 200px; object-fit: cover; display: block;">
+      <div class="project-content" style="padding: 10px;">
+        <h3 class="project-title" style="font-size: 16px; font-weight: bold; margin: 0 0 10px;">
+          دستیار هوشمند ارتباط با صنعت دانشگاه
+        </h3>
+      </div>
+    </a>
+  </div>
+
 
   <!-- پروژه 4 -->
   
