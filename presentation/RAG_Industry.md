@@ -35,7 +35,7 @@ header:
 - پاسخگویی هوشمند، دقیق و ارجاع‌دهی شده به سؤالات متخصصان، اعضای هیئت علمی و مدیران صنایع.
 
 
-## Introduction
+## مقدمه
 
 دستیار هوشمند ارتباط با صنعت، راه‌حلی مبتنی بر هوش مصنوعی برای پاسخگویی به سوالات مرتبط با مقررات و آیین‌نامه‌های دانشگاهی است. این سیستم با تحلیل اسناد معتبر، پاسخ‌های دقیق و مستندی در اختیار اساتید و صنعتگران قرار می‌دهد و فرآیندهای ارتباط با صنعت را تسهیل می‌کند.
 دارای خصوصیات 
@@ -60,7 +60,7 @@ header:
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/Rajabi2.jpg" alt="challeng1" style="width: 30%; height: 30%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/Rajabi2.jpg" alt="challeng1" style="width: 46%; height: 46%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   هدر رفت توان بدنه اجرایی و مدیریت
@@ -82,7 +82,7 @@ header:
 -  دستورالعمل امتیازدهی طرح‌های برون دانشگاهی (جزئیات محاسبه)
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/challeng3.jpg" alt="challeng1" style="width: 30%; height: 30%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/challeng3.jpg" alt="challeng1" style="width: 43%; height: 43%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   غرق در آیین نامه ها
@@ -176,7 +176,7 @@ header:
 
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/Presentationimages/RAG/SmartIndustryAssistant.jpg" alt="Architecture1" style="width: 30%; height: 30%; object-fit: contain;">
+    <img src="/assets/Presentationimages/RAG/SmartIndustryAssistant.jpg" alt="Architecture1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
   معماری دستیار هوشمند ارتباط با صنعت
