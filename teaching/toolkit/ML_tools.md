@@ -34,8 +34,14 @@ header:
 </div>
 <a href="/teaching/studenteffort/toolkit/IPS" style="text-decoration:underline; color:green;" target="_blank"><strong> موقعیت یابی درون ساختمان</strong></a>
 
-<!--3-->
+<!--4-->
 <div class="english-text">
 <strong>Abnormal Behavior</strong>
 </div>
 <a href="/teaching/studenteffort/toolkit/Abnormal" style="text-decoration:underline; color:green;" target="_blank"><strong> رفتار غیر نرمال رانندگان اتوبوس</strong></a>
+
+<!--5-->
+<div class="english-text">
+<strong>Regression and classification testing with training data</strong>
+</div>
+<a href="/teaching/studenteffort/toolkit/CrossVal" style="text-decoration:underline; color:green;" target="_blank"><strong>  آزمون رگرسیون و طبقه‌بندی با داده‌های آموزش</strong></a>

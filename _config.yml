@@ -172,6 +172,8 @@ footer:
 
 markdown: kramdown
 mathjax: true
+mathjax_autoDirection: true
+
 
 
 # در بخش head_scripts اضافه کنید
