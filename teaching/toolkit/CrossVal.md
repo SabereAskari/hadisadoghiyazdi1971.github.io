@@ -35,6 +35,13 @@ header:
 
 در این روش، داده‌ها به صورت تصادفی به K گروه (Fold) تقسیم می‌شوند. هر Fold تقریباً شامل **(100/K) %**  از داده‌هاست. سپس، در هر اجرا، یکی از Foldها برای تست انتخاب می‌شود و باقی Foldها برای آموزش استفاده می‌گردند. این فرآیند برای همه K Fold تکرار می‌شود. برای هر اجرا، نرخ شناسایی محاسبه شده و در نهایت، میانگین و واریانس کل اجراها به دست می‌آید. Foldها به ترتیب انتخاب می‌شوند (مثلاً Fold #۱ برای تست، Fold #۲، ...). این روش تعادل بهتری نسبت به Random Subsampling ایجاد می‌کند و از همه داده‌ها هم برای آموزش و هم برای تست استفاده می‌شود.
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/Toolkitimages/crossval/cross.jpg" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+10 Fold Cross Validation
+</div>
+
 (رابطه ۳-۵-۲-۱: K-Fold Validation)
 
 ### کد K-Fold Validation در زبان برنامه‌نویسی پایتون
