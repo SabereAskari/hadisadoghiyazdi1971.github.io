@@ -45,3 +45,10 @@ header:
 <strong>Regression and classification testing with training data</strong>
 </div>
 <a href="/teaching/studenteffort/toolkit/CrossVal" style="text-decoration:underline; color:green;" target="_blank"><strong>  آزمون رگرسیون و طبقه‌بندی با داده‌های آموزش</strong></a>
+
+
+<!--6-->
+<div class="english-text">
+<strong>Single class anomaly detection based on implicit anomaly detection and ensemble learning</strong>
+</div>
+<a href="/teaching/studenteffort/toolkit/ThesisInfoGhalenoei" style="text-decoration:underline; color:green;" target="_blank"><strong>  تشخیص ناهنجاری تک‌کلاسه مبتنی بر پوش‌محدب ضمنی و یادگیری دسته‌جمعی</strong></a>
