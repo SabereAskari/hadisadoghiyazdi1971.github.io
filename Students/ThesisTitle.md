@@ -128,3 +128,35 @@ This document contains a categorized list of student theses and dissertations, o
 * **Identifying individuals’ personality through their voice.** by Elnaz Mohammadi (2014-09-22)
 * **Selection and combination of eigenvectors in transform space.** by Soheila Ashkezari (2011-09-05)
 * **Gravity centre oriented support vector data description.** by Yonos Allahyari (2011-09-05)
+
+## 👨‍🎓 Student Gallery
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/sabzevar1.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+دانشجویان دوست داشتنی حکیم سبزواری 
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/IMG_0037.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+دیدار با تعدادی از دانشجویان دوست داشتنی حکیم سبزواری 
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/IMG_0035.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+دیدار با تعدادی از دانشجویان دوست داشتنی حکیم سبزواری 
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/DSC03571.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+دانشجویان دوست داشتنی حکیم سبزواری 
+</div>
+
+
