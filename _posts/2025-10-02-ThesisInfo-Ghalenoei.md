@@ -1,6 +1,6 @@
 ---
--layout: persian
-title: تشخیص ناهنجاری تک‌کلاسه مبتنی بر پوش‌محدب ضمنی و یادگیری دسته‌جمعی
+layout: single
+title: Single-class anomaly detection based on implicit convex hull and ensemble learning
 date: 2025-10-02
 categories: [Physics, Computational]
 tags: [anomaly detection, anomaly detection, ensemble learning]
@@ -8,52 +8,68 @@ slug: "Single-class-anomaly-detection-based-on-implicit-anomaly-detection-and-en
 math: true
 ---
 
-## Yousof Ghalenoei
+<div class="english-text">
+<strong>Yousof Ghalenoei</strong>
+</div>
 
-## 👤 About the Author
 
-<p align=center dir=rtl>
-  <img src=https://github.com/YousofLHC.png width=110 alt=Yousof Ghalenoei avatar><br><br>
-  <b>Yousof Ghalenoei</b><br><br>
+<div class="english-text">
+<strong>👤 About the Author</strong>
+</div>
+
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="https://github.com/YousofLHC.png" alt="Yousof" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+
+<div class="caption" style="text-align: center; margin-top: 8px;">
+Yousof Ghalenoei
+</div>
+
+<p align=center>
   🎓 M.Sc. in Computer Engineering (2022–2025)<br>
   🤖 Specialization: Artificial Intelligence and Robotics<br>
   📊 Research Area: Anomaly Detection and Decentralized Models<br>
-  🏆 Graduation Grade: Excellent
+  🏆 Graduation Grade: Excellent (19.5)
 </p>
 
----
-<p align=center dir=rtl>
-  <img src=https://img.shields.io/badge/Research-Anomaly%20Detection-DC2626?style=flat-square&labelColor=4B5563&logo=chart-bar&logoColor=white alt=Anomaly Detection>
-  <img src=https://img.shields.io/badge/Research-Decentralized%20%2F%20Federated%20ML-2563EB?style=flat-square&labelColor=4B5563&logo=network&logoColor=white alt=Decentralized/Federated ML>
-</p>
+<div align="center" dir="rtl">
+  <img src="https://img.shields.io/badge/Research-Anomaly%20Detection-DC2626?style=flat-square&labelColor=4B5563&logo=chart-bar&logoColor=white" alt="Anomaly Detection">
+  <img src="https://img.shields.io/badge/Research-Decentralized%20%2F%20Federated%20ML-2563EB?style=flat-square&labelColor=4B5563&logo=network&logoColor=white" alt="Decentralized/Federated ML">
+</div>
+
+
+
 
 ---
 
 ### 🎓 Supervisor's Message  
-> I sincerely congratulate Yousof Ghalenoei on graduating with an excellent grade. His effort, perseverance, and creativity in the fields of anomaly detection and decentralized learning are a valuable example for other students. I wish him the best of success in his research and professional future.  
-> — *Dr. Hadi Sadeghi Yazdi, Supervisor*
+> I sincerely congratulate Yousof Ghalenoei on graduating with an excellent grade (19.5). His effort, perseverance, and creativity in the fields of anomaly detection and decentralized learning are a valuable example for other students. I wish him the best of success in his research and professional future.  
+<a href="https://hadisadoghiyazdi1971.github.io" style="text-decoration:none; color:green;" target="_blank">
+      <strong>Dr. Hadi Sadeghi Yazdi, Supervisor</strong>
+
 
 ---
 
 ## 📬 Contact Information  
 
-<p align=center>
-  <a href=https://github.com/YousofLHC>
-    <img src=https://img.shields.io/badge/GitHub-YousofLHC-181717?logo=github&logoColor=white&style=flat-square />
+<div align="center">
+  <a href="https://github.com/YousofLHC">
+    <img src="https://img.shields.io/badge/GitHub-YousofLHC-181717?logo=github&logoColor=white&style=flat-square" />
   </a>
-  <a href=https://www.linkedin.com/in/yousof-ghalenoei-71899315b>
-    <img src=https://img.shields.io/badge/LinkedIn-Yousof%20Ghalenoei-0A66C2?logo=linkedin&logoColor=white&style=flat-square />
+  <a href="https://www.linkedin.com/in/yousof-ghalenoei-71899315b">
+    <img src="https://img.shields.io/badge/LinkedIn-Yousof%20Ghalenoei-0A66C2?logo=linkedin&logoColor=white&style=flat-square" />
   </a>
-  <a href=https://t.me/Yousof_LHC>
-    <img src=https://img.shields.io/badge/Telegram-@Yousof__LHC-26A5E4?logo=telegram&logoColor=white&style=flat-square />
+  <a href="https://t.me/Yousof_LHC">
+    <img src="https://img.shields.io/badge/Telegram-@Yousof__LHC-26A5E4?logo=telegram&logoColor=white&style=flat-square" />
   </a>
-  <a href=mailto:yousof.ghalenoei@gmail.com>
-    <img src=https://img.shields.io/badge/Email-yousof.ghalenoei%40gmail.com-EA4335?logo=gmail&logoColor=white&style=flat-square />
+  <a href="mailto:yousof.ghalenoei@gmail.com">
+    <img src="https://img.shields.io/badge/Email-yousof.ghalenoei%40gmail.com-EA4335?logo=gmail&logoColor=white&style=flat-square" />
   </a>
-  <a href=https://twitter.com/YousofLHC>
-    <img src=https://img.shields.io/badge/Twitter-@YousofLHC-1DA1F2?logo=twitter&logoColor=white&style=flat-square />
+  <a href="https://twitter.com/YousofLHC">
+    <img src="https://img.shields.io/badge/Twitter-@YousofLHC-1DA1F2?logo=twitter&logoColor=white&style=flat-square" />
   </a>
-</p>
+</div>
 
 
 ## Abstract
@@ -391,7 +407,10 @@ $$
 \quad \quad (5.2)
 $$
 
-where $f_i : \mathbb{R}^{|c_i|} \to \mathbb{R} \cup \{+\infty\}$ and $g_j : \mathbb{R}^{|d_j|} \to \mathbb{R} \cup \{+\infty\}$.  
+where 
+$f_i : \mathbb{R}^{|c_i|} \to \mathbb{R} \cup \{+\infty\}$ 
+and
+$g_j : \mathbb{R}^{|d_j|} \to \mathbb{R} \cup \{+\infty\}$.  
 
 For simplicity, we use the index $i$ for the blocks of $f$ and $j$ for the blocks of $g$.
 ##### ADMM Algorithm for Problem Form (5.2)
@@ -447,14 +466,57 @@ For a better understanding of statistical approaches and their connection with o
 
 ### Decentralized Version of the Proposed Method
 
-To implement algorithms such as AMP and its extended version KAMP in a decentralized manner, a network of nodes can be modeled as a directed graph $(\mathcal{G}=(\mathcal{V},\mathcal{E}))$ where $|\mathcal{V}| = L$ is the number of nodes. Each node $l$ holds a set of local observations including a submatrix $(\mathbf{A}_l)$ and a subvector $(\mathbf{y}_l)$, such that by aggregating these submatrices and vectors, the global measurement matrix and observation vector are obtained:
+To implement algorithms such as AMP and its extended version KAMP in a decentralized manner, a network of nodes can be modeled as a directed graph
+ $(\mathcal{G}=(\mathcal{V},\mathcal{E}))$ where $|\mathcal{V}| = L$ 
+ is the number of nodes. Each node $l$ holds a set of local observations including a submatrix 
+ $(\mathbf{A}_l)$ 
+ and a subvector 
+ $(\mathbf{y}_l)$,
+ such that by aggregating these submatrices and vectors, the global measurement matrix and observation vector are obtained:
 
 $$
 \mathbf{A} = \begin{bmatrix} \mathbf{A}_1 \\ \mathbf{A}_2 \\ \vdots \\ \mathbf{A}_L \end{bmatrix}, \qquad 
 \mathbf{y} = \begin{bmatrix} \mathbf{y}_1 \\ \mathbf{y}_2 \\ \vdots \\ \mathbf{y}_L \end{bmatrix},
 $$
 
-where $(\mathbf{y}_\ell = \mathbf{A}_\ell \mathbf{x} + \boldsymbol{\omega}_\ell)$ is the local observation model of node $(\ell)$ (the noise vector $(\boldsymbol{\omega}_\ell)$ also has variance $(\sigma^2)$). Therefore, each node observes only part of the equation $(\mathbf{y}=\mathbf{A}\mathbf{x} + \boldsymbol{\omega})$ and does not need to know the entire matrix $(\mathbf{A})$ or vector $(\mathbf{y})$.
+where 
+$$
+(\mathbf{y}_\ell = \mathbf{A}_\ell \mathbf{x} + \boldsymbol{\omega}_\ell)
+$$
+
+is the local observation model of node 
+$$
+(\ell)
+$$ 
+
+(the noise vector 
+
+$$
+(\boldsymbol{\omega}_\ell)
+$$
+also has variance 
+
+$$
+(\sigma^2)
+$$
+
+). Therefore, each node observes only part of the equation 
+$$
+(\mathbf{y}=\mathbf{A}\mathbf{x} + \boldsymbol{\omega})
+$$ 
+
+and does not need to know the entire matrix
+
+$$
+(\mathbf{A})
+$$
+
+or vector
+
+$$
+(\mathbf{y})
+$$
+.
 
 In the distributed KAMP algorithm, each node runs KAMP on its local data and obtains an initial estimate of vector $(\mathbf{x})$. Then, in order to reach a joint estimate, nodes exchange their results with neighbors. A common mechanism for this exchange is consensus averaging of neighbors' values; in this way, each node $l$ combines its own estimate with the estimates received from its neighbors $(\mathscr{N}_l)$.
 <div align="center">
@@ -464,7 +526,16 @@ In the distributed KAMP algorithm, each node runs KAMP on its local data and obt
   </div>
 </div>
 
-  Displaying the interactions between node $j$ and its neighbors with information $\mathcal{I}_{j} = \bigwedge_{i \in \mathscr{N}_j} h_{ij}(\hat{\mathbf{x}}_{i_{[t-1]}}, \mathbf{P}_{i_{[t-1]}})$,  where $\mathscr{N}_j$  denotes the set of all neighbor nodes of node $j$ (incoming edges to node $j$).
+  Displaying the interactions between node $j$ and its neighbors with information 
+
+  $$
+  \mathcal{I}_{j} = \bigwedge_{i \in \mathscr{N}_j} h_{ij}(\hat{\mathbf{x}}_{i_{[t-1]}}, \mathbf{P}_{i_{[t-1]}})
+  $$
+
+  ,  where 
+
+  $\mathscr{N}_j$ 
+  denotes the set of all neighbor nodes of node $j$ (incoming edges to node $j$).
 
   
 
