@@ -3,7 +3,7 @@ layout: persian
 classes: wide rtl-layout
 dir: rtl
 title: "راهنمای کامل مارک‌داون برای سایت آموزشی"
-permalink: /teaching/toolkit/md_minimal_mistake/
+permalink: /teaching//studenteffort/toolkit/md_minimal_mistake/
 author_profile: true
 
 header:
