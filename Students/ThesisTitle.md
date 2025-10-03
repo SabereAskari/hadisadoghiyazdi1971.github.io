@@ -159,4 +159,34 @@ This document contains a categorized list of student theses and dissertations, o
 دانشجویان دوست داشتنی حکیم سبزواری 
 </div>
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/bahreini_gharib_ansari.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+دفاع خانم دکتر بحرینی -دانشجویان تصویر- خانم دکتر غریب-خانم دکتر انصاری 
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/ashkezari.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+آماده سازی کوادکوپتر
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/mortezapour_hosseini.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+کار میدانی دانشجویان در  راهاندازی کوادکوپتر
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="/assets/studentimages/shams_nayyeri_bahrami.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+مهندس شمس-دکتر نیری-مهندس بهرامی
+</div>
+
+
+
 
