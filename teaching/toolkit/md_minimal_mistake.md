@@ -2,7 +2,7 @@
 layout: persian
 classes: wide rtl-layout
 dir: rtl
-title: "راهنمای کامل مارک‌داون برای سایت آموزشی"
+title: "راهنمای کامل مارک‌داون فارسی برای سایت آموزشی"
 permalink: /teaching//studenteffort/toolkit/md_minimal_mistake/
 author_profile: true
 
@@ -13,7 +13,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-# راهنمای نگارش محتوا با مارک‌داون
+#  راهنمای نگارش محتوا با مارک‌داون برای فارسی
 
 این راهنما برای کمک به دانشجویان جهت ایجاد محتوای استاندارد برای سایت آموزشی تهیه شده است.
 
