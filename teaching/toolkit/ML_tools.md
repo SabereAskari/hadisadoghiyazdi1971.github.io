@@ -2,7 +2,7 @@
 layout: persian  # یا single با کلاس rtl-layout
 classes: wide rtl-layout
 dir: rtl
-title: "ML tools"
+title: "ابزار لازم باتاکید بر یادگیری ماشین و شناسایی الگو"
 permalink: /teaching/studenteffort/toolkit/ML_tools/
 author_profile: true
 header:
