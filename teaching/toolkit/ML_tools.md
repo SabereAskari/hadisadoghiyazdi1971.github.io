@@ -52,3 +52,10 @@ header:
 <strong>Single class anomaly detection based on implicit anomaly detection and ensemble learning</strong>
 </div>
 <a href="/teaching/studenteffort/toolkit/ThesisInfoGhalenoei" style="text-decoration:underline; color:green;" target="_blank"><strong>  تشخیص ناهنجاری تک‌کلاسه مبتنی بر پوش‌محدب ضمنی و یادگیری دسته‌جمعی</strong></a>
+
+<!--7-->
+<div class="english-text">
+<strong>Mark down for minimal mistakes</strong>
+</div>
+<a href="/teaching/studenteffort/toolkit/md_minimal_mistake" style="text-decoration:underline; color:green;" target="_blank"><strong>راهنمای کامل مارک‌داون برای سایت آموزشی</strong></a>
+
