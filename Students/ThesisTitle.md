@@ -202,7 +202,7 @@ This document contains a categorized list of student theses and dissertations, o
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-   <img src="/assets/studentimages/Fata.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+   <img src="/assets/studentimages/Fata2.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;">
  بازدید پلیس فتای استان به همراه اساتید دوست داشتنی گروه کامپیوتر از آزمایشگاه شناسایی الگو-باهمت بچه های خوب الگو
