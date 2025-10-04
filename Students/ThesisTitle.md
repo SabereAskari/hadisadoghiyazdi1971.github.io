@@ -187,6 +187,38 @@ This document contains a categorized list of student theses and dissertations, o
 مهندس شمس-دکتر نیری-مهندس بهرامی
 </div>
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+   <img src="/assets/studentimages/hosseini_InteractiveWall.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+مهندس حسینی در پروژه دیوار تعاملی 
+</div>
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+   <img src="/assets/studentimages/FataHosseini.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+ بازدید پلیس فتای استان از آزمایشگاه شناسایی الگو-باهمت بچه های خوب الگو
+</div>
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+   <img src="/assets/studentimages/Fata.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+ بازدید پلیس فتای استان به همراه اساتید دوست داشتنی گروه کامپیوتر از آزمایشگاه شناسایی الگو-باهمت بچه های خوب الگو
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+   <img src="/assets/studentimages/InteractiveWall.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+ اجرای اولین دیوار تعاملی در نمایشگاه کودکان-باهمت بچه های خوب الگو
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+   <img src="/assets/studentimages/Farhangi.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+ بازدید مدیر فرهنگی، مدیر ارتباطات و مدیر رسانه های نوین آستان قدس از آزمایشگاه شناسایی الگو-باهمت بچه های خوب الگو آقایان مهندس حسینی و مرتضی پور
+</div>
 
