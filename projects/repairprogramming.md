@@ -91,6 +91,13 @@ header:
 | تجهیزات مورد نیاز    | EQP-2024-10-001  | لیست (Array)    | لیست ابزار و مواد مورد استفاده در عملیات     |
 
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+   <img src="/assets/Projectsimages/Repairplanning/data.jpg" alt="stu1" style="width: 50%; height: 50%; object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;">
+داده ها در شبکه توزیع
+</div>
+
 ### داده های تیم های تعمیرات 
 
 | نام داده‌ها        | کد داده          | نوع داده        | توضیحات                                                                 |
