@@ -8,6 +8,8 @@
         .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         h1 { color: #004d99; border-bottom: 2px solid #004d99; padding-bottom: 10px; }
         h2 { color: #0066cc; margin-top: 25px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; margin-bottom: 20px; }
         button { 
             padding: 10px 20px; 
             background-color: #4CAF50; 
@@ -17,7 +19,7 @@
             cursor: pointer; 
             font-size: 16px; 
             transition: background-color 0.3s;
-            display: block; /* دکمه کل صفحه را بگیرد */
+            display: block; 
             width: 100%;
             margin-bottom: 20px;
         }
@@ -31,10 +33,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق 💡 (پوسته نمایشی)</h1>
-        <p>این صفحه از طریق GitHub Pages میزبانی می‌شود و برای اجرای **منطق تخصیص تصادفی**، به سرویس بک‌اند پایتون (که باید روی Render یا سرویس دیگری مستقر شود) متصل می‌شود.</p>
+        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق 💡 (پوسته ورودی-خروجی)</h1>
+        <p>نوع تخصیص را انتخاب کنید تا داده‌های مربوطه به بک‌اند (Render) ارسال و نتایج برگردانده شود.</p>
         
-        <button onclick="getOptimizationResult()" id="optimizeButton">اجرای ماژول تخصیص تصادفی</button>
+        <label for="allocationType">نوع الگوریتم تخصیص:</label>
+        <select id="allocationType">
+            <option value="random">۱. تخصیص تصادفی (تصادفی)</option>
+            <option value="shortest_travel">۲. تخصیص بر اساس کمترین زمان سفر (ساختگی)</option>
+            <option value="balanced_load">۳. تخصیص بر اساس توزیع بار متعادل (ساختگی)</option>
+        </select>
+
+        <button onclick="getOptimizationResult()" id="optimizeButton">اجرای ماژول با نوع تخصیص انتخابی</button>
         
         <div id="results">
             <h2>نتایج تخصیص</h2>
@@ -43,36 +52,45 @@
     </div>
 
     <script>
-        // 💡 مهم: این آدرس را با URL عمومی Render یا سرویس بک‌اند خود جایگزین کنید! https://smart-repair-api.onrender.com
+        // 💡 مهم: این آدرس را با URL عمومی Render خود جایگزین کنید!
         const API_URL = 'https://smart-repair-api.onrender.com/optimize'; 
 
         function getOptimizationResult() {
             const resultsDiv = document.getElementById('results');
             const button = document.getElementById('optimizeButton');
             
-            // نمایش وضعیت بارگذاری
-            resultsDiv.innerHTML = '<h2>در حال اجرای تخصیص...</h2><p>لطفاً منتظر بمانید تا بک‌اند (Render) پاسخ دهد.</p>';
+            // گرفتن پیام ورودی
+            const selectedType = document.getElementById('allocationType').value; 
+            
+            resultsDiv.innerHTML = `<h2>در حال اجرای تخصیص...</h2><p>نوع تخصیص درخواستی: <b>${selectedType}</b>. لطفاً منتظر بمانید.</p>`;
             button.disabled = true;
 
-            fetch(API_URL)
-                .then(response => {
-                    button.disabled = false;
-                    if (!response.ok) {
-                        // اگر کد وضعیت HTTP موفق نباشد (مثلاً 404 یا 500)
-                        throw new Error(`خطای HTTP: ${response.status}. مطمئن شوید بک‌اند Render در حال اجراست.`);
-                    }
-                    return response.json();
+            fetch(API_URL, {
+                method: 'POST', // استفاده از متد POST برای ارسال داده
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({ // ساخت بدنه JSON از پیام ورودی
+                    "allocation_type": selectedType 
                 })
-                .then(data => displayResults(data))
-                .catch(error => {
-                    console.error('خطا در دریافت نتایج:', error);
-                    resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>دلیل احتمالی: آدرس API در خط ۷۸ کد جاوااسکریپت به درستی تنظیم نشده یا بک‌اند Render شما هنوز مستقر نشده یا Sleep (خواب) است.</p>`;
-                });
+            })
+            .then(response => {
+                button.disabled = false;
+                if (!response.ok) {
+                    throw new Error(`خطای HTTP: ${response.status}. مشکل در اجرای بک‌اند.`);
+                }
+                return response.json();
+            })
+            .then(data => displayResults(data))
+            .catch(error => {
+                console.error('خطا در دریافت نتایج:', error);
+                resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>دلیل احتمالی: آدرس API به درستی تنظیم نشده، مشکل CORS حل نشده یا بک‌اند Render شما Sleep است.</p>`;
+            });
         }
 
         function displayResults(data) {
             const resultsDiv = document.getElementById('results');
-            let htmlContent = '<h2>نتایج تخصیص (تصادفی)</h2>';
+            let htmlContent = `<h2>نتایج تخصیص (${data.type_applied})</h2>`; // نمایش نوع تخصیص اعمال شده
 
             if (data.team_assignments && data.team_assignments.length > 0) {
                 data.team_assignments.forEach(team => {
