@@ -2,7 +2,7 @@
 layout: persian  # یا single با کلاس rtl-layout
 classes: wide rtl-layout
 dir: rtl
-title: " رویای عمیق"
+title: "رویای عمیق"
 permalink: /teaching/studenteffort/patterneffort/DeepDream/
 author_profile: true
 

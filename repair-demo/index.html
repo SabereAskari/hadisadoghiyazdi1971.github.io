@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>برنامه‌ریزی هوشمند تعمیرات (نمونه اولیه)</title>
+    <style>
+        body { font-family: Tahoma, Arial, sans-serif; line-height: 1.6; margin: 20px; text-align: right; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #004d99; border-bottom: 2px solid #004d99; padding-bottom: 10px; }
+        h2 { color: #0066cc; margin-top: 25px; }
+        button { 
+            padding: 10px 20px; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            transition: background-color 0.3s;
+            display: block; /* دکمه کل صفحه را بگیرد */
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        button:hover { background-color: #45a049; }
+        .team-box { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 6px; background-color: #f9f9f9; }
+        .job-item { margin-right: 20px; list-style-type: square; color: #333; }
+        .time-info { font-weight: bold; color: #cc0000; }
+        .summary { margin-top: 10px; font-style: italic; font-size: 0.9em; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق 💡 (پوسته نمایشی)</h1>
+        <p>این صفحه از طریق GitHub Pages میزبانی می‌شود و برای اجرای **منطق تخصیص تصادفی**، به سرویس بک‌اند پایتون (که باید روی Render یا سرویس دیگری مستقر شود) متصل می‌شود.</p>
+        
+        <button onclick="getOptimizationResult()" id="optimizeButton">اجرای ماژول تخصیص تصادفی</button>
+        
+        <div id="results">
+            <h2>نتایج تخصیص</h2>
+            <p>برای مشاهده نتایج، دکمه بالا را کلیک کنید.</p>
+        </div>
+    </div>
+
+    <script>
+        // 💡 مهم: این آدرس را با URL عمومی Render یا سرویس بک‌اند خود جایگزین کنید!
+        const API_URL = 'https://YOUR-RENDER-BACKEND-URL.onrender.com/optimize'; 
+
+        function getOptimizationResult() {
+            const resultsDiv = document.getElementById('results');
+            const button = document.getElementById('optimizeButton');
+            
+            // نمایش وضعیت بارگذاری
+            resultsDiv.innerHTML = '<h2>در حال اجرای تخصیص...</h2><p>لطفاً منتظر بمانید تا بک‌اند (Render) پاسخ دهد.</p>';
+            button.disabled = true;
+
+            fetch(API_URL)
+                .then(response => {
+                    button.disabled = false;
+                    if (!response.ok) {
+                        // اگر کد وضعیت HTTP موفق نباشد (مثلاً 404 یا 500)
+                        throw new Error(`خطای HTTP: ${response.status}. مطمئن شوید بک‌اند Render در حال اجراست.`);
+                    }
+                    return response.json();
+                })
+                .then(data => displayResults(data))
+                .catch(error => {
+                    console.error('خطا در دریافت نتایج:', error);
+                    resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>دلیل احتمالی: آدرس API در خط ۷۸ کد جاوااسکریپت به درستی تنظیم نشده یا بک‌اند Render شما هنوز مستقر نشده یا Sleep (خواب) است.</p>`;
+                });
+        }
+
+        function displayResults(data) {
+            const resultsDiv = document.getElementById('results');
+            let htmlContent = '<h2>نتایج تخصیص (تصادفی)</h2>';
+
+            if (data.team_assignments && data.team_assignments.length > 0) {
+                data.team_assignments.forEach(team => {
+                    htmlContent += `
+                        <div class="team-box">
+                            <h3>تیم: ${team.team_id}</h3>
+                            <div class="summary">
+                                • کل زمان کار: ${team.total_work_time_min} دقیقه | 
+                                • کل زمان سفر: ${team.total_travel_time_min} دقیقه
+                            </div>
+                            <h4>مسیر کارها:</h4>
+                            <ul>
+                    `;
+                    team.route.forEach(job => {
+                        htmlContent += `
+                            <li class="job-item">
+                                **${job.job_id}** (مدت: ${job.job_duration_min} دقیقه)
+                                <span class="time-info"> - شروع: ${job.start_time} | پایان: ${job.end_time} </span>
+                            </li>
+                        `;
+                    });
+                    htmlContent += `
+                            </ul>
+                        </div>
+                    `;
+                });
+            } else {
+                htmlContent += '<p>هیچ تخصیصی انجام نشد.</p>';
+            }
+
+            resultsDiv.innerHTML = htmlContent;
+        }
+    </script>
+</body>
+</html>
