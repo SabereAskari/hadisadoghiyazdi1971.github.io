@@ -2,52 +2,156 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>برنامه‌ریزی هوشمند تعمیرات (نمونه اولیه)</title>
+    <title>برنامه‌ریزی هوشمند تعمیرات شبکه برق</title>
     <style>
-        body { font-family: Tahoma, Arial, sans-serif; line-height: 1.6; margin: 20px; text-align: right; background-color: #f4f4f4; color: #333; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #004d99; border-bottom: 2px solid #004d99; padding-bottom: 10px; }
-        h2 { color: #0066cc; margin-top: 25px; }
-        label { display: block; margin-top: 15px; font-weight: bold; }
-        select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; margin-bottom: 20px; }
+        @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css');
+        
+        body { 
+            font-family: 'Vazirmatn', Tahoma, Arial, sans-serif; 
+            line-height: 1.8; 
+            margin: 0; 
+            background-color: #eef2f7; 
+            color: #2c3e50;
+            direction: rtl;
+            text-align: right;
+        }
+        .header-bar {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 40px; /* اندازه استاندارد لوگوها */
+            width: auto;
+            border-radius: 4px;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 30px auto; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 20px rgba(0, 77, 153, 0.1); 
+        }
+        h1 { 
+            color: #004d99; 
+            border-bottom: 3px solid #004d99; 
+            padding-bottom: 15px; 
+            margin-top: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+        h2 { 
+            color: #0066cc; 
+            margin-top: 35px; 
+            border-bottom: 1px solid #e0e7ee;
+            padding-bottom: 8px;
+        }
+        label { 
+            display: block; 
+            margin-top: 20px; 
+            font-weight: 600; 
+            color: #34495e;
+        }
+        select { 
+            padding: 12px; 
+            border-radius: 6px; 
+            border: 1px solid #bdc3c7; 
+            width: 100%; 
+            box-sizing: border-box; 
+            margin-bottom: 25px; 
+            font-family: inherit;
+            font-size: 1rem;
+        }
         button { 
-            padding: 10px 20px; 
+            padding: 12px 25px; 
             background-color: #4CAF50; 
             color: white; 
             border: none; 
-            border-radius: 5px; 
+            border-radius: 6px; 
             cursor: pointer; 
-            font-size: 16px; 
-            transition: background-color 0.3s;
-            display: block; 
+            font-size: 1.1rem; 
+            transition: background-color 0.3s, transform 0.1s;
             width: 100%;
-            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
         }
-        button:hover { background-color: #45a049; }
-        .team-box { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 6px; background-color: #f9f9f9; }
-        .job-item { margin-right: 20px; list-style-type: square; color: #333; }
-        .time-info { font-weight: bold; color: #cc0000; }
-        .summary { margin-top: 10px; font-style: italic; font-size: 0.9em; }
-        .error { color: red; font-weight: bold; }
+        button:hover { 
+            background-color: #45a049; 
+            transform: translateY(-2px);
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .team-box { 
+            border: 1px solid #bdc3c7; 
+            padding: 20px; 
+            margin-bottom: 25px; 
+            border-radius: 8px; 
+            background-color: #f9f9f9; 
+            transition: box-shadow 0.3s;
+        }
+        .team-box:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .job-item { 
+            margin-right: 25px; 
+            list-style-type: disc; 
+            color: #34495e; 
+            padding: 5px 0;
+        }
+        .time-info { 
+            font-weight: bold; 
+            color: #c0392b; /* رنگ قرمز تیره تر */
+            font-size: 0.95rem;
+        }
+        .summary { 
+            margin-top: 15px; 
+            font-style: italic; 
+            font-size: 1rem;
+            color: #2980b9;
+            border-top: 1px dashed #ecf0f1;
+            padding-top: 10px;
+        }
+        .error { 
+            color: #e74c3c; 
+            font-weight: 600; 
+            background-color: #fbecec;
+            padding: 15px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
+    <div class="header-bar">
+        <div class="logo-container">
+            <img src="mylogo.jpg" alt="لوگوی پروژه"> 
+        </div>
+        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق</h1>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="لوگوی شرکت برق">
+        </div>
+    </div>
+    
     <div class="container">
-        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق 💡 (پوسته ورودی-خروجی)</h1>
-        <p>نوع تخصیص را انتخاب کنید تا داده‌های مربوطه به بک‌اند (Render) ارسال و نتایج برگردانده شود.</p>
+        <p>شیوه تخصیص را انتخاب کنید و منتظر نتایج باشید. ممکن است کمی طول بکشد.</p>
         
         <label for="allocationType">نوع الگوریتم تخصیص:</label>
         <select id="allocationType">
-            <option value="random">۱. تخصیص تصادفی (تصادفی)</option>
-            <option value="shortest_travel">۲. تخصیص بر اساس کمترین زمان سفر (ساختگی)</option>
-            <option value="balanced_load">۳. تخصیص بر اساس توزیع بار متعادل (ساختگی)</option>
+            <option value="random">تخصیص پایه</option>
+            <option value="shortest_travel">بهینه‌سازی بر اساس کوتاه‌ترین زمان سفر</option>
+            <option value="balanced_load">بهینه‌سازی بر اساس توزیع بار متعادل</option>
         </select>
 
         <button onclick="getOptimizationResult()" id="optimizeButton">اجرای ماژول با نوع تخصیص انتخابی</button>
         
         <div id="results">
             <h2>نتایج تخصیص</h2>
-            <p>برای مشاهده نتایج، دکمه بالا را کلیک کنید.</p>
+            <p style="color: #95a5a6;">برای شروع، یک شیوه تخصیص را انتخاب و دکمه بالا را کلیک کنید.</p>
         </div>
     </div>
 
@@ -59,38 +163,38 @@
             const resultsDiv = document.getElementById('results');
             const button = document.getElementById('optimizeButton');
             
-            // گرفتن پیام ورودی
             const selectedType = document.getElementById('allocationType').value; 
             
-            resultsDiv.innerHTML = `<h2>در حال اجرای تخصیص...</h2><p>نوع تخصیص درخواستی: <b>${selectedType}</b>. لطفاً منتظر بمانید.</p>`;
+            resultsDiv.innerHTML = `<h2 style="color:#f39c12;">در حال پردازش...</h2><p>نوع تخصیص درخواستی: <b>${selectedType}</b>. لطفاً منتظر بمانید تا بک‌اند پاسخ دهد.</p>`;
             button.disabled = true;
 
             fetch(API_URL, {
-                method: 'POST', // استفاده از متد POST برای ارسال داده
+                method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json' 
                 },
-                body: JSON.stringify({ // ساخت بدنه JSON از پیام ورودی
+                body: JSON.stringify({ 
                     "allocation_type": selectedType 
                 })
             })
             .then(response => {
                 button.disabled = false;
                 if (!response.ok) {
-                    throw new Error(`خطای HTTP: ${response.status}. مشکل در اجرای بک‌اند.`);
+                    throw new Error(`خطای HTTP: ${response.status}. بک‌اند در دسترس نیست یا دچار خطا شده است.`);
                 }
                 return response.json();
             })
             .then(data => displayResults(data))
             .catch(error => {
                 console.error('خطا در دریافت نتایج:', error);
-                resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>دلیل احتمالی: آدرس API به درستی تنظیم نشده، مشکل CORS حل نشده یا بک‌اند Render شما Sleep است.</p>`;
+                resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>بررسی کنید که آدرس API درست و سرور Render فعال باشد.</p>`;
             });
         }
 
         function displayResults(data) {
             const resultsDiv = document.getElementById('results');
-            let htmlContent = `<h2>نتایج تخصیص (${data.type_applied})</h2>`; // نمایش نوع تخصیص اعمال شده
+            // در اینجا کلمه 'تصادفی' حذف شده و از داده برگشتی استفاده می‌شود
+            let htmlContent = `<h2>نتایج تخصیص (الگوریتم ${data.type_applied})</h2>`; 
 
             if (data.team_assignments && data.team_assignments.length > 0) {
                 data.team_assignments.forEach(team => {
