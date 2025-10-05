@@ -74,8 +74,10 @@ header:
 
 ## انتخاب روش ارائه با توجه به استاد پروژه
 
-### روش ارائه پیشنهادی
-- آدرس راهنما: https://hadisadoghiyazdi1971.github.io/teaching/studenteffort/toolkit/md_minimal_mistake/
+### روش ارائه 
+<a href="https://hadisadoghiyazdi1971.github.io/teaching/studenteffort/toolkit/md_minimal_mistake/" style="text-decoration:none; color:green;" target="_blank">
+      <strong>آدرس راهنما</strong>
+
 
 ## آماده شدن برای ارائه
 
