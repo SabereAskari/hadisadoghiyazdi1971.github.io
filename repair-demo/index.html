@@ -2,8 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>برنامه‌ریزی هوشمند تعمیرات شبکه برق</title>
-    <style>
+    <title>برنامه‌ریزی هوشمند تعمیرات شبکه برق</title> <style>
         @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css');
         
         body { 
@@ -16,16 +15,31 @@
             text-align: right;
         }
         .header-bar {
-            background-color: #004d99;
+            background-color: #004d99; /* رنگ آبی تیره */
             color: white;
             padding: 10px 40px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* توزیع محتوا به طرفین */
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .header-bar h1 {
+            color: white; /* رنگ سفید برای عنوان در نوار بالا */
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em; /* اندازه کوچکتر برای عنوان در نوار */
+            border-bottom: none;
+            flex-grow: 1; /* اجازه رشد برای وسط قرار گرفتن */
+            text-align: center;
+        }
+        .logo-container {
+            width: 150px; /* فضای ثابت برای لوگو */
+            text-align: center;
         }
         .logo-container img {
-            height: 40px; /* اندازه استاندارد لوگوها */
+            height: 40px; 
             width: auto;
+            max-width: 100%;
             border-radius: 4px;
         }
         .container { 
@@ -35,14 +49,6 @@
             padding: 40px; 
             border-radius: 12px; 
             box-shadow: 0 8px 20px rgba(0, 77, 153, 0.1); 
-        }
-        h1 { 
-            color: #004d99; 
-            border-bottom: 3px solid #004d99; 
-            padding-bottom: 15px; 
-            margin-top: 0;
-            font-size: 2em;
-            text-align: center;
         }
         h2 { 
             color: #0066cc; 
@@ -95,9 +101,6 @@
             background-color: #f9f9f9; 
             transition: box-shadow 0.3s;
         }
-        .team-box:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
         .job-item { 
             margin-right: 25px; 
             list-style-type: disc; 
@@ -106,7 +109,7 @@
         }
         .time-info { 
             font-weight: bold; 
-            color: #c0392b; /* رنگ قرمز تیره تر */
+            color: #c0392b;
             font-size: 0.95rem;
         }
         .summary { 
@@ -131,7 +134,7 @@
         <div class="logo-container">
             <img src="mylogo.jpg" alt="لوگوی پروژه"> 
         </div>
-        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق</h1>
+        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق</h1> 
         <div class="logo-container">
             <img src="logo.jpg" alt="لوگوی شرکت برق">
         </div>
@@ -193,8 +196,16 @@
 
         function displayResults(data) {
             const resultsDiv = document.getElementById('results');
-            // در اینجا کلمه 'تصادفی' حذف شده و از داده برگشتی استفاده می‌شود
-            let htmlContent = `<h2>نتایج تخصیص (الگوریتم ${data.type_applied})</h2>`; 
+            
+            // نگاشت نام‌های انگلیسی به فارسی برای نمایش
+            const typeMap = {
+                'random': 'تخصیص پایه',
+                'shortest_travel': 'کمترین زمان سفر',
+                'balanced_load': 'توزیع بار متعادل'
+            };
+            const displayType = typeMap[data.type_applied] || data.type_applied;
+
+            let htmlContent = `<h2>نتایج تخصیص (الگوریتم ${displayType})</h2>`; 
 
             if (data.team_assignments && data.team_assignments.length > 0) {
                 data.team_assignments.forEach(team => {
