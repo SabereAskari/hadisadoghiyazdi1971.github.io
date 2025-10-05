@@ -59,3 +59,8 @@ header:
 </div>
 <a href="/teaching/studenteffort/toolkit/md_minimal_mistake" style="text-decoration:underline; color:green;" target="_blank"><strong>راهنمای کامل مارک‌داون برای سایت آموزشی</strong></a>
 
+<!--8-->
+<div class="english-text">
+<strong>How to prepare your lesson project in a short time</strong>
+</div>
+<a href="/teaching/studenteffort/toolkit/HowConsProject" style="text-decoration:underline; color:green;" target="_blank"><strong>چگونه پروژه درسی خود را در زمانی کوتاه آماده کنیم</strong></a>
