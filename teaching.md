@@ -88,7 +88,19 @@ header:
         </div>
       </a>
     </div>
-  </div>
+     <div class="project-card">
+      <a href="/teaching/organizations/organ_ai">
+        <img src="{{ '/assets/images/organizations.jpg' | relative_url }}" 
+             alt="Pattern Recognition" 
+             class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Organizations & AI</h3>
+        </div>
+      </a>
+    </div>
+
+  </div> <!-- project grid-->
+
 
   <div class="footer">
     

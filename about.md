@@ -45,10 +45,7 @@ Mashhad, Iran
 **University Website:** [http://prof.um.ac.ir/h-sadoghi/](http://prof.um.ac.ir/h-sadoghi/)  
 
 <a href="https://h-sadoghi.github.io/" style="text-decoration:underline; color:green;" target="_blank">
-<strong>General Website 1</strong>
-</a>
-
-<a href="https://hadisadoghiyazdi1971.github.io/" style="text-decoration:underline; color:green;" target="_blank">
+<strong>General Website 1</strong>,       </a> <a href="https://hadisadoghiyazdi1971.github.io/" style="text-decoration:underline; color:green;" target="_blank">
 <strong>General Website 2</strong>
 </a>
 
