@@ -32,7 +32,7 @@ header:
 این فرایند **"Inceptionism"** نام‌گذاری شد (اشاره‌ای به [InceptionNet](https://arxiv.org/pdf/1409.4842.pdf) و همچنین فیلم [Inception](https://en.wikipedia.org/wiki/Inception)).
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="dogception.png" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/dogception.png" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 
 # ریشه‌ها و توسعه‌ی رویای عمیق
@@ -58,7 +58,7 @@ header:
 زمانی‌که یک تصویر به رویای عمیق داده می‌شود، برنامه الگوهایی را که یاد گرفته شناسایی کند تقویت می‌کند. این کار از طریق فرایندی به‌نام *"Inceptionism"* انجام می‌شود؛ جایی که شبکه دستور می‌گیرد تشخیص ویژگی‌ها را در لایه‌های مختلف به حداکثر برساند.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom:15px ">
-    <img src="Screenshot-2024-05-26-004105.webp" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/Screenshot-2024-05-26-004105.webp" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 
 برای نمونه، اگر شبکه الگویی شبیه به یک سگ تشخیص دهد، آن الگو را تقویت می‌کند و تصویر به‌گونه‌ای تغییر می‌کند که پر از اشکال و فرم‌های شبیه به سگ به‌نظر برسد.
