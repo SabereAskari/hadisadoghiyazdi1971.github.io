@@ -36,14 +36,22 @@ As Director of the Pattern Recognition Laboratory, I mentor students and collabo
 ## Contact Information
 
 **Ferdowsi University of Mashhad**  
-[Department of Electrical and Computer Engineering](https://ece.um.ac.ir/)  
+[Department of Electrical and Computer Engineering](https://www.um.ac.ir/)  
 Phone: +98-51-38805117  
 Park Square, Ferdowsi University of Mashhad  
 Mashhad, Iran
 
 **Email:** [h.sadoghi@um.ac.ir](mailto:h-sadoghi@um.ac.ir)  
 **University Website:** [http://prof.um.ac.ir/h-sadoghi/](http://prof.um.ac.ir/h-sadoghi/)  
-**General Website** [h-sadoghi.github.io](h-sadoghi.github.io)
+
+<a href="https://h-sadoghi.github.io/" style="text-decoration:underline; color:green;" target="_blank">
+<strong>General Website 1</strong>
+</a>
+
+<a href="https://hadisadoghiyazdi1971.github.io/" style="text-decoration:underline; color:green;" target="_blank">
+<strong>General Website 2</strong>
+</a>
+
 **Google Scholar:** [https://scholar.google.com/citations?user=wEBTP4oAAAAJ](https://scholar.google.com/citations?user=wEBTP4oAAAAJ)
 
 ---
