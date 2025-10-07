@@ -2,7 +2,8 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>برنامه‌ریزی هوشمند تعمیرات شبکه برق</title> <style>
+    <title>سیستم هوشمند تخصیص کارهای تعمیراتی</title>
+    <style>
         @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css');
         
         body { 
@@ -15,25 +16,25 @@
             text-align: right;
         }
         .header-bar {
-            background-color: #004d99; /* رنگ آبی تیره */
+            background-color: #004d99;
             color: white;
             padding: 10px 40px;
             display: flex;
-            justify-content: space-between; /* توزیع محتوا به طرفین */
+            justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .header-bar h1 {
-            color: white; /* رنگ سفید برای عنوان در نوار بالا */
+            color: white;
             margin: 0;
             padding: 0;
-            font-size: 1.5em; /* اندازه کوچکتر برای عنوان در نوار */
+            font-size: 1.5em;
             border-bottom: none;
-            flex-grow: 1; /* اجازه رشد برای وسط قرار گرفتن */
+            flex-grow: 1;
             text-align: center;
         }
         .logo-container {
-            width: 150px; /* فضای ثابت برای لوگو */
+            width: 150px;
             text-align: center;
         }
         .logo-container img {
@@ -56,19 +57,23 @@
             border-bottom: 1px solid #e0e7ee;
             padding-bottom: 8px;
         }
+        h3 {
+            color: #004d99;
+            margin-top: 25px;
+        }
         label { 
             display: block; 
             margin-top: 20px; 
             font-weight: 600; 
             color: #34495e;
         }
-        select { 
+        select, input { 
             padding: 12px; 
             border-radius: 6px; 
             border: 1px solid #bdc3c7; 
             width: 100%; 
             box-sizing: border-box; 
-            margin-bottom: 25px; 
+            margin-bottom: 15px; 
             font-family: inherit;
             font-size: 1rem;
         }
@@ -83,6 +88,7 @@
             transition: background-color 0.3s, transform 0.1s;
             width: 100%;
             box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+            margin-top: 10px;
         }
         button:hover { 
             background-color: #45a049; 
@@ -127,58 +133,242 @@
             padding: 15px;
             border-radius: 6px;
         }
+        .input-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-right: 4px solid #0066cc;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .file-upload {
+            border: 2px dashed #0066cc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .file-upload:hover {
+            background: #e3f2fd;
+        }
+        .emergency-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .team-capacity {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .capacity-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4CAF50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .small-btn {
+            width: auto;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="header-bar">
         <div class="logo-container">
-            <img src="mylogo.jpg" alt="لوگوی پروژه"> 
+            <img src="mylogo.jpg" alt="لوگوی پروژه">
         </div>
-        <h1>برنامه‌ریزی هوشمند تعمیرات شبکه برق</h1> 
+        <h1>سیستم هوشمند تخصیص کارهای تعمیراتی</h1>
         <div class="logo-container">
             <img src="logo.jpg" alt="لوگوی شرکت برق">
         </div>
     </div>
     
     <div class="container">
-        <p>شیوه تخصیص را انتخاب کنید و منتظر نتایج باشید. ممکن است کمی طول بکشد.</p>
-        
-        <label for="allocationType">نوع الگوریتم تخصیص:</label>
-        <select id="allocationType">
-            <option value="random">تخصیص پایه</option>
-            <option value="shortest_travel">بهینه‌سازی بر اساس کوتاه‌ترین زمان سفر</option>
-            <option value="balanced_load">بهینه‌سازی بر اساس توزیع بار متعادل</option>
-        </select>
+        <!-- بخش آپلود فایل اکسل -->
+        <div class="input-section">
+            <h3>📊 ورود داده‌ها از طریق فایل اکسل</h3>
+            <div class="file-upload" onclick="document.getElementById('excelFile').click()">
+                <p>📁 برای آپلود فایل اکسل کلیک کنید</p>
+                <small>فرمت‌های قابل قبول: .xlsx, .xls (حاوی اطلاعات کارها و تیم‌ها)</small>
+                <input type="file" id="excelFile" accept=".xlsx,.xls" style="display: none" onchange="handleExcelUpload(this.files)">
+            </div>
+            <div id="fileInfo"></div>
+        </div>
 
-        <button onclick="getOptimizationResult()" id="optimizeButton">اجرای ماژول با نوع تخصیص انتخابی</button>
-        
+        <!-- بخش اطلاعات پایه -->
+        <div class="input-section">
+            <h3>⚙️ تنظیمات برنامه‌ریزی</h3>
+            
+            <div class="input-group">
+                <label for="planningWeek">هفته برنامه‌ریزی:</label>
+                <input type="week" id="planningWeek">
+            </div>
+            
+            <div class="input-group">
+                <label for="workGroup">گروه تعمیراتی:</label>
+                <select id="workGroup">
+                    <option value="">-- انتخاب گروه --</option>
+                    <option value="lighting">روشنایی معابر</option>
+                    <option value="overhead">شبکه هوایی</option>
+                    <option value="underground">شبکه زمینی</option>
+                    <option value="panel">تابلو</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="dailyHours">ساعات کاری روزانه (ساعت):</label>
+                <input type="number" id="dailyHours" value="6" min="4" max="8">
+            </div>
+        </div>
+
+        <!-- بخش کارهای اضطراری -->
+        <div class="emergency-section">
+            <h3>🚨 کارهای اضطراری</h3>
+            <div class="input-group">
+                <label for="emergencyCapacity">درصد ظرفیت اختصاص داده شده به کارهای اضطراری:</label>
+                <input type="number" id="emergencyCapacity" value="10" min="0" max="30" step="5">
+                <small>%</small>
+            </div>
+            
+            <button class="small-btn" onclick="addEmergencyJob()" style="background: #e74c3c;">
+                ➕ افزودن کار اضطراری
+            </button>
+            
+            <div id="emergencyJobsList" style="margin-top: 15px;"></div>
+        </div>
+
+        <!-- بخش الگوریتم تخصیص -->
+        <div class="input-section">
+            <h3>🎯 الگوریتم تخصیص</h3>
+            <label for="allocationType">نوع الگوریتم تخصیص:</label>
+            <select id="allocationType">
+                <option value="random">تخصیص پایه</option>
+                <option value="shortest_travel">بهینه‌سازی بر اساس کوتاه‌ترین زمان سفر</option>
+                <option value="balanced_load">بهینه‌سازی بر اساس توزیع بار متعادل</option>
+                <option value="multi_team">هماهنگی بین گروهی (کارهای چندتخصصی)</option>
+            </select>
+        </div>
+
+        <!-- دکمه اجرا -->
+        <button onclick="runOptimization()" id="optimizeButton">
+            🚀 اجرای بهینه‌سازی و تخصیص کارها
+        </button>
+
+        <!-- نتایج -->
         <div id="results">
             <h2>نتایج تخصیص</h2>
-            <p style="color: #95a5a6;">برای شروع، یک شیوه تخصیص را انتخاب و دکمه بالا را کلیک کنید.</p>
+            <p style="color: #95a5a6;">برای شروع، اطلاعات مورد نیاز را وارد و دکمه اجرا را کلیک کنید.</p>
         </div>
     </div>
 
     <script>
-        // 💡 مهم: این آدرس را با URL عمومی Render خود جایگزین کنید!
-        const API_URL = 'https://smart-repair-api.onrender.com/optimize'; 
+        // 💡 آدرس API اصلی از فایل قبلی
+        const API_URL = 'https://smart-repair-api.onrender.com/optimize';
+        
+        // متغیرهای全局
+        let emergencyJobs = [];
+        let excelData = null;
 
-        function getOptimizationResult() {
-            const resultsDiv = document.getElementById('results');
+        // توابع JavaScript
+        function handleExcelUpload(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                document.getElementById('fileInfo').innerHTML = 
+                    `<p style="color: #27ae60;">✓ فایل "${file.name}" با موفقیت انتخاب شد</p>`;
+                
+                // در اینجا می‌توانید فایل را به بک‌اند آپلود کنید
+                // uploadExcelFile(file);
+                
+                // برای نمونه، داده‌های تستی را تنظیم می‌کنیم
+                excelData = {
+                    filename: file.name,
+                    uploadTime: new Date().toISOString()
+                };
+            }
+        }
+
+        function addEmergencyJob() {
+            const jobId = prompt('شناسه کار اضطراری را وارد کنید:');
+            if (jobId) {
+                const priority = prompt('اولویت کار (high/medium/low):', 'high');
+                emergencyJobs.push({
+                    id: jobId,
+                    priority: priority || 'high',
+                    description: 'کار اضطراری',
+                    timestamp: new Date().toISOString()
+                });
+                updateEmergencyJobsList();
+            }
+        }
+
+        function removeEmergencyJob(jobId) {
+            emergencyJobs = emergencyJobs.filter(job => job.id !== jobId);
+            updateEmergencyJobsList();
+        }
+
+        function updateEmergencyJobsList() {
+            const container = document.getElementById('emergencyJobsList');
+            if (emergencyJobs.length === 0) {
+                container.innerHTML = '<p>هیچ کار اضطراری ثبت نشده است</p>';
+                return;
+            }
+            
+            container.innerHTML = '<h4>کارهای اضطراری ثبت شده:</h4>';
+            
+            emergencyJobs.forEach(job => {
+                container.innerHTML += `
+                    <div style="background: #ffeaa7; padding: 10px; margin: 5px 0; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>${job.id}</strong> - اولویت: ${job.priority}
+                        </div>
+                        <button class="small-btn" onclick="removeEmergencyJob('${job.id}')" style="background: #e74c3c; padding: 5px 10px;">حذف</button>
+                    </div>
+                `;
+            });
+        }
+
+        function runOptimization() {
             const button = document.getElementById('optimizeButton');
+            const resultsDiv = document.getElementById('results');
             
-            const selectedType = document.getElementById('allocationType').value; 
+            // جمع‌آوری داده‌ها از فرم
+            const planningData = {
+                allocation_type: document.getElementById('allocationType').value,
+                planning_week: document.getElementById('planningWeek').value,
+                work_group: document.getElementById('workGroup').value,
+                daily_hours: parseInt(document.getElementById('dailyHours').value),
+                emergency_capacity: parseInt(document.getElementById('emergencyCapacity').value),
+                emergency_jobs: emergencyJobs,
+                excel_data: excelData
+            };
+
+            // نمایش وضعیت پردازش
+            resultsDiv.innerHTML = `
+                <h2 style="color:#f39c12;">در حال پردازش...</h2>
+                <p>نوع تخصیص درخواستی: <b>${document.getElementById('allocationType').options[document.getElementById('allocationType').selectedIndex].text}</b></p>
+                <p>لطفاً منتظر بمانید تا بک‌اند پاسخ دهد.</p>
+            `;
             
-            resultsDiv.innerHTML = `<h2 style="color:#f39c12;">در حال پردازش...</h2><p>نوع تخصیص درخواستی: <b>${selectedType}</b>. لطفاً منتظر بمانید تا بک‌اند پاسخ دهد.</p>`;
             button.disabled = true;
 
+            // ارسال درخواست به API اصلی
             fetch(API_URL, {
-                method: 'POST', 
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json' 
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ 
-                    "allocation_type": selectedType 
-                })
+                body: JSON.stringify(planningData)
             })
             .then(response => {
                 button.disabled = false;
@@ -187,10 +377,19 @@
                 }
                 return response.json();
             })
-            .then(data => displayResults(data))
+            .then(data => {
+                displayResults(data);
+            })
             .catch(error => {
                 console.error('خطا در دریافت نتایج:', error);
-                resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>بررسی کنید که آدرس API درست و سرور Render فعال باشد.</p>`;
+                button.disabled = false;
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h2>خطا در اتصال به ماژول بهینه‌سازی</h2>
+                        <p>${error.message}</p>
+                        <p>بررسی کنید که آدرس API درست و سرور Render فعال باشد.</p>
+                    </div>
+                `;
             });
         }
 
@@ -201,7 +400,8 @@
             const typeMap = {
                 'random': 'تخصیص پایه',
                 'shortest_travel': 'کمترین زمان سفر',
-                'balanced_load': 'توزیع بار متعادل'
+                'balanced_load': 'توزیع بار متعادل',
+                'multi_team': 'هماهنگی بین گروهی'
             };
             const displayType = typeMap[data.type_applied] || data.type_applied;
 
@@ -214,19 +414,24 @@
                             <h3>تیم: ${team.team_id}</h3>
                             <div class="summary">
                                 • کل زمان کار: ${team.total_work_time_min} دقیقه | 
-                                • کل زمان سفر: ${team.total_travel_time_min} دقیقه
+                                • کل زمان سفر: ${team.total_travel_time_min} دقیقه |
+                                • تعداد کارها: ${team.route ? team.route.length : 0}
                             </div>
                             <h4>مسیر کارها:</h4>
                             <ul>
                     `;
-                    team.route.forEach(job => {
-                        htmlContent += `
-                            <li class="job-item">
-                                **${job.job_id}** (مدت: ${job.job_duration_min} دقیقه)
-                                <span class="time-info"> - شروع: ${job.start_time} | پایان: ${job.end_time} </span>
-                            </li>
-                        `;
-                    });
+                    if (team.route && team.route.length > 0) {
+                        team.route.forEach(job => {
+                            htmlContent += `
+                                <li class="job-item">
+                                    <strong>${job.job_id}</strong> (مدت: ${job.job_duration_min} دقیقه)
+                                    <span class="time-info"> - شروع: ${job.start_time} | پایان: ${job.end_time} </span>
+                                </li>
+                            `;
+                        });
+                    } else {
+                        htmlContent += `<li>هیچ کاری به این تیم تخصیص داده نشد</li>`;
+                    }
                     htmlContent += `
                             </ul>
                         </div>
@@ -238,6 +443,19 @@
 
             resultsDiv.innerHTML = htmlContent;
         }
+
+        // مقداردهی اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            // تنظیم هفته جاری به صورت پیش‌فرض
+            const now = new Date();
+            const startOfYear = new Date(now.getFullYear(), 0, 1);
+            const days = Math.floor((now - startOfYear) / (24 * 60 * 60 * 1000));
+            const weekNumber = Math.ceil((days + 1) / 7);
+            document.getElementById('planningWeek').value = `${now.getFullYear()}-W${weekNumber.toString().padStart(2, '0')}`;
+            
+            // به روزرسانی لیست کارهای اضطراری
+            updateEmergencyJobsList();
+        });
     </script>
 </body>
 </html>
