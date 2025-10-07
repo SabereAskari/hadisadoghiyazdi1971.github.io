@@ -28,7 +28,7 @@ header:
 
 ## نمونه روش ساده
 
-<a href="https://hadisadoghiyazdi1971.github.io/repair-demo/" style="text-decoration:none; color:green;" target="_blank">
+<a href="https://hadisadoghiyazdi1971.github.io/repair-demo/front/" style="text-decoration:none; color:green;" target="_blank">
 <strong>کلیک کنید و وارد سایت تخصیص شوید</strong>
 </a>
 
