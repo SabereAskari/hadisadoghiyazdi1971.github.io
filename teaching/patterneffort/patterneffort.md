@@ -30,4 +30,10 @@ header:
 </div>
 <a href="/teaching/studenteffort/patterneffort/DeepDream" style="text-decoration:underline; color:green;" target="_blank"><strong> رویای عمیق</strong></a>
 
+ <!--2-->
+<div class="english-text">
+<strong>Feature Extraction from Speech</strong>
+</div>
+<a href="/teaching/studenteffort/patterneffort/voice_2_vec" style="text-decoration:underline; color:green;" target="_blank"><strong> استخراج ویژگی از گفتار</strong></a>
+
  
