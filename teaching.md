@@ -98,7 +98,16 @@ header:
         </div>
       </a>
     </div>
-
+    <div class="project-card">
+      <a href="/teaching/AI_HS/introduction">
+        <img src="{{ '/assets/images/organizations.jpg' | relative_url }}" 
+             alt="Pattern Recognition" 
+             class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">AI for High School</h3>
+        </div>
+      </a>
+    </div>
   </div> <!-- project grid-->
 
 

@@ -13,117 +13,85 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-<div style="padding: 20px; max-width: 1200px; margin: 0 auto;">
-    <h2>نتایج تخصیص کارهای تعمیراتی</h2>
-    <button onclick="fetchData()" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        🔄 دریافت نتایج جدید
-    </button>
-    <div id="result" style="background: white; padding: 20px; border-radius: 8px; border: 2px solid #0066cc; margin-top: 20px; min-height: 200px;">
-        <p>برای دریافت نتایج، دکمه بالا را کلیک کنید</p>
+<div class="container">
+  <div class="header">
+    <h1>تخصیص کارهای تعمیرات</h1>
+    <p> </p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <a href="/repair-demo/index.html">
+        <img src="{{ '/assets/images/inputdata.jpg' | relative_url }}" 
+             alt="Pattern Recognition" 
+             class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">دریافت اطلاعات و تکمیل فرم </h3>
+        </div>
+      </a>
     </div>
+    <div class="project-card">
+      <a href="/repair-demo/Infoshowing">
+        <img src="{{ '/assets/images/info.jpg' | relative_url }}" 
+             alt="Machine Learning" 
+             class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">بازیابی اطلاحات فرم ها</h3>
+        </div>
+      </a>
+    </div>
+    <div class="project-card">
+      <a href="/repair-demo/regparam">
+        <img src="{{ '/assets/images/param.jpg' | relative_url }}" 
+             alt="Circuit Analysis" 
+             class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">تنظیم پارامترها</h3>
+        </div>
+      </a>
+    </div>
+    
+  </div> <!-- project grid-->
+
+
+  <div class="footer">
+    
+  </div>
 </div>
 
-<script>
-// تابع برای نمایش زیبا و خوانا
-function formatResults(data) {
-    console.log("فرمت کردن داده‌ها:", data);
-    
-    let html = `
-        <div style="text-align: right; direction: rtl;">
-            <h3 style="color: #0066cc;">نتایج تخصیص (${data.type_applied === 'random' ? 'تخصیص پایه' : data.type_applied})</h3>
-            
-            <div style="background: #e8f4fd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                <h4>📊 آمار کلی</h4>
-                <p><strong>تعداد تیم‌ها:</strong> ${data.summary.total_teams}</p>
-                <p><strong>کل زمان کار:</strong> ${data.summary.total_work_time} دقیقه</p>
-                <p><strong>کل زمان سفر:</strong> ${data.summary.total_travel_time} دقیقه</p>
-                <p><strong>میانگین کارها per تیم:</strong> ${data.summary.average_jobs_per_team.toFixed(1)}</p>
-            </div>
-    `;
+<style>
 
-    // نمایش اطلاعات هر تیم
-    data.team_assignments.forEach(team => {
-        html += `
-            <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 8px; background: #f9f9f9;">
-                <h4 style="color: #2c3e50;">👥 تیم: ${team.team_id}</h4>
-                <p><strong>تعداد کارها:</strong> ${team.job_count} | 
-                   <strong>کل زمان کار:</strong> ${team.total_work_time_min} دقیقه | 
-                   <strong>کل زمان سفر:</strong> ${team.total_travel_time_min} دقیقه</p>
-        `;
-
-        if (team.route && team.route.length > 0) {
-            html += `<h5>📋 کارهای تخصیص داده شده:</h5>
-                <ul style="list-style-type: none; padding-right: 0;">`;
-
-            team.route.forEach(job => {
-                html += `
-                    <li style="padding: 8px; margin-bottom: 5px; background: white; border-right: 3px solid #4CAF50; border-radius: 4px;">
-                        <strong>${job.job_id}</strong> - ${job.specialty}<br>
-                        <small>⏱️ مدت: ${job.job_duration_min} دقیقه | 
-                        🚗 زمان سفر: ${job.travel_time_min} دقیقه | 
-                        🕐 ${job.start_time} تا ${job.end_time}</small>
-                    </li>
-                `;
-            });
-
-            html += `</ul>`;
-        } else {
-            html += `<p>⚠️ هیچ کاری به این تیم تخصیص داده نشد</p>`;
-        }
-
-        html += `</div>`;
-    });
-
-    html += `</div>`;
-    return html;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* فاصله بین کارت‌ها */
+  margin-top: 2rem;
 }
 
-// تابع اصلی برای دریافت داده
-async function fetchData() {
-    const resultDiv = document.getElementById("result");
-    
-    try {
-        resultDiv.innerHTML = "<p>🔄 در حال دریافت داده از سرور...</p>";
-        
-        // داده‌های ساده - بدون پارامترهای اضافی که باعث خطا می‌شوند
-        const requestData = {
-            allocation_type: "random"
-            // فقط پارامتر اصلی را می‌فرستیم تا خطا ندهد
-        };
-
-        console.log("ارسال درخواست:", requestData);
-
-        const response = await fetch('https://smart-repair-api.onrender.com/optimize', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(requestData)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`خطای سرور: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log("داده‌های دریافت شده:", data);
-        
-        // حالا تابع formatResults را فراخوانی می‌کنیم
-        resultDiv.innerHTML = formatResults(data);
-        
-    } catch (error) {
-        console.error("خطا:", error);
-        resultDiv.innerHTML = `
-            <div style="color: red; text-align: center; padding: 20px;">
-                <h3>❌ خطا در ارتباط با سرور</h3>
-                <p>${error.message}</p>
-                <p>لطفاً دوباره تلاش کنید یا با پشتیبانی تماس بگیرید.</p>
-            </div>
-        `;
-    }
+.project-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-// برای تست: یک بار هنگام لود صفحه اجرا شود
-document.addEventListener('DOMContentLoaded', function() {
-    // خودکار اجرا نشود - کاربر باید دکمه را کلیک کند
-    console.log("صفحه آماده است. برای دریافت داده دکمه را کلیک کنید.");
-});
-</script>
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  margin-top: 0;
+  color: #333;
+}
+</style>
