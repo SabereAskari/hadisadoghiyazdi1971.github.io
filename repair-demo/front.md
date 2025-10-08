@@ -22,7 +22,7 @@ header:
   <div class="projects-grid">
     <div class="project-card">
       <a href="/repair-demo/index.html">
-        <img src="{{ '/assets/images/inputdata.jpg' | relative_url }}" 
+        <img src="{{ '/assets/schedulling/inputdata.jpg' | relative_url }}" 
              alt="Pattern Recognition" 
              class="project-image">
         <div class="project-content">
@@ -32,7 +32,7 @@ header:
     </div>
     <div class="project-card">
       <a href="/repair-demo/Infoshowing">
-        <img src="{{ '/assets/images/info.jpg' | relative_url }}" 
+        <img src="{{ '/assets/schedulling/info.jpg' | relative_url }}" 
              alt="Machine Learning" 
              class="project-image">
         <div class="project-content">
@@ -42,7 +42,7 @@ header:
     </div>
     <div class="project-card">
       <a href="/repair-demo/regparam">
-        <img src="{{ '/assets/images/param.jpg' | relative_url }}" 
+        <img src="{{ '/assets/schedulling/param.JPG' | relative_url }}" 
              alt="Circuit Analysis" 
              class="project-image">
         <div class="project-content">
