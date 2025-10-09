@@ -6,6 +6,7 @@
     <title>برنامه‌ریزی هوشمند تعمیرات شبکه برق</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
+        /* استایل‌ها همانند قبل */
         @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css');
         
         :root {
@@ -344,6 +345,35 @@
         .data-table tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
+        .auto-load-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .status-message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
     </style>
 </head>
 <body>
@@ -450,29 +480,10 @@
                     <input type="number" id="time-limit" min="1" max="10" value="5">
                     
                     <button id="save-job" class="secondary">ذخیره کار تعمیراتی</button>
+                    <button id="send-jobs-to-backend" class="warning">ارسال تمام کارها به بک‌اند</button>
                 </div>
                 
-                <h2>هماهنگی بین گروهی برای کارهای چندتخصصی</h2>
-                <div class="coordination-timeline">
-                    <div class="timeline-header">
-                        <span>توالی ورود تیم‌ها</span>
-                        <span>ساعت کاری: ۸:۰۰ تا ۱۶:۰۰</span>
-                    </div>
-                    <div class="timeline-hours">
-                        <div class="timeline-hour">۸:۰۰</div>
-                        <div class="timeline-hour">۹:۰۰</div>
-                        <div class="timeline-hour">۱۰:۰۰</div>
-                        <div class="timeline-hour">۱۱:۰۰</div>
-                        <div class="timeline-hour">۱۲:۰۰</div>
-                        <div class="timeline-hour">۱۳:۰۰</div>
-                        <div class="timeline-hour">۱۴:۰۰</div>
-                        <div class="timeline-hour">۱۵:۰۰</div>
-                        <div class="timeline-hour">۱۶:۰۰</div>
-                    </div>
-                    <div class="timeline-content" id="team-sequence-timeline">
-                        <!-- تیم‌ها در اینجا با درگ و دراپ قابل جابجایی خواهند بود -->
-                    </div>
-                </div>
+                <div id="jobs-status" class="status-message" style="display: none;"></div>
                 
                 <h2>لیست کارهای تعمیراتی</h2>
                 <table class="data-table" id="jobs-table">
@@ -533,7 +544,10 @@
                     </select>
                     
                     <button id="save-team" class="secondary">ذخیره اطلاعات گروه/اکیپ</button>
+                    <button id="send-teams-to-backend" class="warning">ارسال تمام تیم‌ها به بک‌اند</button>
                 </div>
+                
+                <div id="teams-status" class="status-message" style="display: none;"></div>
                 
                 <h2>لیست گروه‌ها و اکیپ‌های تعمیراتی</h2>
                 <table class="data-table" id="teams-table">
@@ -578,7 +592,10 @@
                     </select>
                     
                     <button id="add-location" class="secondary">افزودن موقعیت به نقشه</button>
+                    <button id="send-locations-to-backend" class="warning">ارسال تمام موقعیت‌ها به بک‌اند</button>
                 </div>
+                
+                <div id="locations-status" class="status-message" style="display: none;"></div>
                 
                 <h2>ماتریس زمان سفر</h2>
                 <div id="travel-matrix-container">
@@ -602,8 +619,15 @@
                         <option value="balanced_load">بهینه‌سازی بر اساس توزیع بار متعادل</option>
                     </select>
 
-                    <button onclick="getOptimizationResult()" id="optimizeButton">اجرای ماژول با نوع تخصیص انتخابی</button>
+                    <button onclick="getOptimizationResult()" id="optimizeButton">اجرای بهینه‌سازی</button>
+                    <button onclick="sendAllDataToBackend()" class="secondary">ارسال تمام داده‌ها به بک‌اند</button>
+                    
+                    <div id="auto-load-notice" class="auto-load-notice" style="display: none;">
+                        ⚠️ داده‌ای یافت نشد! داده‌های پیش‌فرض به صورت خودکار لود شدند.
+                    </div>
                 </div>
+                
+                <div id="all-data-status" class="status-message" style="display: none;"></div>
                 
                 <div id="results">
                     <h2>نتایج تخصیص</h2>
@@ -615,13 +639,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // تنظیمات اولیه
-//        const API_URL = 'https://smart-repair-api.onrender.com/optimize'; 
-        //const API_URL = 'http://localhost:5000/optimize';
-        //const API_URL = 'https://hadi-repair.loca.lt/optimize';
-
-        const API_URL = 'https://hadisadoghiyazdi.loca.lt/optimize';
-
+        // تنظیمات اولیه - استفاده از آدرس بک‌اند جدید
+     const API_BASE_URL = 'https://hadisadoghiyazdi.loca.lt'; // تغییر به HTTPS
+     const API_URL = `${API_BASE_URL}/optimize`;
 
         let map;
         let markers = [];
@@ -629,26 +649,85 @@
         let repairTeams = [];
         let locations = [];
         
+        // داده‌های پیش‌فرض
+        const defaultData = {
+            repairJobs: [
+                {
+                    id: 'A1',
+                    location: 'خیابان ولیعصر، نرسیده به میدان ولیعصر',
+                    priority: 'high',
+                    specialties: ['روشنایی معابر'],
+                    crewCapacity: 4,
+                    status: 'scheduled',
+                    timeLimit: 3,
+                    timestamp: new Date().toISOString()
+                },
+                {
+                    id: 'A2',
+                    location: 'میدان انقلاب، خیابان کارگر شمالی',
+                    priority: 'medium',
+                    specialties: ['شبکه هوایی'],
+                    crewCapacity: 6,
+                    status: 'scheduled',
+                    timeLimit: 5,
+                    timestamp: new Date().toISOString()
+                }
+            ],
+            repairTeams: [
+                {
+                    teamId: 'G1',
+                    teamName: 'روشنایی',
+                    crewId: 'C1',
+                    crewMembers: 3,
+                    workStation: 'ایستگاه مرکزی منطقه ۶',
+                    dailyCapacity: 5.5,
+                    workShift: 'daily',
+                    timestamp: new Date().toISOString()
+                },
+                {
+                    teamId: 'G2',
+                    teamName: 'هوایی',
+                    crewId: 'C1',
+                    crewMembers: 4,
+                    workStation: 'ایستگاه منطقه ۱۱',
+                    dailyCapacity: 6,
+                    workShift: 'daily',
+                    timestamp: new Date().toISOString()
+                }
+            ],
+            locations: [
+                {
+                    name: 'ایستگاه مرکزی منطقه ۶',
+                    lat: 35.7152,
+                    lng: 51.4050,
+                    type: 'station',
+                    timestamp: new Date().toISOString()
+                },
+                {
+                    name: 'ایستگاه منطقه ۱۱',
+                    lat: 35.6892,
+                    lng: 51.3740,
+                    type: 'station',
+                    timestamp: new Date().toISOString()
+                }
+            ]
+        };
+
         // مدیریت تب‌ها
         document.addEventListener('DOMContentLoaded', function() {
             // مدیریت رویداد کلیک روی تب‌ها
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => {
                 tab.addEventListener('click', function() {
-                    // حذف کلاس active از همه تب‌ها
                     tabs.forEach(t => t.classList.remove('active'));
-                    // اضافه کردن کلاس active به تب انتخاب شده
                     this.classList.add('active');
                     
-                    // مخفی کردن همه محتواهای تب
                     const tabContents = document.querySelectorAll('.tab-content');
                     tabContents.forEach(content => content.classList.remove('active'));
                     
-                    // نمایش محتوای تب انتخاب شده
                     const tabId = this.getAttribute('data-tab');
                     document.getElementById(tabId).classList.add('active');
                     
-                    // اگر تب نقشه فعال است، نقشه را مجدداً اندازه‌گیری کن
                     if (tabId === 'geographic-info') {
                         setTimeout(() => {
                             if (map) map.invalidateSize();
@@ -678,7 +757,6 @@
                 const percentage = (capacity / 6) * 100;
                 capacityVisual.style.width = `${percentage}%`;
                 
-                // تغییر رنگ بر اساس ظرفیت
                 if (capacity <= 4) {
                     capacityVisual.className = 'capacity-fill';
                 } else if (capacity <= 5.5) {
@@ -703,25 +781,97 @@
             // محاسبه زمان سفر
             document.getElementById('calculate-travel-time').addEventListener('click', calculateTravelTime);
             
+            // ارسال داده‌ها به بک‌اند
+            document.getElementById('send-jobs-to-backend').addEventListener('click', () => sendJobsToBackend());
+            document.getElementById('send-teams-to-backend').addEventListener('click', () => sendTeamsToBackend());
+            document.getElementById('send-locations-to-backend').addEventListener('click', () => sendLocationsToBackend());
+            
             // مقداردهی اولیه نقشه
             initMap();
             
-            // بارگذاری داده‌های نمونه
-            loadSampleData();
+            // بارگذاری داده‌های اولیه از بک‌اند
+            loadInitialDataFromBackend();
         });
         
         // تابع مقداردهی اولیه نقشه
         function initMap() {
-            // مرکز نقشه روی تهران
             map = L.map('map').setView([35.6892, 51.3890], 11);
             
-            // اضافه کردن لایه نقشه OSM
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
             
-            // اضافه کردن کنترل اندازه‌گیری
             L.control.scale().addTo(map);
+        }
+        
+        // تابع بارگذاری داده‌های اولیه از بک‌اند
+        async function loadInitialDataFromBackend() {
+            try {
+                // بارگذاری کارها از بک‌اند
+                const jobsResponse = await fetch(`${API_BASE_URL}/api/jobs`);
+                if (jobsResponse.ok) {
+                    const jobsData = await jobsResponse.json();
+                    repairJobs = jobsData.jobs || defaultData.repairJobs;
+                } else {
+                    repairJobs = defaultData.repairJobs;
+                }
+
+                // بارگذاری تیم‌ها از بک‌اند
+                const teamsResponse = await fetch(`${API_BASE_URL}/api/teams`);
+                if (teamsResponse.ok) {
+                    const teamsData = await teamsResponse.json();
+                    repairTeams = teamsData.teams || defaultData.repairTeams;
+                } else {
+                    repairTeams = defaultData.repairTeams;
+                }
+
+                // بارگذاری موقعیت‌ها از بک‌اند
+                const locationsResponse = await fetch(`${API_BASE_URL}/api/locations`);
+                if (locationsResponse.ok) {
+                    const locationsData = await locationsResponse.json();
+                    locations = locationsData.locations || defaultData.locations;
+                } else {
+                    locations = defaultData.locations;
+                }
+
+                // به روزرسانی رابط کاربری
+                updateJobsTable();
+                updateTeamsTable();
+                updateMapWithLocations();
+                
+                console.log('✅ داده‌ها از بک‌اند بارگذاری شدند');
+            } catch (error) {
+                console.log('❌ خطا در بارگذاری از بک‌اند، استفاده از داده‌های پیش‌فرض:', error);
+                repairJobs = defaultData.repairJobs;
+                repairTeams = defaultData.repairTeams;
+                locations = defaultData.locations;
+                
+                updateJobsTable();
+                updateTeamsTable();
+                updateMapWithLocations();
+            }
+        }
+        
+        // تابع به روزرسانی نقشه با موقعیت‌ها
+        function updateMapWithLocations() {
+            // پاک کردن مارکرهای قبلی
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+            
+            // اضافه کردن موقعیت‌ها به نقشه
+            locations.forEach(loc => {
+                const color = loc.type === 'repair' ? 'red' : 'blue';
+                const icon = L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white;"></div>`,
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+                
+                const marker = L.marker([loc.lat, loc.lng], { icon: icon }).addTo(map);
+                marker.bindPopup(`<b>${loc.name}</b><br>نوع: ${loc.type === 'repair' ? 'نقطه تعمیراتی' : 'ایستگاه کاری'}<br>موقعیت: ${loc.lat.toFixed(4)}, ${loc.lng.toFixed(4)}`);
+                markers.push(marker);
+            });
         }
         
         // تابع ذخیره کار تعمیراتی
@@ -733,7 +883,6 @@
             const jobLocation = document.getElementById('job-location').value;
             const jobPriority = document.getElementById('job-priority').value;
             
-            // جمع‌آوری تخصص‌های انتخاب شده
             const specialties = [];
             if (document.getElementById('specialty-lighting').checked) specialties.push('روشنایی معابر');
             if (document.getElementById('specialty-overhead').checked) specialties.push('شبکه هوایی');
@@ -745,42 +894,26 @@
             const jobStatus = document.getElementById('job-status').value;
             const timeLimit = document.getElementById('time-limit').value;
             
-            // اعتبارسنجی
             if (!jobId || !jobLocation) {
                 alert('لطفاً شناسه کار و مکان را وارد کنید.');
                 return;
             }
             
-            // ایجاد شیء کار تعمیراتی
             const repairJob = {
                 id: jobId,
                 location: jobLocation,
                 priority: jobPriority,
                 specialties: specialties,
-                crewCapacity: crewCapacity,
+                crewCapacity: parseInt(crewCapacity),
                 status: jobStatus,
-                timeLimit: timeLimit,
+                timeLimit: parseInt(timeLimit),
                 timestamp: new Date().toISOString()
             };
             
-            // ذخیره در آرایه
             repairJobs.push(repairJob);
-            
-            // به روزرسانی جدول
             updateJobsTable();
-            
-            // نمایش پیام موفقیت
-            alert(`کار تعمیراتی ${jobId} با موفقیت ثبت شد.`);
-            
-            // ریست فرم
-            document.getElementById('job-id').value = '';
-            document.getElementById('job-location').value = '';
-            document.getElementById('job-priority').value = 'medium';
-            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            document.getElementById('crew-capacity').value = '4';
-            document.getElementById('job-status').value = 'scheduled';
-            document.getElementById('time-limit').value = '5';
-            document.getElementById('custom-job-id').style.display = 'none';
+            alert(`✅ کار تعمیراتی ${jobId} با موفقیت ثبت شد.`);
+            resetJobForm();
         }
         
         // تابع ذخیره گروه/اکیپ
@@ -793,40 +926,26 @@
             const dailyCapacity = document.getElementById('daily-capacity').value;
             const workShift = document.getElementById('work-shift').value;
             
-            // اعتبارسنجی
             if (!teamId || !crewId || !workStation) {
                 alert('لطفاً تمام فیلدهای ضروری را پر کنید.');
                 return;
             }
             
-            // ایجاد شیء گروه/اکیپ
             const repairTeam = {
                 teamId: teamId,
                 teamName: teamName,
                 crewId: crewId,
-                crewMembers: crewMembers,
+                crewMembers: parseInt(crewMembers),
                 workStation: workStation,
-                dailyCapacity: dailyCapacity,
+                dailyCapacity: parseFloat(dailyCapacity),
                 workShift: workShift,
                 timestamp: new Date().toISOString()
             };
             
-            // ذخیره در آرایه
             repairTeams.push(repairTeam);
-            
-            // به روزرسانی جدول
             updateTeamsTable();
-            
-            // نمایش پیام موفقیت
-            alert(`گروه/اکیپ ${teamId}-${crewId} با موفقیت ثبت شد.`);
-            
-            // ریست فرم
-            document.getElementById('team-id').value = '';
-            document.getElementById('crew-id').value = '';
-            document.getElementById('crew-members').value = '3';
-            document.getElementById('work-station').value = '';
-            document.getElementById('daily-capacity').value = '6';
-            document.getElementById('work-shift').value = 'daily';
+            alert(`✅ گروه/اکیپ ${teamId}-${crewId} با موفقیت ثبت شد.`);
+            resetTeamForm();
         }
         
         // تابع افزودن موقعیت به نقشه
@@ -836,38 +955,23 @@
             const lng = parseFloat(document.getElementById('location-lng').value);
             const type = document.getElementById('location-type').value;
             
-            // اعتبارسنجی
             if (!name || isNaN(lat) || isNaN(lng)) {
                 alert('لطفاً تمام فیلدها را به درستی پر کنید.');
                 return;
             }
             
-            // تعیین رنگ و آیکون بر اساس نوع
-            const color = type === 'repair' ? 'red' : 'blue';
-            const icon = L.divIcon({
-                className: 'custom-marker',
-                html: `<div style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white;"></div>`,
-                iconSize: [24, 24],
-                iconAnchor: [12, 12]
-            });
-            
-            // اضافه کردن مارکر به نقشه
-            const marker = L.marker([lat, lng], { icon: icon }).addTo(map);
-            marker.bindPopup(`<b>${name}</b><br>نوع: ${type === 'repair' ? 'نقطه تعمیراتی' : 'ایستگاه کاری'}<br>موقعیت: ${lat.toFixed(4)}, ${lng.toFixed(4)}`);
-            
-            // ذخیره موقعیت
-            locations.push({
+            const location = {
                 name: name,
                 lat: lat,
                 lng: lng,
                 type: type,
-                marker: marker
-            });
+                timestamp: new Date().toISOString()
+            };
             
-            // نمایش پیام موفقیت
-            alert(`موقعیت ${name} با موفقیت به نقشه اضافه شد.`);
+            locations.push(location);
+            updateMapWithLocations();
+            alert(`✅ موقعیت ${name} با موفقیت به نقشه اضافه شد.`);
             
-            // ریست فرم
             document.getElementById('location-name').value = '';
             document.getElementById('location-lat').value = '';
             document.getElementById('location-lng').value = '';
@@ -881,16 +985,13 @@
                 return;
             }
             
-            // ایجاد ماتریس زمان سفر
             let matrixHTML = '<table class="data-table"><thead><tr><th>از/به</th>';
             
-            // هدر جدول
             locations.forEach(loc => {
                 matrixHTML += `<th>${loc.name}</th>`;
             });
             matrixHTML += '</tr></thead><tbody>';
             
-            // محتوای جدول
             locations.forEach(fromLoc => {
                 matrixHTML += `<tr><td><b>${fromLoc.name}</b></td>`;
                 
@@ -898,12 +999,11 @@
                     if (fromLoc.name === toLoc.name) {
                         matrixHTML += '<td>-</td>';
                     } else {
-                        // محاسبه زمان سفر تقریبی (بر اساس فاصله)
                         const distance = calculateDistance(
                             fromLoc.lat, fromLoc.lng, 
                             toLoc.lat, toLoc.lng
                         );
-                        const travelTime = Math.round(distance * 1.5); // فرض: 1.5 دقیقه به ازای هر کیلومتر
+                        const travelTime = Math.round(distance * 1.5);
                         matrixHTML += `<td>${travelTime} دقیقه</td>`;
                     }
                 });
@@ -916,9 +1016,9 @@
             document.getElementById('travel-matrix').innerHTML = matrixHTML;
         }
         
-        // تابع محاسبه فاصله بین دو نقطه جغرافیایی (کیلومتر)
+        // تابع محاسبه فاصله
         function calculateDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371; // شعاع زمین در کیلومتر
+            const R = 6371;
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
             const a = 
@@ -926,8 +1026,7 @@
                 Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
                 Math.sin(dLon/2) * Math.sin(dLon/2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-            const distance = R * c;
-            return distance;
+            return R * c;
         }
         
         // تابع به روزرسانی جدول کارها
@@ -938,16 +1037,12 @@
             repairJobs.forEach(job => {
                 const row = document.createElement('tr');
                 
-                // تعیین کلاس اولویت
                 let priorityClass = '';
                 switch(job.priority) {
-                    case 'low': priorityClass = ''; break;
-                    case 'medium': priorityClass = ''; break;
                     case 'high': priorityClass = 'warning'; break;
                     case 'urgent': priorityClass = 'danger'; break;
                 }
                 
-                // تعیین متن وضعیت
                 const statusText = job.status === 'scheduled' ? 'زمان‌بندی شده' : 'اضطراری';
                 
                 row.innerHTML = `
@@ -974,7 +1069,6 @@
             repairTeams.forEach(team => {
                 const row = document.createElement('tr');
                 
-                // تعیین کلاس ظرفیت
                 let capacityClass = '';
                 const capacity = parseFloat(team.dailyCapacity);
                 if (capacity > 5.5) capacityClass = 'danger';
@@ -997,183 +1091,214 @@
             });
         }
         
-        // تابع حذف کار
-        function deleteJob(jobId) {
-            if (confirm(`آیا از حذف کار ${jobId} اطمینان دارید؟`)) {
-                repairJobs = repairJobs.filter(job => job.id !== jobId);
-                updateJobsTable();
-            }
-        }
-        
-        // تابع حذف گروه
-        function deleteTeam(teamId, crewId) {
-            if (confirm(`آیا از حذف گروه ${teamId}-${crewId} اطمینان دارید؟`)) {
-                repairTeams = repairTeams.filter(team => !(team.teamId === teamId && team.crewId === crewId));
-                updateTeamsTable();
-            }
-        }
-        
-        // تابع تبدیل کد اولویت به متن فارسی
-        function getPriorityText(priority) {
-            switch(priority) {
-                case 'low': return 'کم';
-                case 'medium': return 'متوسط';
-                case 'high': return 'بالا';
-                case 'urgent': return 'اضطراری';
-                default: return 'نامشخص';
-            }
-        }
-        
-        // تابع تبدیل کد شیفت به متن فارسی
-        function getShiftText(shift) {
-            switch(shift) {
-                case 'daily': return 'روزانه';
-                case 'nightly': return 'شبانه';
-                case 'emergency': return 'اضطراری';
-                default: return 'نامشخص';
-            }
-        }
-        
-        // تابع بارگذاری داده‌های نمونه
-        function loadSampleData() {
-            // داده‌های نمونه برای کارهای تعمیراتی
-            repairJobs = [
-                {
-                    id: 'A1',
-                    location: 'خیابان ولیعصر، نرسیده به میدان ولیعصر',
-                    priority: 'high',
-                    specialties: ['روشنایی معابر'],
-                    crewCapacity: '4',
-                    status: 'scheduled',
-                    timeLimit: '3',
-                    timestamp: new Date().toISOString()
-                },
-                {
-                    id: 'A2',
-                    location: 'میدان انقلاب، خیابان کارگر شمالی',
-                    priority: 'medium',
-                    specialties: ['شبکه هوایی'],
-                    crewCapacity: '6',
-                    status: 'scheduled',
-                    timeLimit: '5',
-                    timestamp: new Date().toISOString()
-                }
-            ];
+        // توابع ارسال به بک‌اند - سازگار با ساختار جدید
+        async function sendJobsToBackend() {
+            const statusDiv = document.getElementById('jobs-status');
             
-            // داده‌های نمونه برای گروه‌ها
-            repairTeams = [
-                {
-                    teamId: 'G1',
-                    teamName: 'روشنایی',
-                    crewId: 'C1',
-                    crewMembers: '3',
-                    workStation: 'ایستگاه مرکزی منطقه ۶',
-                    dailyCapacity: '5.5',
-                    workShift: 'daily',
-                    timestamp: new Date().toISOString()
-                },
-                {
-                    teamId: 'G2',
-                    teamName: 'هوایی',
-                    crewId: 'C1',
-                    crewMembers: '4',
-                    workStation: 'ایستگاه منطقه ۱۱',
-                    dailyCapacity: '6',
-                    workShift: 'daily',
-                    timestamp: new Date().toISOString()
-                }
-            ];
+            if (repairJobs.length === 0) {
+                statusDiv.innerHTML = '❌ هیچ کاری برای ارسال وجود ندارد.';
+                statusDiv.className = 'status-message status-error';
+                statusDiv.style.display = 'block';
+                return;
+            }
             
-            // داده‌های نمونه برای موقعیت‌ها
-            locations = [
-                {
-                    name: 'ایستگاه مرکزی منطقه ۶',
-                    lat: 35.7152,
-                    lng: 51.4050,
-                    type: 'station'
-                },
-                {
-                    name: 'ایستگاه منطقه ۱۱',
-                    lat: 35.6892,
-                    lng: 51.3740,
-                    type: 'station'
-                },
-                {
-                    name: 'کار A1',
-                    lat: 35.7212,
-                    lng: 51.4150,
-                    type: 'repair'
-                },
-                {
-                    name: 'کار A2',
-                    lat: 35.7000,
-                    lng: 51.3900,
-                    type: 'repair'
-                }
-            ];
-            
-            // اضافه کردن موقعیت‌های نمونه به نقشه
-            locations.forEach(loc => {
-                const color = loc.type === 'repair' ? 'red' : 'blue';
-                const icon = L.divIcon({
-                    className: 'custom-marker',
-                    html: `<div style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white;"></div>`,
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12]
+            try {
+                statusDiv.innerHTML = '⏳ در حال ارسال کارها...';
+                statusDiv.className = 'status-message';
+                statusDiv.style.display = 'block';
+                
+                const response = await fetch(`${API_BASE_URL}/api/jobs`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ repairJobs: repairJobs })
                 });
                 
-                const marker = L.marker([loc.lat, loc.lng], { icon: icon }).addTo(map);
-                marker.bindPopup(`<b>${loc.name}</b><br>نوع: ${loc.type === 'repair' ? 'نقطه تعمیراتی' : 'ایستگاه کاری'}<br>موقعیت: ${loc.lat.toFixed(4)}, ${loc.lng.toFixed(4)}`);
-                loc.marker = marker;
-            });
-            
-            // به روزرسانی جداول
-            updateJobsTable();
-            updateTeamsTable();
+                if (!response.ok) {
+                    throw new Error(`خطای سرور: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                statusDiv.innerHTML = `✅ ${repairJobs.length} کار با موفقیت ارسال شدند.`;
+                statusDiv.className = 'status-message status-success';
+                
+            } catch (error) {
+                console.error('خطا در ارسال کارها:', error);
+                statusDiv.innerHTML = `❌ خطا در ارسال کارها: ${error.message}`;
+                statusDiv.className = 'status-message status-error';
+            }
         }
         
-        // تابع بهینه‌سازی (همان تابع اصلی)
+        async function sendTeamsToBackend() {
+            const statusDiv = document.getElementById('teams-status');
+            
+            if (repairTeams.length === 0) {
+                statusDiv.innerHTML = '❌ هیچ تیمی برای ارسال وجود ندارد.';
+                statusDiv.className = 'status-message status-error';
+                statusDiv.style.display = 'block';
+                return;
+            }
+            
+            try {
+                statusDiv.innerHTML = '⏳ در حال ارسال تیم‌ها...';
+                statusDiv.className = 'status-message';
+                statusDiv.style.display = 'block';
+                
+                const response = await fetch(`${API_BASE_URL}/api/teams`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ repairTeams: repairTeams })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`خطای سرور: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                statusDiv.innerHTML = `✅ ${repairTeams.length} تیم با موفقیت ارسال شدند.`;
+                statusDiv.className = 'status-message status-success';
+                
+            } catch (error) {
+                console.error('خطا در ارسال تیم‌ها:', error);
+                statusDiv.innerHTML = `❌ خطا در ارسال تیم‌ها: ${error.message}`;
+                statusDiv.className = 'status-message status-error';
+            }
+        }
+        
+        async function sendLocationsToBackend() {
+            const statusDiv = document.getElementById('locations-status');
+            
+            if (locations.length === 0) {
+                statusDiv.innerHTML = '❌ هیچ موقعیتی برای ارسال وجود ندارد.';
+                statusDiv.className = 'status-message status-error';
+                statusDiv.style.display = 'block';
+                return;
+            }
+            
+            try {
+                statusDiv.innerHTML = '⏳ در حال ارسال موقعیت‌ها...';
+                statusDiv.className = 'status-message';
+                statusDiv.style.display = 'block';
+                
+                const response = await fetch(`${API_BASE_URL}/api/locations`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ locations: locations })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`خطای سرور: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                statusDiv.innerHTML = `✅ ${locations.length} موقعیت با موفقیت ارسال شدند.`;
+                statusDiv.className = 'status-message status-success';
+                
+            } catch (error) {
+                console.error('خطا در ارسال موقعیت‌ها:', error);
+                statusDiv.innerHTML = `❌ خطا در ارسال موقعیت‌ها: ${error.message}`;
+                statusDiv.className = 'status-message status-error';
+            }
+        }
+        
+        async function sendAllDataToBackend() {
+            const statusDiv = document.getElementById('all-data-status');
+            
+            try {
+                statusDiv.innerHTML = '⏳ در حال ارسال تمام داده‌ها...';
+                statusDiv.className = 'status-message';
+                statusDiv.style.display = 'block';
+                
+                const response = await fetch(`${API_BASE_URL}/api/all-data`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        repairJobs: repairJobs,
+                        repairTeams: repairTeams,
+                        locations: locations
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`خطای سرور: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                statusDiv.innerHTML = `✅ تمام داده‌ها ارسال شدند (${repairJobs.length} کار، ${repairTeams.length} تیم، ${locations.length} موقعیت)`;
+                statusDiv.className = 'status-message status-success';
+                
+            } catch (error) {
+                console.error('خطا در ارسال داده‌ها:', error);
+                statusDiv.innerHTML = `❌ خطا در ارسال داده‌ها: ${error.message}`;
+                statusDiv.className = 'status-message status-error';
+            }
+        }
+        
+        // تابع بهینه‌سازی
         function getOptimizationResult() {
             const resultsDiv = document.getElementById('results');
             const button = document.getElementById('optimizeButton');
-            
+            const noticeDiv = document.getElementById('auto-load-notice');
             const selectedType = document.getElementById('allocationType').value; 
             
-            resultsDiv.innerHTML = `<h2 style="color:#f39c12;">در حال پردازش...</h2><p>نوع تخصیص درخواستی: <b>${selectedType}</b>. لطفاً منتظر بمانید تا بک‌اند پاسخ دهد.</p>`;
+            // بررسی اگر داده‌ای وجود ندارد، از پیش‌فرض استفاده کن
+            if (repairJobs.length === 0 || repairTeams.length === 0) {
+                repairJobs = defaultData.repairJobs;
+                repairTeams = defaultData.repairTeams;
+                locations = defaultData.locations;
+                updateJobsTable();
+                updateTeamsTable();
+                updateMapWithLocations();
+                noticeDiv.style.display = 'block';
+            } else {
+                noticeDiv.style.display = 'none';
+            }
+            
+            resultsDiv.innerHTML = `<h2 style="color:#f39c12;">🔄 در حال پردازش...</h2>`;
             button.disabled = true;
 
+            const requestData = {
+                allocation_type: selectedType,
+                repair_jobs: repairJobs,
+                repair_teams: repairTeams,
+                locations: locations
+            };
+
             fetch(API_URL, {
-                method: 'POST', 
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json' 
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ 
-                    "allocation_type": selectedType 
-                })
+                body: JSON.stringify(requestData)
             })
             .then(response => {
                 button.disabled = false;
                 if (!response.ok) {
-                    throw new Error(`خطای HTTP: ${response.status}. بک‌اند در دسترس نیست یا دچار خطا شده است.`);
+                    throw new Error(`خطای HTTP: ${response.status}`);
                 }
                 return response.json();
             })
             .then(data => displayResults(data))
             .catch(error => {
-                console.error('خطا در دریافت نتایج:', error);
-                resultsDiv.innerHTML = `<h2 class="error">خطا در اتصال به ماژول بهینه‌سازی</h2><p class="error">${error.message}</p><p>بررسی کنید که آدرس API درست و سرور Render فعال باشد.</p>`;
+                console.error('خطا:', error);
+                resultsDiv.innerHTML = `<h2 class="error">❌ خطا در اتصال به بک‌اند</h2><p>${error.message}</p>`;
             });
         }
 
         function displayResults(data) {
             const resultsDiv = document.getElementById('results');
             
-             // این خط جدید را اضافه کنید
-        if (data.deployment_info) {
+            if (data.deployment_info) {
                 resultsDiv.innerHTML += `<div class="success" style="margin: 10px 0; padding: 10px;">${data.deployment_info}</div>`;
-                }
+            }
 
-            // نگاشت نام‌های انگلیسی به فارسی برای نمایش
             const typeMap = {
                 'random': 'تخصیص پایه',
                 'shortest_travel': 'کمترین زمان سفر',
@@ -1181,24 +1306,24 @@
             };
             const displayType = typeMap[data.type_applied] || data.type_applied;
 
-            let htmlContent = `<h2>نتایج تخصیص (الگوریتم ${displayType})</h2>`; 
+            let htmlContent = `<h2>✅ نتایج تخصیص (الگوریتم ${displayType})</h2>`; 
 
             if (data.team_assignments && data.team_assignments.length > 0) {
                 data.team_assignments.forEach(team => {
                     htmlContent += `
                         <div class="team-box">
-                            <h3>تیم: ${team.team_id}</h3>
+                            <h3>👥 تیم: ${team.team_id}</h3>
                             <div class="summary">
-                                • کل زمان کار: ${team.total_work_time_min} دقیقه | 
-                                • کل زمان سفر: ${team.total_travel_time_min} دقیقه
+                                • ⏱️ کل زمان کار: ${team.total_work_time_min} دقیقه | 
+                                • 🚗 کل زمان سفر: ${team.total_travel_time_min} دقیقه
                             </div>
-                            <h4>مسیر کارها:</h4>
+                            <h4>🗺️ مسیر کارها:</h4>
                             <ul>
                     `;
                     team.route.forEach(job => {
                         htmlContent += `
                             <li class="job-item">
-                                **${job.job_id}** (مدت: ${job.job_duration_min} دقیقه)
+                                <strong>${job.job_id}</strong> (⏰ مدت: ${job.job_duration_min} دقیقه)
                                 <span class="time-info"> - شروع: ${job.start_time} | پایان: ${job.end_time} </span>
                             </li>
                         `;
@@ -1209,10 +1334,64 @@
                     `;
                 });
             } else {
-                htmlContent += '<p>هیچ تخصیصی انجام نشد.</p>';
+                htmlContent += '<p>❌ هیچ تخصیصی انجام نشد.</p>';
             }
 
             resultsDiv.innerHTML = htmlContent;
+        }
+        
+        // توابع کمکی
+        function resetJobForm() {
+            document.getElementById('job-id').value = '';
+            document.getElementById('job-location').value = '';
+            document.getElementById('job-priority').value = 'medium';
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.getElementById('crew-capacity').value = '4';
+            document.getElementById('job-status').value = 'scheduled';
+            document.getElementById('time-limit').value = '5';
+            document.getElementById('custom-job-id').style.display = 'none';
+        }
+        
+        function resetTeamForm() {
+            document.getElementById('team-id').value = '';
+            document.getElementById('crew-id').value = '';
+            document.getElementById('crew-members').value = '3';
+            document.getElementById('work-station').value = '';
+            document.getElementById('daily-capacity').value = '6';
+            document.getElementById('work-shift').value = 'daily';
+        }
+        
+        function deleteJob(jobId) {
+            if (confirm(`آیا از حذف کار ${jobId} اطمینان دارید؟`)) {
+                repairJobs = repairJobs.filter(job => job.id !== jobId);
+                updateJobsTable();
+            }
+        }
+        
+        function deleteTeam(teamId, crewId) {
+            if (confirm(`آیا از حذف گروه ${teamId}-${crewId} اطمینان دارید؟`)) {
+                repairTeams = repairTeams.filter(team => !(team.teamId === teamId && team.crewId === crewId));
+                updateTeamsTable();
+            }
+        }
+        
+        function getPriorityText(priority) {
+            switch(priority) {
+                case 'low': return 'کم';
+                case 'medium': return 'متوسط';
+                case 'high': return 'بالا';
+                case 'urgent': return 'اضطراری';
+                default: return 'نامشخص';
+            }
+        }
+        
+        function getShiftText(shift) {
+            switch(shift) {
+                case 'daily': return 'روزانه';
+                case 'nightly': return 'شبانه';
+                case 'emergency': return 'اضطراری';
+                default: return 'نامشخص';
+            }
         }
     </script>
 </body>
