@@ -18,18 +18,16 @@ header:
     <h1>تخصیص کارهای تعمیرات</h1>
     <p> </p>
   </div>
-
-
-
   <div class="projects-grid">
     <div class="project-card">
-      <a href="{{ url_for('index') }}">
-  <img src="{{ url_for('static', filename='assets/schedulling/inputdata.jpg') }}" 
-       alt="Pattern Recognition" class="project-image">
-  <div class="project-content">
-    <h3 class="project-title">دریافت اطلاعات و تکمیل فرم</h3>
-  </div>
-</a>
+      <a href="/repair-demo/index.html">
+        <img src="{{ '/assets/schedulling/inputdata.jpg' | relative_url }}" 
+             alt="Pattern Recognition" 
+             class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">دریافت اطلاعات و تکمیل فرم </h3>
+        </div>
+      </a>
     </div>
     <div class="project-card">
       <a href="/repair-demo/Infoshowing">
