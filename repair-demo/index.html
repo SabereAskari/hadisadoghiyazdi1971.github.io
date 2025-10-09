@@ -1164,6 +1164,11 @@
         function displayResults(data) {
             const resultsDiv = document.getElementById('results');
             
+             // این خط جدید را اضافه کنید
+        if (data.deployment_info) {
+                resultsDiv.innerHTML += `<div class="success" style="margin: 10px 0; padding: 10px;">${data.deployment_info}</div>`;
+                }
+
             // نگاشت نام‌های انگلیسی به فارسی برای نمایش
             const typeMap = {
                 'random': 'تخصیص پایه',
