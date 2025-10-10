@@ -1,25 +1,25 @@
 {
   "repair_jobs": [
     {
+      "crewCapacity": 4,
       "id": "A1",
       "location": "خیابان ولیعصر، نرسیده به میدان ولیعصر",
       "priority": "high",
       "specialties": [
         "روشنایی معابر"
       ],
-      "crewCapacity": 4,
       "status": "scheduled",
       "timeLimit": 3,
       "timestamp": "2025-10-10T10:42:56.451Z"
     },
     {
+      "crewCapacity": 6,
       "id": "A2",
       "location": "میدان انقلاب، خیابان کارگر شمالی",
       "priority": "medium",
       "specialties": [
         "شبکه هوایی"
       ],
-      "crewCapacity": 6,
       "status": "scheduled",
       "timeLimit": 5,
       "timestamp": "2025-10-10T10:42:56.451Z"

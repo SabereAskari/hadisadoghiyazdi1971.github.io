@@ -39,7 +39,7 @@ header:
     </div>
      <div class="project-card">
       <a href="/teaching/studenteffort/toolkit/software_tools">
-        <img src="{{ '/assets/images/Software_toolkit.jpg' | relative_url }}" 
+        <img src="{{ '/assets/images/software_toolkit.jpg' | relative_url }}" 
              alt="Rag1" 
              class="project-image">
         <div class="project-content">
