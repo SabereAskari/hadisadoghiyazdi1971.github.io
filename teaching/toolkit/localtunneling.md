@@ -476,3 +476,21 @@ print("Number of vectors in index:", index.ntotal)
 ```
 
 output: Number of vectors in index: 3
+
+## جستجوی 2-NN
+
+```python 
+query = "Where is the Mona Lisa located?"
+query_vec = model.encode([query], convert_to_numpy=True)
+
+# Search top-2 results
+k = 2
+distances, indices = index.search(query_vec, k)
+
+for i, idx in enumerate(indices[0]):
+    print(f"Result {i+1}: {docs[idx]} (distance={distances[0][i]:.4f})")
+```
+
+output is:
+Result 1: The Mona Lisa is in the Louvre. (distance=0.3544)
+Result 2: The capital of France is Paris. (distance=1.5152)
