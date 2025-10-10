@@ -20,7 +20,8 @@ header:
   </div>
   <div class="projects-grid">
     <div class="project-card">
-      <a href="/repair-demo/index.html">
+      <!-- <a href="/repair-demo/index.html">-->
+      <a href="/smart-repair-api/templates/index.html">
         <img src="{{ '/assets/schedulling/inputdata.jpg' | relative_url }}" 
              alt="Pattern Recognition" 
              class="project-image">
