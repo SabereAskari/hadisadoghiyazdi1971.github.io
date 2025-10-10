@@ -225,7 +225,10 @@ curl http://localhost:5000/health
 ## FAISS چیست؟ یک راهنمای کامل
 
 ## معرفی کلی
-**FAISS** (مخفف Facebook AI Similarity Search) یک کتابخانه اوپن‌سورس است که توسط تیم AI Research فیسبوک (متا) توسعه داده شده است. این کتابخانه برای **جستجوی شباهت بردارها** (Vector Similarity Search) بهینه‌سازی شده است.
+ 
+<a href="https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D8%AF%D8%A7%D8%AF%D9%87_%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C#:~:text=FAISS%3A%20%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C%20%D9%85%D9%86%D8%A8%D8%B9%E2%80%8C%D8%A8%D8%A7%D8%B2%20%DA%A9%D9%87%20%D8%AA%D9%88%D8%B3%D8%B7,%D8%AD%D8%AC%D9%85%20%D8%A8%D8%A7%D9%84%D8%A7%20%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C%20%D8%B4%D8%AF%D9%87%20%D8%A7%D8%B3%D8%AA." style="text-decoration:none; color:green;" target="_blank">
+      <strong>FAISS</strong>
+    </a> (مخفف Facebook AI Similarity Search) یک کتابخانه اوپن‌سورس است که توسط تیم AI Research فیسبوک (متا) توسعه داده شده است. این کتابخانه برای **جستجوی شباهت بردارها** (Vector Similarity Search) بهینه‌سازی شده است.
 
 ## مشکل اصلی که FAISS حل می‌کند
 وقتی با داده‌های برداری (Vector Data) کار می‌کنید - مانند:
