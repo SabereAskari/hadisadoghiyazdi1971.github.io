@@ -415,4 +415,64 @@ FAISS یک **ابزار تخصصی و فوق‌العاده کارآمد** بر�
 
 اما برای **برنامه‌های تولیدی در مقیاس بزرگ**، ممکن است نیاز به راه‌حل‌های کامل‌تری مانند دیتابیس‌های برداری تخصصی داشته باشید.
 
-**سخن پایانی:** FAISS مثل یک "موتور جستجوی خالص" برای بردارها است - سریع، قدرتمند، ولی نیاز به ساخت بدنه اطراف آن دارید!
+
+## آزمایش
+**برای انجام این آزمایش ابتدا باید پایتون گونه 3.12 داشته باشید با بالاتر از آن دچار بحران! می شوید**
+
+### محیط جدید
+python -m venv "torch_env_fixed"
+
+### فعال کردن
+torch_env_fixed\Scripts\activate
+
+### نصب ها 
+
+If you’re on CPU:
+
+pip install faiss-cpu
+
+If you have a CUDA GPU:
+
+pip install faiss-gpu
+
+pip install sentence_transformers
+
+حالا اولین تبدیل متن به بردار
+
+```python
+from sentence_transformers import SentenceTransformer
+
+# Load embedding model
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+docs = [
+    "The capital of France is Paris.",
+    "Machine learning is a subset of AI.",
+    "The Mona Lisa is in the Louvre."
+]
+
+# Encode documents into vectors
+embeddings = model.encode(docs, convert_to_numpy=True)
+```
+
+output:
+[[ 0.10325696  0.03042014  0.02909579 ...  0.05853157  0.08585992
+  -0.0056698 ]
+ [-0.03637548 -0.02661065  0.06555219 ...  0.05287919  0.06833272
+  -0.06037488]
+ [ 0.00113731 -0.04676315  0.00223458 ...  0.01240106  0.0471148
+  -0.06059993]]
+
+```python
+import faiss
+import numpy as np
+
+# Create a FAISS index
+dim = embeddings.shape[1]  # vector dimension
+index = faiss.IndexFlatL2(dim)  # L2 distance
+index.add(embeddings)  # add vectors to the index
+
+print("Number of vectors in index:", index.ntotal)
+```
+
+output: Number of vectors in index: 3
