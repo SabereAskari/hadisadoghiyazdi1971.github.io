@@ -21,7 +21,7 @@ header:
 
 <!-- محتوای اصلی شما -->
 <div class="english-text">
-<strong>local tunneling and server creation</strong>
+<strong>ُSoftware concepts</strong>
 </div>
-<a href="/teaching/studenteffort/toolkit/localtunneling" style="text-decoration:underline; color:green;" target="_blank"><strong> تونل زنی و ایجاد سرور</strong></a>
+<a href="/teaching/studenteffort/toolkit/localtunneling" style="text-decoration:underline; color:green;" target="_blank"><strong> مفاهیم نرم افزاری</strong></a>
 
