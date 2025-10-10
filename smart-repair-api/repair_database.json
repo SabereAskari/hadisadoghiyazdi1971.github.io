@@ -1,0 +1,66 @@
+{
+  "repair_jobs": [
+    {
+      "id": "A1",
+      "location": "خیابان ولیعصر، نرسیده به میدان ولیعصر",
+      "priority": "high",
+      "specialties": [
+        "روشنایی معابر"
+      ],
+      "crewCapacity": 4,
+      "status": "scheduled",
+      "timeLimit": 3,
+      "timestamp": "2025-10-10T10:42:56.451Z"
+    },
+    {
+      "id": "A2",
+      "location": "میدان انقلاب، خیابان کارگر شمالی",
+      "priority": "medium",
+      "specialties": [
+        "شبکه هوایی"
+      ],
+      "crewCapacity": 6,
+      "status": "scheduled",
+      "timeLimit": 5,
+      "timestamp": "2025-10-10T10:42:56.451Z"
+    }
+  ],
+  "repair_teams": [
+    {
+      "teamId": "G1",
+      "teamName": "روشنایی",
+      "crewId": "C1",
+      "crewMembers": 3,
+      "workStation": "ایستگاه مرکزی منطقه ۶",
+      "dailyCapacity": 5.5,
+      "workShift": "daily",
+      "timestamp": "2025-10-10T10:42:56.451Z"
+    },
+    {
+      "teamId": "G2",
+      "teamName": "هوایی",
+      "crewId": "C1",
+      "crewMembers": 4,
+      "workStation": "ایستگاه منطقه ۱۱",
+      "dailyCapacity": 6,
+      "workShift": "daily",
+      "timestamp": "2025-10-10T10:42:56.451Z"
+    }
+  ],
+  "locations": [
+    {
+      "name": "ایستگاه مرکزی منطقه ۶",
+      "lat": 35.7152,
+      "lng": 51.405,
+      "type": "station",
+      "timestamp": "2025-10-10T10:42:56.451Z"
+    },
+    {
+      "name": "ایستگاه منطقه ۱۱",
+      "lat": 35.6892,
+      "lng": 51.374,
+      "type": "station",
+      "timestamp": "2025-10-10T10:42:56.451Z"
+    }
+  ]
+}
