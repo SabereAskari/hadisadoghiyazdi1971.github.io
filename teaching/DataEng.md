@@ -19,7 +19,7 @@ header:
   <div class="projects-grid">
     <div class="project-card">
       <a href="/teaching/DataEngCourse/Data">
-        <img src="{{ '/assets//DataEngCourseimages/Data1.jpg' | relative_url }}" 
+        <img src="{{ '/assets//DataEngCourseimages/Data1.JPG' | relative_url }}" 
              alt="datadefine" 
              class="project-image">
         <div class="project-content">
@@ -33,7 +33,7 @@ header:
              alt="processingtools" 
              class="project-image">
         <div class="project-content">
-          <h3 class="project-title">Procesing of data</h3>
+          <h3 class="project-title">Procesing tools</h3>
         </div>
       </a>
     </div>
