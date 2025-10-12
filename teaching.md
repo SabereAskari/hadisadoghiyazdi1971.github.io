@@ -54,7 +54,7 @@ header:
              alt="dataeng" 
              class="project-image">
         <div class="project-content">
-          <h3 class="project-title">Industrial tools for Data engineering</h3>
+          <h3 class="project-title">Programming tools for Data engineering</h3>
         </div>
       </a>
     </div>
