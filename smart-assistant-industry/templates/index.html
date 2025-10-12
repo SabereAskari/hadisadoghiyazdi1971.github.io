@@ -90,11 +90,24 @@
                                         </button>
                                     </div>
                                 </form>
+                                <!-- در بخش chat-input-area، قبل از input-footer -->
+                                <div class="chat-input-area">
+                                <form id="chatForm" class="d-flex align-items-center">
+                                    <div class="input-group">
+                                    <input type="text" id="messageInput" class="form-control chat-input" placeholder="سؤال خود را بپرسید..." maxlength="500" autocomplete="off">
+                                    <button type="submit" id="sendButton" class="btn btn-primary chat-send-btn">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span class="ms-2">ارسال</span>
+                                    </button>
+                                    <button type="button" id="clearButton" class="btn btn-secondary ms-2">پاک‌سازی</button> <!-- اضافه‌شده -->
+                                    </div>
+                                </form>
                                 <div class="input-footer">
                                     <small class="text-muted">
-                                        <i class="fas fa-info-circle me-1"></i>
-                                        پاسخ‌ها بر اساس قوانین رسمی دانشگاه ارائه می‌شوند
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    پاسخ‌ها بر اساس قوانین رسمی دانشگاه ارائه می‌شوند
                                     </small>
+                                </div>
                                 </div>
                             </div>
                         </div>

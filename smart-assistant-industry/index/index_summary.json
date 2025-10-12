@@ -1,0 +1,7 @@
+{
+  "total_chunks": 195,
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "embedding_dimension": 384,
+  "indexed_at": "2025-10-12T10:24:24.367214",
+  "documents_processed": 5
+}

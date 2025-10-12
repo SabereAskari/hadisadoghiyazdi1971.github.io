@@ -88,6 +88,25 @@ async function main() {
 
 main();
 
+const localtunnel = require('localtunnel');
+
+(async () => {
+  try {
+    const tunnel = await localtunnel({ port: 8000 });
+    console.log(`[TUNNEL] your url is: ${tunnel.url}`);
+    console.log(`✅ Tunnel is ready and running...`);
+
+    tunnel.on('close', () => {
+      console.log('[TUNNEL] Tunnel closed');
+    });
+
+    tunnel.on('error', (err) => {
+      console.error(`[TUNNEL-ERROR] ${err.message}`);
+    });
+  } catch (err) {
+    console.error(`[TUNNEL-ERROR] Failed to start tunnel: ${err.message}`);
+  }
+  
 // لاگ دوره‌ای برای نشان دادن فعالیت
 setInterval(() => {
     console.log('💚 Tunnel monitor: still running...', new Date().toLocaleTimeString());
