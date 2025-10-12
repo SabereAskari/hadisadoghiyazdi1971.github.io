@@ -7,8 +7,10 @@ echo 🚀 Starting System
 echo ========================================
 
 echo Step 1: Starting Flask...
-start "Flask Server" python app.py
-timeout /t 3 >nul
+echo "Flask Server" python app.py
+echo python app.py
+start "Flask Server" python3.14 app.py
+timeout /t 8 >nul
 
 echo Step 2: Stopping old tunnel (if exists)...
 call pm2 delete tunnel >nul 2>&1
@@ -38,5 +40,8 @@ echo Help
 echo Free of ports
 echo pm2 stop tunnel
 echo pm2 delete tunnel
+echo call  https://hadisadoghiyazdi.loca.lt
+@echo off
+start https://hadisadoghiyazdi.loca.lt
 cmd
 pause
