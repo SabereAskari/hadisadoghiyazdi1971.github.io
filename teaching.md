@@ -50,8 +50,8 @@ header:
     </div>
     <div class="project-card">
       <a href="/teaching/DataEng">
-        <img src="{{ '/assets/images/dataengpic.jpg' | relative_url }}" 
-             alt="Circuit Analysis" 
+        <img src="{{ '/assets/images/dataengpic.JPG' | relative_url }}" 
+             alt="dataeng" 
              class="project-image">
         <div class="project-content">
           <h3 class="project-title">Industrial tools for Data engineering</h3>
