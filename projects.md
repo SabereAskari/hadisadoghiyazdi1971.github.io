@@ -166,6 +166,20 @@ header:
       </div>
     </a>
   </div>
+  <!-- پروژه 9 -->
+  <div class="project-card" style="width: calc(33.33% - 20px); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+    <a href="/projects/smartindustryfum/" style="text-decoration: none; color: inherit;">
+      <img src="/assets/Projectsimages/smartindustryfum/smartidustryfum1.jpg" 
+           alt="smartindustryfum11" 
+           class="project-image"
+           style="width: 100%; height: 200px; object-fit: cover; display: block;">
+      <div class="project-content" style="padding: 10px;">
+        <h3 class="project-title" style="font-size: 16px; font-weight: bold; margin: 0 0 10px;">
+          Smart assistant for communication with industry Ferdowsi University of Mashhad
+        </h3>
+      </div>
+    </a>
+  </div>
 
 
 </div>

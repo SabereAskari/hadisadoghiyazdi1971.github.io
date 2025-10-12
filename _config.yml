@@ -205,6 +205,7 @@ include:
   - .htaccess
   - _pages
 exclude:
+  - sentence_env/
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor
