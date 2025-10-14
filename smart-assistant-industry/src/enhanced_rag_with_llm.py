@@ -51,7 +51,7 @@ class UniversityRulesRAGWithLLM:
         self.qdrant_url = os.getenv("QDRANT_URL")
         self.qdrant_api_key = os.getenv("QDRANT_API_KEY")
         self.openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
-        self.qwen_model = os.getenv("QWEN_MODEL", "qwen/qwen-2.5-72b-instruct:free")
+        self.qwen_model = os.getenv("QWEN_MODEL", "openai/gpt-4o-mini")
         
         if not all([self.qdrant_url, self.qdrant_api_key, self.openrouter_api_key]):
             raise ValueError("Required environment variables not found")

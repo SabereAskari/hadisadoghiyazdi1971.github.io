@@ -1,10 +1,12 @@
-// University Chat Frontend - با قابلیت ذخیره تاریخچه و دکمه پاک‌سازی
-const API_BASE_URL = 'https://hadisadoghiyazdi.loca.lt';
+// University Chat Frontend - با markdown rendering و UI بهبود یافته
+const API_BASE_URL = 'https://hadisadoghiyazdi.loca.lt'; // برای تونل
 //const API_BASE_URL = 'http://localhost:8000'; // برای تست محلی
 const CHAT_API_URL = `${API_BASE_URL}/api/chat`;
 
 // بارگذاری تاریخچه گفتگو از localStorage
 let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+
+// Import marked library for markdown rendering (loaded from CDN in HTML)
 
 // المنت‌های صفحه
 const chatContainer = document.getElementById('chatMessages');
@@ -36,10 +38,54 @@ async function checkBackendStatus() {
 
 // افزودن پیام به صفحه و ذخیره در localStorage
 function appendMessage(sender, text) {
-  const msgDiv = document.createElement('div');
-  msgDiv.className = sender === 'user' ? 'message-user' : 'message-bot';
-  msgDiv.textContent = text;
-  chatContainer.appendChild(msgDiv);
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${sender === 'user' ? 'message-user' : 'message-bot'}`;
+  
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'message-content';
+  
+  // Create header with copy button
+  const headerDiv = document.createElement('div');
+  headerDiv.className = 'message-header';
+  
+  const leftSide = document.createElement('div');
+  leftSide.className = 'left-side';
+  
+  const icon = document.createElement('span');
+  icon.className = 'message-icon';
+  icon.innerHTML = sender === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+  
+  const copyBtn = document.createElement('button');
+  copyBtn.className = 'copy-btn';
+  copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+  copyBtn.onclick = () => copyToClipboard(text);
+  copyBtn.title = 'کپی متن';
+  
+  leftSide.appendChild(icon);
+  leftSide.appendChild(copyBtn);
+  headerDiv.appendChild(leftSide);
+  
+  // Create message text
+  const textDiv = document.createElement('div');
+  textDiv.className = 'message-text';
+  
+  // Render markdown for bot messages
+  if (sender === 'bot' && typeof marked !== 'undefined') {
+    // Configure marked for RTL and Persian
+    marked.setOptions({
+      breaks: true,
+      gfm: true
+    });
+    textDiv.innerHTML = marked.parse(text);
+  } else {
+    textDiv.textContent = text;
+  }
+  
+  contentDiv.appendChild(headerDiv);
+  contentDiv.appendChild(textDiv);
+  messageDiv.appendChild(contentDiv);
+  
+  chatContainer.appendChild(messageDiv);
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
   // ذخیره پیام در تاریخچه
@@ -47,9 +93,49 @@ function appendMessage(sender, text) {
   localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
 }
 
+// Copy to clipboard function
+function copyToClipboard(text) {
+  // Remove markdown formatting for plain text copy
+  const plainText = text.replace(/\*\*/g, '').replace(/\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  
+  navigator.clipboard.writeText(plainText).then(() => {
+    showNotification('✓ متن کپی شد', 'success');
+  }).catch(err => {
+    showNotification('✗ خطا در کپی کردن', 'error');
+  });
+}
+
+// Show notification
+function showNotification(message, type) {
+  const notification = document.createElement('div');
+  notification.className = `copy-notification ${type}`;
+  notification.textContent = message;
+  notification.style.animation = 'slideInFade 0.3s ease-out';
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideOutFade 0.3s ease-out';
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 2000);
+}
+
 // بارگذاری پیام‌های قبلی هنگام ورود
 function loadChatHistory() {
   chatContainer.innerHTML = '';
+  
+  // Filter out error messages from history
+  chatHistory = chatHistory.filter(msg => 
+    !msg.text.includes('خطا در ارتباط با بک‌اند') && 
+    !msg.text.includes('Failed to fetch')
+  );
+  
+  // Save cleaned history
+  localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+  
+  // Load messages
   chatHistory.forEach(msg => appendMessage(msg.sender, msg.text));
 }
 

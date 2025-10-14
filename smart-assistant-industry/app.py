@@ -16,8 +16,8 @@ from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
 import uvicorn
 
-# Import our FAISS-based RAG system
-from src.faiss_rag_with_llm import UniversityRulesRAGWithLLM
+# Import our simplified FAISS-based RAG system V2
+from src.faiss_rag_v2 import UniversityRulesRAG
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -49,7 +49,7 @@ async def startup_event():
     global rag_system
     print("🚀 Initializing RAG System...")
     try:
-        rag_system = UniversityRulesRAGWithLLM()
+        rag_system = UniversityRulesRAG()
         print("✅ RAG System initialized successfully")
     except Exception as e:
         print(f"❌ Failed to initialize RAG system: {e}")
@@ -69,8 +69,8 @@ class ChatResponse(BaseModel):
     response_time: float
     timestamp: str
     status: str
-    detected_academic_level: str = 'general'
-    academic_level_confidence: float = 0.0
+    query_type: str = 'general'  # New: definitional, procedural, eligibility, etc.
+    related_articles: list = []  # New: article numbers found
 
 @app.get("/")
 async def serve_frontend():
@@ -111,21 +111,18 @@ async def chat_endpoint(request: ChatRequest):
             top_k=request.max_sources
         )
         
-        # Prepare sources with PDF links and enhanced metadata
+        # Prepare sources with enhanced structure-aware metadata
         formatted_sources = []
         for source in response.sources:
-            pdf_url = source.get("pdf_url", "")
-            # Check if PDF URL is properly configured
-            has_valid_pdf = pdf_url and pdf_url != "PDF_URL" and pdf_url.startswith(("http://", "https://"))
-            
             source_info = {
                 "document": source["document"],
                 "category": source["category"],
-                "pdf_url": pdf_url if has_valid_pdf else "",
-                "has_pdf": has_valid_pdf,
-                "academic_level": source.get("academic_level", "general"),
-                "article_number": source.get("article_number", 0),
-                "note_number": source.get("note_number", 0),
+                "section": source.get("section", ""),
+                "chunk_type": source.get("chunk_type", "general"),
+                "article_numbers": source.get("article_numbers", []),
+                "note_numbers": source.get("note_numbers", []),
+                "has_table": source.get("has_table", False),
+                "has_list": source.get("has_list", False),
                 "confidence": source.get("confidence", 0.0)
             }
             formatted_sources.append(source_info)
@@ -141,8 +138,8 @@ async def chat_endpoint(request: ChatRequest):
             response_time=response_time,
             timestamp=datetime.now().isoformat(),
             status="success",
-            detected_academic_level=response.detected_academic_level,
-            academic_level_confidence=response.academic_level_confidence
+            query_type=response.query_type,
+            related_articles=response.related_articles
         )
         
     except Exception as e:

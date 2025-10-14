@@ -157,37 +157,41 @@ body {
 .message {
     margin-bottom: 1.5rem;
     animation: fadeInMessage 0.5s ease-out;
+    display: flex;
+    width: 100%;
 }
 
 .message-user {
-    display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* User messages on the right */
 }
 
 .message-bot {
-    display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start; /* Bot messages on the left */
 }
 
 .message-content {
-    max-width: 80%;
+    max-width: 75%;
     padding: 1rem 1.25rem;
     border-radius: 12px;
     position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .message-user .message-content {
     background: var(--university-primary);
     color: white;
-    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px; /* Changed for RTL */
+    margin-left: 1rem; /* Space from edge */
 }
 
 .message-bot .message-content {
     background: white;
     color: var(--university-dark);
     border: 1px solid #e5e7eb;
-    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; /* Changed for RTL */
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-right: 1rem; /* Space from edge */
 }
 
 .message-header {
@@ -248,6 +252,11 @@ body {
 }
 
 /* Markdown formatting in message text */
+.message-text {
+    direction: rtl;
+    text-align: right;
+}
+
 .message-text p {
     margin: 0.8rem 0;
     line-height: 1.8;
@@ -261,36 +270,97 @@ body {
     margin-bottom: 0;
 }
 
+.message-text h1, .message-text h2, .message-text h3 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--university-primary);
+}
+
+.message-text h3 {
+    font-size: 1.1rem;
+    border-right: 3px solid var(--university-primary);
+    padding-right: 0.5rem;
+}
+
 .message-text strong {
     font-weight: bold;
-    color: var(--university-blue);
+    color: var(--university-primary);
+}
+
+.message-bot .message-text strong {
+    color: var(--university-primary);
+}
+
+.message-user .message-text strong {
+    color: #fef3c7;
 }
 
 .message-text em {
     font-style: italic;
-    color: var(--text-muted);
 }
 
 .message-text ol,
 .message-text ul {
     margin: 1rem 0;
     padding-right: 2rem;
-    list-style-position: inside;
     direction: rtl;
+    text-align: right;
 }
 
 .message-text ol {
     list-style-type: decimal;
+    list-style-position: outside;
 }
 
 .message-text ul {
     list-style-type: disc;
+    list-style-position: outside;
 }
 
 .message-text li {
     margin: 0.5rem 0;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: right;
+    padding-right: 0.5rem;
+}
+
+.message-text code {
+    background: rgba(0,0,0,0.05);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.message-text pre {
+    background: rgba(0,0,0,0.05);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.message-text pre code {
+    background: none;
+    padding: 0;
+}
+
+.message-text blockquote {
+    border-right: 3px solid var(--university-accent);
+    padding-right: 1rem;
+    margin: 1rem 0;
+    color: var(--university-gray);
+    font-style: italic;
+}
+
+.message-text a {
+    color: var(--university-primary);
+    text-decoration: underline;
+}
+
+.message-text a:hover {
+    color: var(--university-secondary);
 }
 
 /* Category Badge */

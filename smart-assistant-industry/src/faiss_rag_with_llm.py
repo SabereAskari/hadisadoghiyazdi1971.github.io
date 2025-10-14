@@ -56,7 +56,7 @@ class UniversityRulesRAGWithLLM:
         self.openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
         if not self.openrouter_api_key:
             raise ValueError("OPENROUTER_API_KEY environment variable not set or empty. Please set it in .env or environment.")
-        self.llm_model = os.getenv("LLM_MODEL", "google/gemini-2.0-flash-exp:free")
+        self.llm_model = os.getenv("LLM_MODEL", "openai/gpt-4o-mini")
         
         if not self.openrouter_api_key:
             raise ValueError("OPENROUTER_API_KEY environment variable not set")
