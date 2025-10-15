@@ -2,7 +2,7 @@
 layout: persian
 classes: wide rtl-layout
 dir: rtl
-title: "چگونه پروژه درسی خود را در زمانی کوتاه آماده کنیم"
+title: "معرفی سایفوم"
 permalink: /projects/smartindustrysaifum/infosaifum/
 author_profile: true
 
