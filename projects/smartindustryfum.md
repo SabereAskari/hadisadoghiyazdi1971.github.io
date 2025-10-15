@@ -2,7 +2,7 @@
 layout: persian  # یا single با کلاس rtl-layout
 classes: wide rtl-layout
 dir: rtl
-title: " دستیار هوشمند ارتباط با صنعت دانشگا فردوسی مشهد"
+title: " دستیار هوشمند ارتباط با صنعت دانشگاه فردوسی مشهد"
 permalink: /projects/smartindustryfum/
 author_profile: true
 header:
@@ -29,7 +29,7 @@ Smart Assistant for Industry-University Communication at Ferdowsi University of 
              alt="saifumrun" 
              class="project-image">
         <div class="project-content">
-          <h3 class="project-title">  سوالات خود را از سایفوم بپرسید بدون وی پی ان </h3>
+          <h3 class="project-title">  سوالات خود را از سایفوم بپرسید بدون وی پی ان  </h3>
         </div>
       </a>
     </div>
