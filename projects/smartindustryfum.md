@@ -24,7 +24,7 @@ Smart Assistant for Industry-University Communication at Ferdowsi University of 
   <div class="projects-grid">
     <div class="project-card">
       <!-- <a href="/repair-demo/index.html">-->
-      <a href="/smart-assistant-industry/templates/index.html">
+      <a href="/smart-assistant-industry/templates/saifum">
         <img src="{{ '/assets/Projectsimages/smartindustryfum/Input_saifum.jpg' | relative_url }}" 
              alt="saifumrun" 
              class="project-image">
@@ -44,7 +44,7 @@ Smart Assistant for Industry-University Communication at Ferdowsi University of 
       </a>
     </div>
     <div class="project-card">
-      <a href="/smart-assistant-industry/lawsaifum">
+      <a href="/smart-assistant-industry/saifumlaw">
         <img src="{{ '/assets/Projectsimages/smartindustryfum/lawsaifum.jpg' | relative_url }}" 
              alt="lawsaifum" 
              class="project-image">

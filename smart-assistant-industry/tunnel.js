@@ -5,12 +5,12 @@ const fs = require('fs');
 
 console.log('🚀 Starting LocalTunnel with PM2 (Auto-Restart)...');
 
-// تابع دریافت و نمایش پسورد
+// تابع دریافت و نمایش پسورد (subdomain درست شده)
 function getAndShowPassword() {
     return new Promise((resolve) => {
         console.log('🔑 Getting tunnel password...');
         
-        const req = https.get('https://loca.lt/mytunnelpassword', (res) => {
+        const req = https.get('https://loca.lt/hadisadoghiyazdipassword', (res) => {  // subdomain درست
             let data = '';
             res.on('data', (chunk) => data += chunk);
             res.on('end', () => {
@@ -31,7 +31,7 @@ function getAndShowPassword() {
 
         req.on('error', () => {
             console.log('⚠️  Could not get password automatically');
-            console.log('🔗 Please visit: https://loca.lt/mytunnelpassword');
+            console.log('🔗 Please visit: https://loca.lt/hadisadoghiyazdipassword');
             resolve(null);
         });
 
@@ -43,7 +43,7 @@ function getAndShowPassword() {
     });
 }
 
-// تابع شروع تونل
+// تابع شروع تونل (فقط spawn – duplicate حذف شد)
 function startTunnel() {
     console.log('🌐 Starting localtunnel process...');
     
@@ -84,30 +84,11 @@ function startTunnel() {
 async function main() {
     await getAndShowPassword();
     startTunnel();
+    
+    // لاگ دوره‌ای برای نشان دادن فعالیت (PM2 ببینه process alive هست)
+    setInterval(() => {
+        console.log('💚 Tunnel monitor: still running...', new Date().toLocaleTimeString());
+    }, 60000); // هر 1 دقیقه
 }
 
 main();
-
-const localtunnel = require('localtunnel');
-
-(async () => {
-  try {
-    const tunnel = await localtunnel({ port: 8000 });
-    console.log(`[TUNNEL] your url is: ${tunnel.url}`);
-    console.log(`✅ Tunnel is ready and running...`);
-
-    tunnel.on('close', () => {
-      console.log('[TUNNEL] Tunnel closed');
-    });
-
-    tunnel.on('error', (err) => {
-      console.error(`[TUNNEL-ERROR] ${err.message}`);
-    });
-  } catch (err) {
-    console.error(`[TUNNEL-ERROR] Failed to start tunnel: ${err.message}`);
-  }
-  
-// لاگ دوره‌ای برای نشان دادن فعالیت
-setInterval(() => {
-    console.log('💚 Tunnel monitor: still running...', new Date().toLocaleTimeString());
-}, 60000); // هر 1 دقیقه

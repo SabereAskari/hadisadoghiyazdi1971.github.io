@@ -42,8 +42,8 @@ class RAGResponse:
     total_time: float
     context_used: str
     category: str
-    query_type: str  # New: definitional, procedural, eligibility, numerical
-    related_articles: List[int]  # New: article numbers found
+    query_type: str
+    related_articles: List[int]
 
 
 class UniversityRulesRAG:
@@ -51,19 +51,38 @@ class UniversityRulesRAG:
     
     def __init__(self, 
                  index_dir: str = "./index",
-                 env_path: str = ".env"):
+                 env_path: str = "../.env"):
         """Initialize the RAG system"""
         
         # Load environment variables
         load_dotenv(env_path)
-        self.openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
-        if not self.openrouter_api_key:
-            raise ValueError("OPENROUTER_API_KEY environment variable not set")
 
-        print("🔑 Loaded API key starts with:", self.openrouter_api_key[:15])
+        # Get API key from environment or fallback
+        api_key = os.getenv("OPENROUTER_API_KEY") or "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"
+        if not api_key:
+            raise ValueError("OPENROUTER_API_KEY not found in environment and no fallback provided")
+
+        print("🔑 Loaded API key starts with:", api_key[:15])
 
         self.llm_model = os.getenv("LLM_MODEL", "openai/gpt-4o-mini")
         
+        # Initialize OpenRouter client with required headers
+        try:
+            self.openai_client = OpenAI(
+                base_url="https://openrouter.ai/api/v1",
+                api_key=api_key,
+                default_headers={
+                    "HTTP-Referer": "https://hadisadoghiyazdi1971.github.io",
+                    "X-Title": "FUM University Rules RAG Chatbot",
+                }
+            )
+            # Quick test to confirm authentication
+            _ = self.openai_client.models.list()
+            print(f"✅ Connected to OpenRouter with model: {self.llm_model}")
+        except Exception as e:
+            print(f"❌ Error connecting to OpenRouter: {e}")
+            raise
+
         self.index_dir = Path(index_dir)
         
         # Load index summary
@@ -107,68 +126,25 @@ class UniversityRulesRAG:
         # Build article index for quick lookup
         self._build_article_index()
         
-        # Initialize OpenRouter client
-        #print("🧠 Connecting to OpenRouter...")
-        #self.openai_client = OpenAI(
-         #   base_url="https://openrouter.ai/api/v1",
-          #  api_key=self.openrouter_api_key,
-       # )
-        #print(f"✅ Connected to OpenRouter with model: {self.llm_model}")
-        
-                # Initialize OpenRouter client
-        print("🧠 Connecting to OpenRouter...")
-
-        # Allow fallback key if not in .env      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
-        #api_key = os.getenv("OPENROUTER_API_KEY") or "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"
-        api_key = os.getenv("OPENROUTER_API_KEY") or "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"
-        #api_key = os.getenv("OPENROUTER_API_KEY") or "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"
-
-
-        try:
-            self.openai_client = OpenAI(
-                base_url="https://openrouter.ai/api/v1",
-                api_key=api_key,
-            )
-            # quick test to confirm authentication
-            _ = self.openai_client.models.list()
-            print(f"✅ Connected to OpenRouter with model: {self.llm_model}")
-        except Exception as e:
-            print(f"❌ Error connecting to OpenRouter: {e}")
-            raise
-
-        
         # RAG configuration
-        self.max_context_length = 3000  # Increased for better context
+        self.max_context_length = 3000
         self.max_sources = 5
         
         # Query type patterns
         self.query_patterns = {
-            'definitional': [
-                r'چیست', r'تعریف', r'منظور از', r'مفهوم', r'یعنی چه',
-                r'what is', r'define', r'meaning'
-            ],
-            'procedural': [
-                r'چگونه', r'چطور', r'نحوه', r'روش', r'مراحل', r'گام', r'فرآیند',
-                r'how to', r'procedure', r'process', r'steps'
-            ],
-            'eligibility': [
-                r'آیا می\s*توانم', r'آیا مجاز', r'شرایط', r'ضوابط', r'الزامات',
-                r'can I', r'may I', r'requirements', r'conditions', r'eligible'
-            ],
-            'numerical': [
-                r'چند', r'چقدر', r'میزان', r'درصد', r'تعداد', r'مبلغ',
-                r'how much', r'how many', r'amount', r'percentage'
-            ],
-            'exception': [
-                r'تبصره', r'استثنا', r'مگر', r'به جز', r'موارد خاص',
-                r'exception', r'special case', r'note'
-            ],
-            'timeline': [
-                r'مهلت', r'زمان', r'تاریخ', r'مدت', r'deadline', r'when', r'time'
-            ]
+            'definitional': [r'چیست', r'تعریف', r'منظور از', r'مفهوم', r'یعنی چه', r'what is', r'define', r'meaning'],
+            'procedural': [r'چگونه', r'چطور', r'نحوه', r'روش', r'مراحل', r'گام', r'فرآیند', r'how to', r'procedure', r'process', r'steps'],
+            'eligibility': [r'آیا می\s*توانم', r'آیا مجاز', r'شرایط', r'ضوابط', r'الزامات', r'can I', r'may I', r'requirements', r'conditions', r'eligible'],
+            'numerical': [r'چند', r'چقدر', r'میزان', r'درصد', r'تعداد', r'مبلغ', r'how much', r'how many', r'amount', r'percentage'],
+            'exception': [r'تبصره', r'استثنا', r'مگر', r'به جز', r'موارد خاص', r'exception', r'special case', r'note'],
+            'timeline': [r'مهلت', r'زمان', r'تاریخ', r'مدت', r'deadline', r'when', r'time']
         }
         
         print("✅ Simplified RAG system initialized")
+
+    # ... ادامه تمام متدهای کلاس بدون تغییر ...
+
+
     
     def _build_article_index(self):
         """Build an index of chunks by article number for quick lookup"""
