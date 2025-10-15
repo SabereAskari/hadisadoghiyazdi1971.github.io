@@ -29,7 +29,7 @@ Smart Assistant for Industry-University Communication at Ferdowsi University of 
              alt="saifumrun" 
              class="project-image">
         <div class="project-content">
-          <h3 class="project-title"> سوالات خود را از سایفوم بپرسید</h3>
+          <h3 class="project-title">  سوالات خود را از سایفوم بپرسید بدون وی پی ان </h3>
         </div>
       </a>
     </div>
