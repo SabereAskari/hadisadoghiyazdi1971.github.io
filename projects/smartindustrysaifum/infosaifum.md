@@ -3,7 +3,7 @@ layout: persian
 classes: wide rtl-layout
 dir: rtl
 title: "چگونه پروژه درسی خود را در زمانی کوتاه آماده کنیم"
-permalink: /projects/smartindustrysaifum/inforsaifum/
+permalink: /projects/smartindustrysaifum/infosaifum/
 author_profile: true
 
 header:
