@@ -34,7 +34,7 @@ Smart Assistant for Industry-University Communication at Ferdowsi University of 
       </a>
     </div>
     <div class="project-card">
-      <a href="/projects/smartindustrysaifum/Infosaifum">
+      <a href="/projects/smartindustrysaifum/infosaifum">
         <img src="{{ '/assets/Projectsimages/smartindustryfum/infosaifum.jpg' | relative_url }}" 
              alt="howsaifum" 
              class="project-image">
