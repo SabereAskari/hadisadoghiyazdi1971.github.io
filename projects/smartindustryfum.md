@@ -24,7 +24,7 @@ Smart Assistant for Industry-University Communication at Ferdowsi University of 
   <div class="projects-grid">
     <div class="project-card">
       <!-- <a href="/repair-demo/index.html">-->
-      <a href="/projects/smartindustrysaifum/saifum">
+      <a href="https://hadisadoghiyazdi.loca.lt/">
         <img src="{{ '/assets/Projectsimages/smartindustryfum/Input_saifum.jpg' | relative_url }}" 
              alt="saifumrun" 
              class="project-image">
