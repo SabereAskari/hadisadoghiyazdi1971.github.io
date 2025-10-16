@@ -18,12 +18,8 @@ class PartlasticSpider(CrawlSpider):
                   "https://partlasticgroup.com/product-category/%d9%85%d8%ad%d8%b5%d9%88%d9%84%d8%a7%d8%aa-%d8%b1%db%8c%d9%86%da%af-%d8%b3%d8%a7%d8%b2%db%8c-%d9%85%d8%b4%d9%87%d8%af/"]
 
     rules = (
-        Rule(LinkExtractor(allow=()), callback="parse_page", follow=True),
+        Rule(LinkExtractor(allow_domains=["partlasticgroup.com"]), callback="parse_page", follow=True),
     )
-
-    def start_requests(self):
-        for url in self.start_urls:
-            yield scrapy.Request(url, meta={"playwright": True})
 
     def clean_text(self, html):
         text = re.sub(r"<[^>]+>", " ", html)
@@ -33,10 +29,10 @@ class PartlasticSpider(CrawlSpider):
 
     def parse_page(self, response):
         text = self.clean_text(response.text)
-        if len(text) > 300 and re.search(r"[\u0600-\u06FF]", text):  # فقط صفحات فارسی و دارای متن
+        if len(text) > 300 and re.search(r"[\u0600-\u06FF]", text):
             os.makedirs("documents", exist_ok=True)
             filename = re.sub(r"[^a-zA-Z0-9]+", "_", response.url)[:80] + ".txt"
             path = os.path.join("documents", filename)
             with open(path, "w", encoding="utf-8") as f:
                 f.write(text)
-            self.log(f"✅ Saved clean text: {path}")
+            self.logger.info(f"✅ Saved clean text: {path}")

@@ -3,7 +3,7 @@ layout: persian
 classes: wide rtl-layout
 dir: rtl
 title: "برنامه‌ریزی درجه دوم در یادگیری ماشین: کاربرد در شناسایی الگو"
-permalink: /qp-in-ml/
+permalink: /teaching/studenteffort/patterneffort/QP/
 author_profile: true
 
 header:
