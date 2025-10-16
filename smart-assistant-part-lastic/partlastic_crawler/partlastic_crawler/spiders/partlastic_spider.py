@@ -21,6 +21,10 @@ class PartlasticSpider(CrawlSpider):
         Rule(LinkExtractor(allow=()), callback="parse_page", follow=True),
     )
 
+    def start_requests(self):
+        for url in self.start_urls:
+            yield scrapy.Request(url, meta={"playwright": True})
+
     def clean_text(self, html):
         text = re.sub(r"<[^>]+>", " ", html)
         text = re.sub(r"\s+", " ", text)
