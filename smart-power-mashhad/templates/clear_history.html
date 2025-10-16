@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clear Chat History</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        direction: rtl;
+        text-align: center;
+        padding: 50px;
+        background: #f5f5f5;
+      }
+      button {
+        background: #dc2626;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 10px;
+      }
+      button:hover {
+        background: #b91c1c;
+      }
+      .success {
+        color: green;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>پاک کردن تاریخچه گفتگو</h1>
+    <p>برای حذف تاریخچه قبلی و خطاهای ذخیره شده، روی دکمه زیر کلیک کنید:</p>
+    <button onclick="clearHistory()">پاک کردن تاریخچه</button>
+    <button onclick="goBack()">بازگشت به چت</button>
+    <div id="message"></div>
+
+    <script>
+      function clearHistory() {
+        localStorage.removeItem("chatHistory");
+        document.getElementById("message").innerHTML =
+          '<p class="success">✓ تاریخچه با موفقیت پاک شد!</p>';
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1500);
+      }
+
+      function goBack() {
+        window.location.href = "/";
+      }
+    </script>
+  </body>
+</html>

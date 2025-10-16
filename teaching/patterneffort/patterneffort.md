@@ -36,4 +36,10 @@ header:
 </div>
 <a href="/teaching/studenteffort/patterneffort/voice_2_vec" style="text-decoration:underline; color:green;" target="_blank"><strong> استخراج ویژگی از گفتار</strong></a>
 
+ <!--2-->
+<div class="english-text">
+<strong>Quadratic Programming</strong>
+</div>
+<a href="/teaching/studenteffort/patterneffort/QP" style="text-decoration:underline; color:green;" target="_blank"><strong> برنامه‌ریزی درجه دوم</strong></a>
+
  

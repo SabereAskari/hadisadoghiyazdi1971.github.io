@@ -1,0 +1,171 @@
+{
+  "indexed_at": "2025-10-15T23:35:59.699433",
+  "total_documents": 11,
+  "total_chunks": 117,
+  "total_words": 12531,
+  "total_characters": 67749,
+  "embedding_model": "intfloat/multilingual-e5-large",
+  "embedding_dimension": 1024,
+  "chunking_strategy": "advanced_structure_aware_upgraded",
+  "chunk_size_stats": {
+    "min": 150,
+    "max": 800,
+    "avg": 579.0512820512821,
+    "std": 175.40896517127882
+  },
+  "quality_stats": {
+    "min": 0.3026515151515151,
+    "max": 0.795896551724138,
+    "avg": 0.5279433727302006
+  },
+  "chunk_types_distribution": {
+    "regulation": 19,
+    "article": 50,
+    "note": 6,
+    "general": 23,
+    "table": 7,
+    "definitions": 11,
+    "title": 1
+  },
+  "document_details": [
+    {
+      "filename": "documents\\masoule_imeni.txt",
+      "title": "آئین‌نامه بکارگیری مسئول ایمنی در کارگاه‌ها (واحد HSE)",
+      "chunk_count": 13,
+      "total_length": 8012,
+      "total_words": 1478,
+      "chunk_types": {
+        "regulation": 4,
+        "article": 6,
+        "note": 1,
+        "general": 1,
+        "table": 1
+      },
+      "avg_quality_score": 0.611
+    },
+    {
+      "filename": "documents\\esteghlal_main.txt",
+      "title": "قانون استقلال شرکت‌های توزیع نیروی برق در استان‌ها",
+      "chunk_count": 4,
+      "total_length": 2738,
+      "total_words": 498,
+      "chunk_types": {
+        "regulation": 1,
+        "note": 3
+      },
+      "avg_quality_score": 0.65
+    },
+    {
+      "filename": "documents\\esteghlal_vahede.txt",
+      "title": "قانون استقلال شرکت‌های توزیع نیروی برق در استان‌ها",
+      "chunk_count": 20,
+      "total_length": 12028,
+      "total_words": 2210,
+      "chunk_types": {
+        "regulation": 1,
+        "article": 16,
+        "note": 2,
+        "general": 1
+      },
+      "avg_quality_score": 0.595
+    },
+    {
+      "filename": "documents\\taarefe1404.txt",
+      "title": "تعرفه‌های برق و شرایط عمومی آن‌ها (۱۴۰۴)",
+      "chunk_count": 7,
+      "total_length": 4221,
+      "total_words": 836,
+      "chunk_types": {
+        "table": 4,
+        "regulation": 1,
+        "definitions": 2
+      },
+      "avg_quality_score": 0.442
+    },
+    {
+      "filename": "documents\\hemayatsanatebargh.txt",
+      "title": "قانون حمایت از صنعت برق کشور",
+      "chunk_count": 3,
+      "total_length": 2221,
+      "total_words": 398,
+      "chunk_types": {
+        "article": 3
+      },
+      "avg_quality_score": 0.744
+    },
+    {
+      "filename": "documents\\ghateebargh.txt",
+      "title": "عنوان نامشخص",
+      "chunk_count": 3,
+      "total_length": 1823,
+      "total_words": 313,
+      "chunk_types": {
+        "general": 2,
+        "definitions": 1
+      },
+      "avg_quality_score": 0.414
+    },
+    {
+      "filename": "documents\\nezamnamehrahbarcheshmandaz1404.txt",
+      "title": "عنوان نامشخص",
+      "chunk_count": 21,
+      "total_length": 14123,
+      "total_words": 2461,
+      "chunk_types": {
+        "regulation": 8,
+        "general": 6,
+        "definitions": 5,
+        "table": 2
+      },
+      "avg_quality_score": 0.512
+    },
+    {
+      "filename": "documents\\mainlaw.txt",
+      "title": "قانون سازمان برق ایران",
+      "chunk_count": 27,
+      "total_length": 12308,
+      "total_words": 2493,
+      "chunk_types": {
+        "article": 25,
+        "regulation": 2
+      },
+      "avg_quality_score": 0.542
+    },
+    {
+      "filename": "documents\\siasatekolli.txt",
+      "title": "سیاست‌های کلی پدافند غیرعامل",
+      "chunk_count": 4,
+      "total_length": 2608,
+      "total_words": 453,
+      "chunk_types": {
+        "title": 1,
+        "general": 3
+      },
+      "avg_quality_score": 0.335
+    },
+    {
+      "filename": "documents\\power_factor_final.txt",
+      "title": "دستورالعمل پایش ضریب توان در فیدرهای شبکه توزیع برق",
+      "chunk_count": 6,
+      "total_length": 2653,
+      "total_words": 472,
+      "chunk_types": {
+        "regulation": 2,
+        "definitions": 3,
+        "general": 1
+      },
+      "avg_quality_score": 0.422
+    },
+    {
+      "filename": "documents\\rahnama.txt",
+      "title": "فرآیندهای خدمات برق شرکت توزیع نیروی برق تهران بزرگ",
+      "chunk_count": 9,
+      "total_length": 5014,
+      "total_words": 919,
+      "chunk_types": {
+        "general": 9
+      },
+      "avg_quality_score": 0.388
+    }
+  ]
+}

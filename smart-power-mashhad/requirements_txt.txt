@@ -1,0 +1,27 @@
+# Core ML & NLP Libraries
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0
+scikit-learn==1.5.2
+numpy==1.26.4
+
+# LLM & API Integration
+openai==1.59.9
+
+# Web Framework
+Flask==3.0.5
+Flask-CORS==4.0.0
+
+# Environment & Configuration
+python-dotenv==1.0.1
+
+# Data Processing
+tqdm==4.66.4
+Markdown==3.7.1
+
+# Utilities
+requests==2.32.3
+
+# Development (Optional)
+pytest==7.4.4
+black==24.4.2
+flake8==7.1.1

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دستیار هوشمند شرکت توزیع برق ایران</title>
+
+    <!-- Bootstrap RTL -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Persian Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="university-header">
+      <div class="container">
+        <div class="row align-items-center py-3">
+          <div class="col-md-2 text-center">
+            <i class="fas fa-university fa-3x text-light"></i>
+          </div>
+          <div class="col-md-8 text-center text-md-start">
+            <h1 class="university-title mb-1">دستیار هوشمند</h1>
+            <h2 class="university-subtitle mb-0">شرکت توزیع برق ایران</h2>
+          </div>
+          <div class="col-md-2 text-center">
+            <div class="status-indicator">
+              <span class="status-dot" id="connectionStatus"></span>
+              <small id="statusText" class="status-text">در حال بررسی...</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main-content">
+      <div class="container">
+        <!-- دسته‌بندی‌ها - ثابت در بالا -->
+        <div class="categories-container">
+          <div class="categories-title">
+            <i class="fas fa-tag me-2"></i> موضوعات پشتیبانی شده:
+          </div>
+          <div class="categories-grid">
+            <div class="category-box">استقلال شرکت‌های توزیع</div>
+            <div class="category-box">ایمنی در کارگاه‌ها</div>
+            <div class="category-box">اپلیکیشن برق من</div>
+            <div class="category-box">قانون حمایت برق</div>
+            <div class="category-box">سازمان برق ایران</div>
+            <div class="category-box">پدافند غیر عامل</div>
+            <div class="category-box">پایش ضریب توان</div>
+            <div class="category-box">تعرفه‌های برق</div>
+          </div>
+        </div>
+
+        <!-- چت -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="chat-container">
+              <div class="chat-messages" id="chatMessages"></div>
+
+              <div class="chat-input-area">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="messageInput"
+                    class="chat-input"
+                    placeholder="سؤال خود را بپرسید..."
+                    autocomplete="off"
+                  />
+                  <button type="button" class="btn-primary" id="sendButton">
+                    <i class="fas fa-paper-plane"></i> ارسال
+                  </button>
+                  <button type="button" class="btn-secondary" id="clearButton">
+                    <i class="fas fa-trash"></i> پاک‌کردن
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="university-footer">
+      <div class="container">
+        <div class="text-center">
+          <p class="mb-1"><strong>شرکت توزیع برق ایران</strong> - سامانه پاسخگویی هوشمند</p>
+          <p class="mb-0 text-muted">مبتنی بر هوش مصنوعی و بازیابی اطلاعات</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Marked.js for Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="/static/script.js"></script>
+  </body>
+</html>

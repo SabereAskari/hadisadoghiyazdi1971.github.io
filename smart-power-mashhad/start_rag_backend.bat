@@ -6,7 +6,7 @@ echo =========================================
 echo.
 
 REM تعریف مسیرها
-set "BACKEND_DIR=H:\HadiSadoghiYazdi\hadisadoghiyazdi1971.github.io\hadisadoghiyazdi1971.github.io\smart-assistant-industry"
+set "BACKEND_DIR=H:\HadiSadoghiYazdi\hadisadoghiyazdi1971.github.io\hadisadoghiyazdi1971.github.io\smart-power-mashhad"
 set "VENV_PATH=G:\HadiEnv\rag_env\Scripts\activate.bat"
 
 REM بررسی وجود پوشه بک‌اند
@@ -69,6 +69,6 @@ echo   don't use VPN
 echo   get password
 start "" "https://loca.lt/mytunnelpassword"
 echo run tunnel 
-start "" "https://hadisadoghiyazdi.loca.lt/"
+start "" "https://PowerGrid.loca.lt/"
 pause
 
