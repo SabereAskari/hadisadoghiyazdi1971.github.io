@@ -13,7 +13,6 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-<div dir="rtl">
 
 # برنامه‌ریزی درجه دوم و یادگیری ماشین: کاربرد در شناسایی الگو
 ### نويسنده: محمد يزداني
@@ -168,7 +167,7 @@ $$
 \min_{x} \frac{1}{2} x^T H x + f^T x \quad \text{s.t.} \quad Ax \leq b, \; A_{eq}x = b_{eq}
 $$
 
-</div dir>
+</div>
 
 
 که در آن:
@@ -588,7 +587,6 @@ SMO مسئله QP بزرگ را به زیرمسئله‌های دو متغیره
 
 ## منابع
 ---
-</div>
 
 1. Cortes, C., & Vapnik, V. (1995). Support-vector networks. *Machine Learning*, 20(3), 273–297. https://doi.org/10.1007/BF00994018
 
@@ -607,13 +605,11 @@ SMO مسئله QP بزرگ را به زیرمسئله‌های دو متغیره
 ---
 ---
 
-<div dir="rtl">
 
 ## پیوست A: کدهای کامل
 
 ### A.1. پیاده‌سازی کامل SVM با Python
 
-</div>
 
 ```python
 import numpy as np
@@ -746,11 +742,9 @@ plt.title(f'SVM با {len(svm.support_vectors)} بردار پشتیبان')
 plt.grid(True, alpha=0.3)
 plt.show()
 ```
-<div dir="rtl">
 
 ### A.2. مقایسه QP solvers
 
-</div>
 
 ```python
 import time
@@ -818,11 +812,10 @@ def benchmark_qp_solvers(n_vars_list):
     plt.show()
 
 ```
-<div dir="rtl">
 
 ## خروجي:
 
-</div>
+
 
 ### جدول مقایسه زمان اجرا (ثانیه)
 
