@@ -36,10 +36,17 @@ header:
 </div>
 <a href="/teaching/studenteffort/patterneffort/voice_2_vec" style="text-decoration:underline; color:green;" target="_blank"><strong> استخراج ویژگی از گفتار</strong></a>
 
- <!--2-->
+ <!--3-->
 <div class="english-text">
 <strong>Quadratic Programming</strong>
 </div>
 <a href="/teaching/studenteffort/patterneffort/QP" style="text-decoration:underline; color:green;" target="_blank"><strong> برنامه‌ریزی درجه دوم</strong></a>
+
+<!--3-->
+<div class="english-text">
+<strong>Text Clustering Using FAISS</strong>
+</div>
+<a href="/teaching/studenteffort/patterneffort/Text_Clustering_FAISS" style="text-decoration:underline; color:green;" target="_blank"><strong> خوشه‌بندی متن با ابزار FAISS</strong></a>
+
 
  
