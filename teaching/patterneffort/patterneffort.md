@@ -42,4 +42,10 @@ header:
 </div>
 <a href="/teaching/studenteffort/patterneffort/QP" style="text-decoration:underline; color:green;" target="_blank"><strong> برنامه‌ریزی درجه دوم</strong></a>
 
+ <!--2-->
+<div class="english-text">
+<strong>BERT</strong>
+</div>
+<a href="/teaching/studenteffort/patterneffort/BERT" style="text-decoration:underline; color:green;" target="_blank"><strong> بردار ساختن از کلمات به کمک روش BERT</strong></a>
+
  
