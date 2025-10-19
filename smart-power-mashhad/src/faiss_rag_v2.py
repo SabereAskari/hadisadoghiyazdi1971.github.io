@@ -54,7 +54,7 @@ class UniversityRulesRAG:
         
         load_dotenv(env_path)
 
-        api_key = os.getenv("OPENROUTER_API_KEY") or "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"
+        api_key = os.getenv("OPENROUTER_API_KEY") #or "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"
         if not api_key:
             raise ValueError("OPENROUTER_API_KEY not found")
 

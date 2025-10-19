@@ -64,3 +64,9 @@ header:
 <strong>How to prepare your lesson project in a short time</strong>
 </div>
 <a href="/teaching/studenteffort/toolkit/HowConsProject" style="text-decoration:underline; color:green;" target="_blank"><strong>چگونه پروژه درسی خود را در زمانی کوتاه آماده کنیم</strong></a>
+
+<!--9-->
+<div class="english-text">
+<strong>What Is Principal Component Analysis (PCA)?</strong>
+</div>
+<a href="/teaching/toolkit/pca" style="text-decoration:underline; color:green;" target="_blank"><strong>کاهش ویژگی به مولفه اصلی چیست؟ </strong></a>

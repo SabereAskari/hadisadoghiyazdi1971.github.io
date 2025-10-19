@@ -41,12 +41,12 @@ header:
       </a>
     </div>
     <div class="project-card">
-      <a href="/repair-demo/regparam">
+      <a href="https://repairingscheduling.loca.lt">
         <img src="{{ '/assets/schedulling/param.JPG' | relative_url }}" 
              alt="Circuit Analysis" 
              class="project-image">
         <div class="project-content">
-          <h3 class="project-title">تنظیم پارامترها</h3>
+          <h3 class="project-title">ورود اطلاعات و تخصیص آزمایشی</h3>
         </div>
       </a>
     </div>
