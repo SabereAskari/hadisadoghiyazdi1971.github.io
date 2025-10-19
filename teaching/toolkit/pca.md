@@ -14,15 +14,9 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-بله، عنوان "Lightweight Denoising Pre-trained Model-Based RAG Pipeline" بسیار مناسب و حرفه‌ای است. در ادامه ترجمه فارسی و یک چکیده کامل به فارسی ارائه شده است.
 
----
+A Lightweight Denoising-Enabled Pre-trained Model-Based Retrieval-Augmented Generation Pipeline
 
-### ترجمه فارسی عنوان
-
-**پایپ‌لاین سبک‌وزن تولید تقویت‌شده با بازیابی مبتنی بر مدل ازپیش‌آموزش‌دیده با قابلیت نویززدایی**
-
----
 
 ### چکیده فارسی
 
