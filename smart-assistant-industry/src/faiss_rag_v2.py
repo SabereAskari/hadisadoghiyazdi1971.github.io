@@ -51,14 +51,14 @@ class UniversityRulesRAG:
     
     def __init__(self, 
                  index_dir: str = "./index",
-                 env_path: str = "../.env"):
+                 env_path: str = ".env"):
         """Initialize the RAG system"""
         
         # Load environment variables
         load_dotenv(env_path)
 
         # Get API key from environment or fallback
-        api_key = os.getenv("OPENROUTER_API_KEY") or "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"
+        api_key = os.getenv("OPENROUTER_API_KEY") #or "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"
         if not api_key:
             raise ValueError("OPENROUTER_API_KEY not found in environment and no fallback provided")
 
