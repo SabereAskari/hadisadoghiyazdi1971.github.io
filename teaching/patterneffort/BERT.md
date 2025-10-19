@@ -14,23 +14,37 @@ header:
 
 ---
 
-<p align="center">
-  <a href="https://github.com/mohammadsaleh40">
-    <img src="https://img.shields.io/badge/GitHub-YourUsername-181717?logo=github&logoColor=white&style=flat-square" />
-  </a>
-  <a href="mailto:mohammadsalehmohammadsaleh@gmail.com">
-    <img src="https://img.shields.io/badge/mohammadsalehmohammadsaleh%40gmail.com-EA4335?logo=gmail&logoColor=white&style=flat-square" />
-  </a>
-</p>
-
 # Bert
+
+**نویسنده**: محمد صالح علی اکبری
+
+<img src="https://quera.org/media/CACHE/images/public/avatars/8e111895562e470888dde40a0018e0eb/f93253aa8612f91a5a7b7f9d25cfabd4.jpg" />
+
+<a href="https://github.com/mohammadsaleh40">
+<img src="https://img.shields.io/badge/GitHub-mohammadsaleh40-181717?logo=github&logoColor=white&style=flat-square" />
+
+<a href="mailto:mohammadsalehmohammadsaleh@gmail.com">
+<img src="https://img.shields.io/badge/mohammadsalehmohammadsaleh%40gmail.com-EA4335?logo=gmail&logoColor=white&style=flat-square" />
+</a>
+
+دانشجوی مقطع کارشناسی ارشد
+
+دانشکده: مرکز آموزش الکترونیکی
+
+رشته: مهندسی کامپیوتر گرایش هوش مصنوعی و رباتیک
+
 
 ## مدل‌های زبانی
 
 چند سال پیش مربی یک کلاس برنامه و تفکر الگوریتمی بودم. در بین پروژه‌هایی که دانش‌آموزان انجام می‌دادن یک روز یکی از دانش‌آموزان کلاس ایده ساختن محصولی مشابه <a href="https://en.wikipedia.org/wiki/Cortana_\(virtual_assistant\" style="text-decoration:underline; color:green;" target="_blank">کورتانا</a> ویندوز پیش اومد.
 
+<img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/120px-Microsoft_Cortana_transparent.svg.png" decoding="async" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Microsoft_Cortana_transparent.svg/250px-Microsoft_Cortana_transparent.svg.png 2x" >
+
 این دانش‌آموز می‌خواست به کمک مجموعه بزرگی از شرط‌ها شرایط رو برای یک گفت و گو اولیه فراهم کنه.  
 اگر گفت:«سلام.» برنامه بگه :«سلام چطوری؟» و … . خوب این کار برای یک دانش‌آموز ممکن نبود. حتی برای یک گروه عظیم از کارمندان یک شرکت هم حتی شاید ممکن نباشه. پس اینجا به یک برنامه‌ای نیاز داریم که جملات و گفت و گوها رو بیشتر از یک string خشک و ساده ببینه.
+
+<img src="https://static.vecteezy.com/system/resources/previews/036/171/064/non_2x/chatbot-using-and-chatting-artificial-intelligence-chat-bot-developed-by-tech-company-digital-chat-bot-robot-application-conversation-assistant-concept-optimizing-language-models-for-dialogue-vector.jpg
+" />
 
 ### تبدیل کردن به قطعات کوچک تر از جمله و عبارت
 
