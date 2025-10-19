@@ -14,6 +14,15 @@ header:
 
 ---
 
+<p align="center">
+  <a href="https://github.com/mohammadsaleh40">
+    <img src="https://img.shields.io/badge/GitHub-YourUsername-181717?logo=github&logoColor=white&style=flat-square" />
+  </a>
+  <a href="mailto:mohammadsalehmohammadsaleh@gmail.com">
+    <img src="https://img.shields.io/badge/mohammadsalehmohammadsaleh%40gmail.com-EA4335?logo=gmail&logoColor=white&style=flat-square" />
+  </a>
+</p>
+
 # Bert
 
 ## مدل‌های زبانی
