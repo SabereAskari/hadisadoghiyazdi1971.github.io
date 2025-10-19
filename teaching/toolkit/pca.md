@@ -2,7 +2,7 @@
 layout: persian  # یا single با کلاس rtl-layout
 classes: wide rtl-layout
 dir: rtl
-title: "فیلتر کالمن"
+title: "پایپ‌لاین سبک‌وزن تولید تقویت‌شده با بازیابی مبتنی بر مدل ازپیش‌آموزش‌دیده با قابلیت نویززدایی"
 permalink: /teaching/toolkit/pca/
 author_profile: false
 sidebar:
@@ -14,77 +14,150 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-# آزمون میان‌ترم - تحلیل مؤلفه‌های اصلی (PCA)
 
-## درس: یادگیری ماشین
+A Lightweight Denoising-Enabled Pre-trained Model-Based Retrieval-Augmented Generation Pipeline
 
-## نیم‌سال: پاییز ۱۴۰۳
 
-![مهریه](./img/students.jpg)
+### چکیده فارسی
 
-## **نویسندگان**  
-این سند توسط افراد زیر تهیه شده است:  
-- مهریه علیزاده  
-- مهرنوش ضیایی  
-- بهزاد ثابتی
-- پیمان پرورش‌منش
-- پوریا فکری
-- عرفان فکور
+در سیستم‌های دستیار هوشمند که از معماری تولید تقویت‌شده با بازیابی استفاده می‌کنند، وجود نویز در داده‌های متنی ورودی (مانند متون غیررسمی، مختصر یا دارای اشتباه) به‌طور مستقیم بر دقت بازیابی اطلاعات و در نتیجه، کیفیت پاسخ نهایی تأثیر منفی می‌گذارد. این پژوهش، یک **پایپ‌لاین سبک‌وزن و عملی** را معرفی می‌کند که هدف آن، افزایش مقاومت این دستیارها در برابر نویز است.
 
-با تشکر ویژه از استاد درس یادگیری ماشین **دکتر هادی صدوقی یزدی** برای راهنمایی‌ها و مشارکت‌های ایشان.
+روش پیشنهادی بر سه پایه اصلی استوار است: نخست، از یک **مدل ازپیش‌آموزش‌دیده** و بهینه برای استخراج بازنمایی معنایی از متون استفاده می‌شود. سپس، یک **لایه پروجکشن** به‌صورت یک گام پردازشی افزوده می‌گردد که بازنمایی‌های استخراج‌شده را به یک زیرفضای معنایی کم‌بعدتر و عاری از نویز تبدیل می‌کند. این فرآیند پروجکشن، مؤلفه‌های کم‌اهمیت و پرنویز داده را حذف می‌نماید. در نهایت، بازنمایی‌های «تمیز» شده برای ایندکس‌سازی و بازیابی سریع در یک پایگاه داده برداری ذخیره می‌شوند.
 
-## مثال‌های ابعاد بالا
+ارزیابی این پایپ‌لاین بر روی یک مجموعه داده شبه‌واقعی حاوی متون پُرنویز نشان می‌دهد که این معماری ساده و مبتنی بر مدل‌های موجود، نه تنها نیاز به منابع سخت‌افزاری سنگین را مرتفع می‌سازد، بلکه به‌طور قابل‌توجهی منجر به **بازیابی مرتبط‌تر اسناد** و در نتیجه **تولید پاسخ‌های دقیق‌تر** توسط مدل زبانی بزرگ در مقایسه با پایپ‌لاین‌های سنتی می‌شود. این پایان‌نامه مسیری مقرون‌به‌صرفه و کارآمد برای توسعه دستیارهای هوشمند مقاوم در محیط‌های عملیاتی را ارائه می‌نماید.
+
+## مقدمات مورد نیاز
+
+ابتدا مفهوم نویززدایی  مبتنی بر پروجکشن، با معرفی انواع ابزار همچون 
+PCA, SVD
+بررسی می شود و سپس به معرفی مدلهای از پیش اموزش دیده پرداخته می شود که توانایی تبدیل متن، تصویر، ویدیو و صوت را دارند ، ارایه می گردد. . نهایتا مرور بر ادبیات در زمینه مورد بحث یک تولید تقویت شده، ارایه می شود. 
+
+##  تحلیل مؤلفه‌های اصلی (PCA)
+
+این متن از این ادرس و مراجع دیگر  استفاده شده است 
+
+<a href="https://patternrmachinel.github.io/PatternLearning/StudentEffort/miniprojecct_PCA/finallPCA.html" style="text-decoration:none; color:inherit;" target="_blank">
+      <strong>Principle Component Analysis</strong>
+    </a> 
+
+در پردازش سیگنال در موارد زیادی سیگنالهایی با تعداد ویژگی زیاد مواجه هستیم. همچون 
+
 ابعاد بالا دارای ویژگی‌های زیادی هستند مانند سیگنال‌های EEG از مغز یا رسانه‌های اجتماعی و غیره.
+تصاویر نیز امروزه یک داده با ویژگی زیاد و بسیار مورد استفاده در سیستمهای یادگیر است و پردازش متن که یکی از جاذبه های هوش مصنوعی است یکی دیگر از نمونه های ویژگی زیاد می توان نام برد
 
-![اجتماعی](./img/social.png)
-
-## مزایای کاهش ابعاد
+## برخی از مزایای کاهش ابعاد
 1. مصورسازی
 2. کمک به جلوگیری از بیش‌برازش
 3. استفاده کارآمدتر از منابع
+4. پردازش ساده تر 
+5. کاهش اثر نویز و بررسی مولفه های اصلی 
 
-## تکنیک‌های کاهش ابعاد
-1. انتخاب ویژگی
-   انتخاب زیرمجموعه‌ای از مجموعه ویژگی‌های داده شده.
-    
-2. استخراج ویژگی
-   یک تبدیل خطی یا غیرخطی از فضای ویژگی اصلی به فضای ابعاد پایین‌تر.
+در تصویر زیر راستای با کشیدگی بیشتر را مولفه اصلی و راستای با کشیدگی کمتر را ناشی از نویز تلقی می کنیم این موضوع اساس کار روش مولفه های اصلی است که با نام pca معروف است
 
-![اجتماعی](./img/FS-FE.png)
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/dim_red_var.JPG" alt="pca1" width="200" style="max-width:100%; height:auto; display:block;" />
+    <figcaption><em>Low-High variance</em></figcaption>
+  </figure>
 
-## هدف کاهش ابعاد
-حداکثر نگهداری اطلاعات مهم در حین کاهش ابعاد.
+# تکنیک‌های کاهش ابعاد
 
-اطلاعات مهم چیست؟
+## ۱. انتخاب ویژگی (Feature Selection)
 
-اطلاعات: واریانس داده‌های تصویر شده
+### تعریف ریاضی
+انتخاب زیرمجموعه‌ای به اندازه $k$ از $d$ ویژگی اصلی ($k \ll d$) با استفاده از یک نگاشت گزینشی.
 
-![اجتماعی](./img/dim_red_var.jpg)
+### مدل ریاضی
+- **ورودی**: 
+  - ماتریس داده اصلی: $\mathbf{X} \in \mathbb{R}^{n \times d}$
+  - بردار انتخاب: $\mathbf{m} \in \{0,1\}^d$ به طوری که $\sum_{j=1}^d m_j = k$
 
-اطلاعات: حفظ همسایگی هندسی محلی
+- **تبدیل**:
+  $$
+  \mathbf{X}_{\text{filtered}} = \mathbf{X} \cdot \text{diag}(\mathbf{m})
+  $$
+  $$
+  \text{diag}(\mathbf{m}) = \begin{bmatrix}
+  m_1 & 0 & \cdots & 0 \\
+  0 & m_2 & \cdots & 0 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & \cdots & m_d
+  \end{bmatrix}
+  $$
 
-![اجتماعی](./img/local_relation.png)
+- **خروجی**: $\mathbf{X}_{\text{selected}} \in \mathbb{R}^{n \times k}$ (حاصل حذف ستون‌های صفر از $\mathbf{X}_{\text{filtered}}$)
 
-اطلاعات: حفظ هر دو همسایگی هندسی محلی و سراسری
+### تفسیر
+این فرآیند معادل یک **پروجکشن خطی گزینشی** به زیرفضایی $k$-بعدی است که ویژگی‌های با واریانس-نویز پایین را حفظ می‌کند.
 
-![اجتماعی](./img/global_relation.png)
+---
 
-## ایده:
-با توجه به نقاط داده در یک فضای d-بعدی، آن‌ها را در یک فضای با ابعاد پایین‌تر تصویر کنید در حالی که تا حد امکان اطلاعات حفظ شود:
+## ۲. استخراج ویژگی (Feature Extraction)
 
-- بهترین تقریب صفحه‌ای از داده‌های 3 بعدی را پیدا کنید.
-- بهترین تقریب 12 بعدی از داده‌های 104 بعدی را پیدا کنید.
-- به طور خاص، تصویری را انتخاب کنید که خطای مربع در بازسازی داده‌های اصلی را به حداقل برساند.
+### تعریف ریاضی
+یک تبدیل از فضای ویژگی اصلی 
+
+$$
+\mathbb{R}^d$ به فضای کم‌بعد $\mathbb{R}^k
+$$
+
+$$
+\phi: \mathbb{R}^d \to \mathbb{R}^k
+$$
+
+### الف) استخراج خطی
+
+$$
+\mathbf{Z} = \mathbf{X} \mathbf{W}
+$$
+
+ماتریس تبدیل پروجکشن
+
+$$
+\mathbf{W} \in \mathbb{R}^{d \times k}
+$$
+
+
+داده در فضای جدید
+$$
+\mathbf{Z} \in \mathbb{R}^{n \times k}
+$$
+
+
+### ب) استخراج غیرخطی
+
+$$
+\mathbf{z}_i = \phi(\mathbf{x}_i), \quad \forall i \in \{1, \dots, n\}
+$$
+
+### نمونه الگوریتم‌ها
+| روش | نوع | تابع تبدیل |
+|-----|-----|-------------|
+| PCA | خطی | $\mathbf{W}_{\text{PCA}} = \arg\min_{\mathbf{W}^T\mathbf{W}=\mathbf{I}} \|\mathbf{X} - \mathbf{X}\mathbf{W}\mathbf{W}^T\|_F^2$ |
+| Autoencoder | غیرخطی | $\phi = \psi \circ \varphi$ (کدگذار-کدگشا) |
+| Kernel PCA | غیرخطی | $\phi(\mathbf{x}) = \sum_{i=1}^n \alpha_i k(\mathbf{x}_i, \mathbf{x})$ |
+
+**نکته مهم:**
+در کاهش نویز مبتنی بر این نوع پروجکشن ها نویز را در اجتماعی از داده ها کم می کنند بعبارتی داده های رسیده همچون شکل زیر بما خواهند گفت کدام ویژگیها مهم برای نگهداری و کدامها بهتر از حذف شوند و این ایده پروجکشن را خواهد ساخت 
+
+  <figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/denoising_in_crowd.jpg" alt="denoising_in_crowd1" width="200" style="max-width:60%; height:auto; display:block;" />
+    <figcaption><em>حذف نویز در جمع داده ها</em></figcaption>
+  </figure>
+
+
+در ادامه درک مفهوم محور اصلی و ریاضیات و برنامه نویسی PCA را می فهمیم
 
 ### کد: مجموعه داده گوسی 2 بعدی
 این کد پایتون داده‌های 2 بعدی را از یک توزیع نرمال چندمتغیره با میانگین و ماتریس کوواریانس زیر تولید و مصورسازی می‌کند:
 
 **بردار میانگین**:
+
 $$
 \mu = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
 $$
 
 **ماتریس کوواریانس**:
+
 $$
 \Sigma = \begin{bmatrix} 1 & 0.8 \\ 0.8 & 1 \end{bmatrix}
 $$
@@ -114,6 +187,11 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/cov1.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>نمایش داده ها</em></figcaption>
+  </figure>
 
 ### کد: اولین محور PCA
 این کد پایتون ماتریس کوواریانس داده‌های تولید شده را محاسبه می‌کند، تجزیه ویژه را انجام می‌دهد و اولین محور اصلی (بردار ویژه با بزرگترین مقدار ویژه) را مصورسازی می‌کند. نمودار نقاط داده را به همراه اولین محور اصلی نشان می‌دهد که با یک پیکان قرمز نشان داده شده است و جهت بیشینه واریانس در داده‌ها را نشان می‌دهد. محور برای مصورسازی بهتر مقیاس‌دهی شده است و نمودار شامل خطوط شبکه، برچسب‌های محور و یک راهنما است.
@@ -155,6 +233,12 @@ plt.grid(True)
 plt.show()
 ```
 
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/firstpca1.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>محور اصلی</em></figcaption>
+  </figure>
+
+
 ### کد: محور اول و دوم
 این کد پایتون ماتریس کوواریانس داده‌های تولید شده را محاسبه می‌کند و تجزیه ویژه را برای استخراج دو مؤلفه اصلی اول انجام می‌دهد. مؤلفه‌های اصلی برای مصورسازی بهتر مقیاس‌دهی شده و در کنار داده‌ها رسم می‌شوند. مؤلفه اصلی اول (بزرگترین مقدار ویژه) به رنگ قرمز و مؤلفه اصلی دوم (کوچکترین مقدار ویژه) به رنگ آبی نشان داده می‌شود. نمودار شامل خطوط شبکه، برچسب‌های محور و یک راهنما است، با نسبت ابعاد برابر تا جهت‌گیری مؤلفه‌های اصلی در رابطه با داده‌ها به وضوح مصورسازی شود.
 
@@ -190,9 +274,22 @@ plt.grid(True)
 plt.show()
 ```
 
-جهت تصادفی در مقابل مؤلفه اصلی:
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/pca12.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>محور اصلی و فرعی</em></figcaption>
+  </figure>
 
- ![داده‌های PCA](./img/pcaVSrandom.JPG)
+
+**جهت تصادفی در مقابل مؤلفه اصلی:**
+اینجا یک راستای دیگر از داده ها را برای پروجکشن نشان می دهد که مطابق خرجی روش مولفه اصلی PCA نیست
+
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/pcaVSrandom.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>جهت اصلی تصویر بالایی و جهت غلط که محور اصلی نیست </em></figcaption>
+  </figure>
+
+
 
 ## تعریف
 
@@ -216,7 +313,11 @@ plt.show()
   \end{pmatrix}
   $$
 
-- $ \mathbf{X}_{N \times d} \xrightarrow{\text{PCA}} \tilde{\mathbf{X}}_{N \times k} \quad \text{با} \quad k \leq d $
+
+$$
+\mathbf{X}_{N \times d} \xrightarrow{\text{PCA}} \tilde{\mathbf{X}}_{N \times k} \quad \text{با} \quad k \leq d
+$$
+
 
 - **فرض**: داده‌ها میانگین-مرکزی شده‌اند، یعنی:
   
@@ -229,25 +330,40 @@ plt.show()
 تفسیر ۱. واریانس داده‌های تصویر شده را بیشینه می‌کند.
 تفسیر ۲. مجموع مربعات فواصل تا زیرفضا را کمینه می‌کند.
 
-![داده‌های PCA](./img/pca.png)
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/pca.jpg" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>هدف مولفه اصلی  </em></figcaption>
+  </figure>
 
-### معادل بودن تفسیرها
-کمینه کردن مجموع مربعات فواصل تا زیرفضا معادل است با
-بیشینه کردن مجموع مربعات تصاویر بر روی آن زیرفضا
 
-![داده‌های PCA](./img/var_vs_rec.JPG)
+*کمینه کردن مجموع مربعات فواصل تا زیرفضا معادل است با بیشینه کردن مجموع مربعات تصاویر بر روی آن زیرفضا*
 
-یک مجموعه از بردارهای متعامد واحد $ \mathbf{v} =  \mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_k $ (که هر $ \mathbf{v}_i $ به اندازه $ d \times 1 $ است) که توسط PCA تولید می‌شوند و هر دو تفسیر را انجام می‌دهند.
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/var_vs_rec.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>پروجکشن </em></figcaption>
+  </figure>
+
+
+
+یک مجموعه از بردارهای متعامد واحد 
+$$
+\mathbf{v} =  \mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_k
+$$
+(که هر $ \mathbf{v}_i $ به اندازه $ d \times 1 $ است) که توسط PCA تولید می‌شوند و هر دو تفسیر را انجام می‌دهند.
 
 #### بیشینه کردن واریانس داده‌های تصویر شده
 
 تصویر نقاط داده بر روی $\mathbf{v}_1$:
 
-$$\Pi = \Pi_{\mathbf{v}_1}\{ \mathbf{X}_1, \dots, \mathbf{X}_N \} = \{ \mathbf{v}_1^\top \mathbf{X}_1, \dots, \mathbf{v}_1^\top \mathbf{X}_N \} $$
+$$
+\Pi = \Pi_{\mathbf{v}_1}\{ \mathbf{X}_1, \dots, \mathbf{X}_N \} = \{ \mathbf{v}_1^\top \mathbf{X}_1, \dots, \mathbf{v}_1^\top \mathbf{X}_N \}
+$$
 
 توجه کنید که: $Var(\mathbf{X}) = \mathbb{E}[\mathbf{X}^2] - \mathbb{E}[\mathbf{X}]^2$ 
 
-$$\mathbb{E}[\mathbf{X}] = 0 \implies Var(\Pi) = \frac{1}{N}  \sum_{i=1}^N (\mathbf{v}_1^\top \mathbf{X}_i)^2 $$
+$$
+\mathbb{E}[\mathbf{X}] = 0 \implies Var(\Pi) = \frac{1}{N}  \sum_{i=1}^N (\mathbf{v}_1^\top \mathbf{X}_i)^2
+$$
 
 - مرکزی کردن میانگین داده
     - صفر کردن میانگین هر ویژگی
@@ -283,43 +399,57 @@ $ \lambda $: مقدار ویژه
 مقادیر ویژه نشان می‌دهند که بردار چقدر کشیده یا فشرده شده است.
 مقادیر ویژه به ما می‌گویند که بردار چقدر مقیاس شده است.
 
-![داده‌های PCA](./img/eigenvetor-eigenvalue-idea.png)
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/eigenvetor-eigenvalue-idea.png" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> تفسیر هندسی </em></figcaption>
+  </figure>
+
+
 
 ### چگونه مقادیر ویژه و بردارهای ویژه را پیدا کنیم؟
 می‌دانیم که
+
 $$
 Av = \lambda v
 $$
+
 پس
+
 $$
 Av - \lambda v=0
 $$
+
 $$
 (Av - \lambda I) v=0
 $$
+
 v نمی‌تواند صفر باشد، بنابراین:
+
 $$
 det(Av - \lambda I)=0
 $$
+
 برای $\lambda $ حل کنید.
 $ \lambda $ را دوباره در معادله $ Av=\lambda v $ جایگزین کنید تا v را پیدا کنید.
 
 #### مثال عددی
 فرض کنید 
-$
+
+$$
 A = \begin{pmatrix}
 4 & -5 \\ 
 2 & -3 
 \end{pmatrix}
-$
+$$
 
 آنگاه 
 
-$ A-\lambda I= \begin{pmatrix}
+$$
+ A-\lambda I= \begin{pmatrix}
 4-\lambda & -5 \\ 
 2 & -3-\lambda 
 \end{pmatrix} 
-$
+$$
 
 $$
 دترمینان (A- \lambda I)= (4-\lambda)(-3-\lambda)+10=(\lambda)^2-\lambda-2=0
@@ -329,24 +459,35 @@ $$
 \lambda=-1   یا  \lambda=2
 $$
 
-$$
-برای \lambda_1=-1: 
 
+
+ 
+
+$$
+for \lambda_1=-1:
 (A- \lambda_1 I)v_1= \begin{pmatrix} 5 & -5 \\ 2 & -2 \end{pmatrix} \begin{pmatrix} v_{11} \\ v_{12} \end{pmatrix} = \begin{pmatrix} 0 \\0  \end{pmatrix} \implies v_1=\begin{pmatrix} 1 \\1  \end{pmatrix}
 $$
 
 $$
-برای \lambda_2=2: 
+for \lambda_2=2: 
 
 (A- \lambda_2 I)v_2= \begin{pmatrix} 2 & -5 \\ 2 & -5 \end{pmatrix} \begin{pmatrix} v_{21} \\ v_{22} \end{pmatrix} = \begin{pmatrix} 0 \\0  \end{pmatrix} \implies v_2=\begin{pmatrix} 5 \\2  \end{pmatrix}
 $$
 
-#### مصورسازی
-![داده‌های PCA](./img/matrix_transformations.png)
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/matrix_transformations.png" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> پروجکشن</em></figcaption>
+  </figure>
+
+
 
 ### کوواریانس چیست؟
 کوواریانس معیاری است از این که دو ویژگی تصادفی چقدر با هم تغییر می‌کنند.
-    $$Cov(X,Y) = E[(X −E[X])(Y −E[Y])] = E[(Y −E[Y])(X −E[X])] = Cov(Y,X)$$
+
+$$
+Cov(X,Y) = E[(X −E[X])(Y −E[Y])] = E[(Y −E[Y])(X −E[X])] = Cov(Y,X)
+$$
+
  بنابراین کوواریانس متقارن است.
  مانند قد و وزن افراد.
 
@@ -369,7 +510,8 @@ $$
 رابطه بین a,b و d چیست؟
 
 ##### مثال ماتریس کوواریانس
-$$ \Sigma = \begin{pmatrix}
+$$
+\Sigma = \begin{pmatrix}
 a & 0 \\ 
 0 & a 
 \end{pmatrix}
@@ -407,8 +549,15 @@ plt.gca().set_aspect("equal")  # نسبت ابعاد برابر
 plt.grid(True)
 plt.show()
 ```
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/CovEqualIdentity.jpg" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em>  کوواریانس قطری واحد </em></figcaption>
+</figure>
 
-$$  \Sigma = \begin{pmatrix}
+
+
+$$ 
+\Sigma = \begin{pmatrix}
 a & 0 \\ 
 0 & d 
 \end{pmatrix}
@@ -446,6 +595,13 @@ plt.gca().set_aspect("equal")  # نسبت ابعاد برابر
 plt.grid(True)
 plt.show()
 ```
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/Covdiag.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> کوواریانس قطری </em></figcaption>
+</figure>
+
+
 
 $$  \Sigma = \begin{pmatrix}
 a & b \\ 
@@ -486,6 +642,10 @@ plt.gca().set_aspect("equal")  # نسبت ابعاد برابر
 plt.grid(True)
 plt.show()
 ```
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/CovGeneral.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> کوواریانس کلی </em></figcaption>
+</figure>
 
 $$  \Sigma = \begin{pmatrix}
 a & b \\ 
@@ -528,6 +688,11 @@ plt.grid(True)
 plt.show()
 ```
 
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/NegativeCov.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> کوواریانس منفی </em></figcaption>
+</figure>
+
 ## بیان واریانس
 
 - واریانس داده‌های تصویر شده بر روی جهت $v$ است:
@@ -542,19 +707,34 @@ $$
 ## مسئله بیشینه‌سازی
 - ما هدفمان بیشینه کردن واریانس $\mathbf{v}^T\Sigma \mathbf{v}$ تحت قید $ ||\mathbf{v}||=1 $ است.
 - این منجر به مسئله بهینه‌سازی زیر می‌شود:
-$$ \max_{v} \mathbf{v}^T \Sigma \mathbf{v} \text{ به شرط } ||\mathbf{v}||=1 $$
+$$
+\max_{v} \mathbf{v}^T \Sigma \mathbf{v} \text{ به شرط } ||\mathbf{v}||=1
+$$
 
 ## استفاده از ضرب‌کننده‌های لاگرانژ
 - یک ضرب‌کننده لاگرانژ $\lambda$ معرفی می‌کنیم و لاگرانژی را تعریف می‌کنیم:
-$$ L(\mathbf{v},\lambda)=\mathbf{v}^T \Sigma \mathbf{v} - \lambda (\mathbf{v}^T\mathbf{v} - 1) $$
+$$
+L(\mathbf{v},\lambda)=\mathbf{v}^T \Sigma \mathbf{v} - \lambda (\mathbf{v}^T\mathbf{v} - 1)
+$$
 
 - گرفتن مشتق نسبت به $\mathbf{v}$ و تنظیم آن بر 0:
-$$ \frac{\partial{L}}{\partial{\mathbf{v}}} = 2\Sigma \mathbf{v} - 2 \lambda \mathbf{v} = 0 $$
+$$
+\frac{\partial{L}}{\partial{\mathbf{v}}} = 2\Sigma \mathbf{v} - 2 \lambda \mathbf{v} = 0
+$$
+
 - این به سادگی می‌شود:
 $$
 \Sigma \mathbf{v} = \lambda \mathbf{v}
 $$
-- ما همه $(\mathbf{v}_1, \lambda_1), (\mathbf{v}_2, \lambda_2), ... ,(\mathbf{v}_k, \lambda_k)$ را به عنوان $k$ بردار ویژه $\Sigma$ با بزرگترین مقادیر ویژه تعریف می‌کنیم: $\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_k$
+- ما همه 
+$$
+(\mathbf{v}_1, \lambda_1), (\mathbf{v}_2, \lambda_2), ... ,(\mathbf{v}_k, \lambda_k)
+$$
+را به عنوان $k$ بردار ویژه $\Sigma$ با بزرگترین مقادیر ویژه تعریف می‌کنیم: 
+$$
+\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_k
+$$
+
 
 ## تفسیر
 - واریانس $\mathbf{v}^T \Sigma \mathbf{v}$ وقتی بیشینه می‌شود که $\mathbf{v}$ بردار ویژه متناظر با بزرگترین مقدار ویژه $\Sigma$ باشد.
@@ -601,6 +781,12 @@ plt.ylabel('PC2')
 plt.show()
 ```
 
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/mnist1.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> دو مولفه اصلی mnist</em></figcaption>
+</figure>
+
+
 ## کد:
 این کد پایتون مجموعه داده MNIST کاهش یافته را با استفاده از معکوس تبدیل PCA تجزیه می‌کند. `mnist_decompressed` با ضرب داده کاهش یافته (`mnist_reduced`) در ترانهاده بردارهای ویژه (`eigenvector_subset.T`) و اضافه کردن میانگین مجموعه داده اصلی بازسازی می‌شود. تابع `visualize_decompression` تصاویر اصلی و تجزیه شده را برای مقایسه کنار هم نمایش می‌دهد. این تابع هر دو داده اصلی و تجزیه شده را به فرمت تصویر تغییر شکل می‌دهد و 5 تصویر اول را به همراه نسخه‌های تجزیه شده آن‌ها نشان می‌دهد، که یک نمایش بصری از چگونگی حفظ جزئیات تصویر توسط فرآیند فشرده‌سازی و تجزیه PCA ارائه می‌دهد.
 
@@ -628,6 +814,12 @@ def visualize_decompression(original, decompressed, img_shape, num_images=5, tit
 
 visualize_decompression(mnist[:5], mnist_decompressed[:5], img_shape=(8, 8), title="MNIST")
 ```
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/denosiemnist.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> کاهش بعد و بازیابی شده یا حذف نویز شده تصویر</em></figcaption>
+</figure>
+
 
 ## درک چرخش داده در تحلیل مؤلفه‌های اصلی (PCA)
 
@@ -696,3 +888,366 @@ $$
 $$
 
 با استفاده از این واقعیت که ماتریس کوواریانس $(
+
+
+  با شروع از ماتریس کوواریانس داده‌های اصلی، تبدیل را با بردارهای ویژه اعمال می‌کنیم:
+
+$$
+\text{Cov}(X V) = \frac{1}{N-1} (X V)^T (X V)
+$$
+
+این عبارت را می‌توان به صورت زیر بسط داد:
+
+$$
+= \frac{1}{N-1} V^T X^T X V
+$$
+
+در مرحله بعد، ماتریس کوواریانس اصلی را جایگزین می‌کنیم:
+
+$$
+= \frac{1}{N-1} V^T \text{Cov}(X) V
+$$
+
+با استفاده از این واقعیت که ماتریس کوواریانس $(X)$ توسط بردارهای ویژه قطری می‌شود:
+
+$$
+\text{Cov}(X) = V \Lambda V^T
+$$
+
+به دست می‌آوریم:
+
+$$
+\text{Cov}(X V) = \frac{1}{N-1} V^T (V \Lambda V^T) V
+$$
+
+از آنجا که بردارهای ویژه متعامد هستند، داریم $(V^T V = I)$، بنابراین:
+
+$$
+= \frac{1}{N-1} (V^T V) \Lambda (V^T V) = \frac{1}{N-1} \Lambda
+$$
+
+این نشان می‌دهد که ماتریس کوواریانس داده‌های تبدیل‌شده $(\hat{X})$ یک ماتریس قطری است که مقادیر ویژه $(\Lambda)$ روی قطر اصلی آن قرار دارند.
+
+#### ۵. تفسیر هندسی
+
+از دیدگاه هندسی، این فرآیند مشابه یک **چرخش** داده در فضای ویژگی است. بردارهای ویژه، محورهای جدید داده را تعیین می‌کنند و مقادیر ویژه نشان می‌دهند که چه مقدار واریانس در امتداد هر یک از این محورهای جدید وجود دارد. با تبدیل داده‌ها به این فضای جدید، ما به طور مؤثر سیستم مختصات را به گونه‌ای تغییر جهت می‌دهیم که جهت‌های حداکثر واریانس (مؤلفه‌های اصلی) با محورها تراز شوند.
+
+در عمل، هنگام کاهش ابعاد داده‌ها (مثلاً با حفظ تنها چند مؤلفه اصلی برتر)، بر مهم‌ترین جهت‌های واریانس تمرکز کرده و جهت‌های کم‌اهمیت‌تر را کنار می‌گذاریم. این به ساده‌سازی داده‌ها کمک می‌کند در حالی که مهم‌ترین ویژگی‌ها حفظ می‌شوند.
+
+استفاده از بردارهای ویژه و مقادیر ویژه در PCA، **چرخش داده‌ها** را به یک سیستم مختصات جدید ممکن می‌سازد که در آن محورها با جهت‌های حداکثر واریانس مطابقت دارند. این تبدیل به درک بهتر ساختار داده کمک می‌کند و گامی اساسی در کاهش ابعاد، استخراج ویژگی و کاهش نویز است. با تمرکز بر مهم‌ترین مؤلفه‌ها، می‌توانیم به نمایشی کارآمدتر از داده دست یابیم.
+
+این فرآیند کامل چرخش داده در PCA، ساده‌سازی مجموعه داده‌های پیچیده را ممکن می‌سازد و تجسم و تحلیل الگوهای زیربنایی در داده را آسان‌تر می‌کند.
+
+```python
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Generate melon-shaped data
+def generate_data(n_samples=100):
+    np.random.seed(42)  # For reproducibility
+    x = np.random.normal(0, 1, n_samples)
+    y = 0.5 * x + np.random.normal(0, 0.1, n_samples)  # Elongated data
+    return np.column_stack((x, y))
+
+# Generate data matrix
+data = generate_data()
+
+# 2. Compute the covariance matrix of the original data
+cov_matrix_data = np.cov(data, rowvar=False)
+
+# 3. Compute eigenvalues and eigenvectors
+eig_values, eig_vectors = np.linalg.eig(cov_matrix_data)
+
+# 4. Transform the data using eigenvectors
+x_hat = data @ eig_vectors
+
+# 5. Compute the covariance matrix of the transformed data
+cov_matrix_x_hat = np.cov(x_hat, rowvar=False)
+
+# 6. Plot data and covariance matrices
+fig, axes = plt.subplots(2, 2, figsize=(12, 12))
+
+# Plot original data
+axes[0, 0].scatter(data[:, 0], data[:, 1], alpha=0.7, edgecolor='k')
+axes[0, 0].set_title('Original Data')
+axes[0, 0].axis('equal')
+
+# Plot eigenvectors on original data
+for i in range(len(eig_values)):
+    vector = eig_vectors[:, i] * np.sqrt(eig_values[i]) * 2
+    axes[0, 0].quiver(0, 0, vector[0], vector[1], angles='xy', scale_units='xy', scale=1, color='r', alpha=0.8)
+
+# Plot transformed data
+axes[0, 1].scatter(x_hat[:, 0], x_hat[:, 1], alpha=0.7, edgecolor='k')
+axes[0, 1].set_title('Transformed Data')
+axes[0, 1].axis('equal')
+
+# Plot covariance matrix of original data
+im1 = axes[1, 0].imshow(cov_matrix_data, cmap='viridis', interpolation='none')
+axes[1, 0].set_title('Covariance Matrix of Original Data')
+plt.colorbar(im1, ax=axes[1, 0])
+
+# Plot covariance matrix of transformed data
+im2 = axes[1, 1].imshow(cov_matrix_x_hat, cmap='viridis', interpolation='none')
+axes[1, 1].set_title('Covariance Matrix of Transformed Data')
+plt.colorbar(im2, ax=axes[1, 1])
+
+plt.tight_layout()
+plt.show()
+```
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/transform1.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> تبدیل</em></figcaption>
+</figure>
+
+## کد:
+
+این پروژه از PCA برای تحلیل مجموعه‌داده‌ای ساخته‌شده از تصاویر خاکستری تمام دانش‌ جویان یک کلاس استفاده می‌کند. مجموعه‌داده که در `lfw_people` ذخیره شده، با بارگذاری تصاویر از یک دایرکتوری ساخته می‌شود. علاوه بر این، یک تصویر تست جداگانه برای ارزیابی بارگذاری می‌شود.
+
+هدف کاهش ابعاد تصاویر با استفاده از PCA در حالی است که مهم‌ترین ویژگی‌ها حفظ شوند. تابع `pca`، ۱۰ مؤلفه اصلی برتر را استخراج می‌کند. اولین مؤلفه اصلی که به صورت یک تصویر可视化 می‌شود، نمایان‌گر dominantترین ویژگی مشترک در میان عکس‌های کلاس است.
+
+سپس اسکریپت، هر دو مجموعه‌داده کلاس و تصویر تست را فشرده و بازسازی می‌کند. تابع `visualize_decompression` تصاویر اصلی و بازسازی‌شده را کنار هم نمایش می‌دهد و برجسته می‌کند که PCA چقدر خوب اطلاعات حیاتی را حفظ می‌کند.
+
+این تحلیل نشان می‌دهد که PCA چگونه می‌تواند داده‌های تصویری را ساده کند، و بازسازی و فشرده‌سازی عکس‌های کلاس را به طور مؤثر نمایش می‌دهد در حالی که شباهت بصری را حفظ می‌کند.
+
+
+```python
+from sklearn.datasets import fetch_olivetti_faces
+from matplotlib import pyplot as plt
+import numpy as np
+import cv2
+import os
+
+src = './data/'
+files = os.listdir(src)
+lfw_people = []
+for file in files:
+    lfw_people.append(cv2.imread(src+file, 0))
+lfw_people = np.array(lfw_people)
+
+name = ['resized_parvaz.png','resized_mahdieh.jpg']
+test = cv2.imread('./img/'+name[0], 0).reshape(1, 64, 64)
+
+print(test.shape)
+print(lfw_people.shape)
+
+num_pcs = 10
+def pca(X, num_components):
+    mean_face = np.mean(X, axis=0)
+    X_meaned = X - np.mean(X, axis=0)
+    covariance_matrix = np.cov(X_meaned, rowvar=False)
+    print(X.shape)
+    print(covariance_matrix.shape)
+    eigenvalues, eigenvectors = np.linalg.eigh(covariance_matrix)
+    sorted_index = np.argsort(eigenvalues)[::-1]
+    sorted_eigenvectors = eigenvectors[:, sorted_index]
+    eigenvector_subset = sorted_eigenvectors[:, :num_components]
+    X_reduced = np.dot(X_meaned, eigenvector_subset)
+    return X_reduced, eigenvector_subset, mean_face
+
+# آموزش
+mnist_reduced, eigenvector_subset, mean_face = pca(lfw_people.reshape(-1, 64*64), num_pcs)
+
+plt.figure(figsize=(12, 8))
+grid_cols = 5  # تنظیم ستون‌های grid
+grid_rows = (num_pcs + 1) // grid_cols + 1  # تنظیم پویای سطرهای grid
+
+plt.subplot(grid_rows, grid_cols, 1)
+plt.title("میانگین چهره")
+plt.imshow(mean_face.reshape(64,64), cmap="gray")
+plt.axis("off")
+
+# نمایش چهره‌های ویژه
+for i in range(num_pcs):
+    plt.subplot(grid_rows, grid_cols, i + 2)
+    plt.title(f"چهره ویژه {i + 1}")
+    plt.imshow(eigenvector_subset[:, i].reshape(64,64), cmap="gray")
+    plt.axis("off")
+
+plt.tight_layout()
+plt.show()
+
+
+# تست
+test_reduced = np.dot(test.reshape(-1, 64*64), eigenvector_subset)
+print(eigenvector_subset.shape)
+
+mnist_decompressed = np.dot(mnist_reduced, eigenvector_subset.T) + np.mean(lfw_people.reshape(-1, 64*64), axis=0)
+test_decompressed = np.dot(test_reduced, eigenvector_subset.T)
+
+def visualize_decompression(original, decompressed, img_shape, num_images=13, title=""):
+    original = original.reshape(-1, *img_shape)
+    decompressed = decompressed.reshape(-1, *img_shape)
+
+    plt.figure(figsize=(10, 4))
+
+    for i in range(num_images):
+        plt.subplot(2, num_images, i + 1)
+        plt.imshow(original[i])
+        plt.axis('off')
+
+        plt.subplot(2, num_images, num_images + i + 1)
+        plt.imshow(decompressed[i])
+        plt.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+
+
+visualize_decompression(lfw_people, mnist_decompressed, (64, 64), title="بازسازی PCA")
+visualize_decompression(test, test_decompressed, (64, 64), num_images=1, title="بازسازی PCA")
+```
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/eigenimage1.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> چهره ویژه</em></figcaption>
+</figure>
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/criticalinfo.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> چهره بی نویز</em></figcaption>
+</figure>
+
+
+
+
+## اگر به جای مقادیر ویژه بزرگ از مقادیر ویژه کوچک در پروژه چهره‌های ویژه استفاده کنیم چه اتفاقی می‌افتد؟
+
+در زمینه پروژه چهره‌های ویژه، که در آن از تحلیل مؤلفه‌های اصلی (PCA) برای شناسایی مؤلفه‌های اصلی (چهره‌های ویژه) تصاویر چهره استفاده می‌شود، مقادیر ویژه نمایان‌گر واریانس captured شده توسط هر مؤلفه اصلی هستند. مقادیر ویژه بزرگ با مهم‌ترین ویژگی‌های داده مطابقت دارند، مانند ویژگی‌های اصلی یک چهره (مثلاً شکل کلی، چشم‌ها، بینی)، در حالی که مقادیر ویژه کوچک با تغییرات ریزتر و جزئی‌تر مطابقت دارند که اغلب ویژگی‌های کم‌اهمیت‌تر را capture می‌کنند.
+
+اگر به جای مقادیر بزرگ از مقادیر کوچک استفاده کنیم، در واقع بر ویژگی‌هایی با واریانس پایین تأکید کرده‌ایم. این ویژگی‌ها معمولاً کم‌برجسته‌تر هستند و اغلب مربوط به جزئیات ظریف یا نویز در داده‌ها هستند، نه ویژگی‌های غالب چهره. در نتیجه، چهره‌های بازسازی‌شده با استفاده از مقادیر ویژه کوچک ممکن است distorted، کمتر قابل تشخیص یا تار به نظر برسند زیرا بر تغییرات جزئی و کم‌اهمیت‌تر در تصاویر تمرکز می‌کنند.
+
+استفاده از مقادیر ویژه کوچک ممکن است نویز پس‌زمینه، تغییرات جزئی نورپردازی یا نواقص کوچک در تصاویر را نیز برجسته کند که بخشی از ساختار اصلی چهره نیستند. در حالی که این ممکن است برخی جزئیات خاص را capture کند، به نمایش دقیق ویژگی‌های کلیدی چهره که توسط مقادیر ویژه بزرگتر نمایش داده می‌شوند کمک نمی‌کند.
+
+به طور خلاصه، استفاده از مقادیر ویژه کوچک در پروژه چهره‌های ویژه می‌تواند منجر به overfitting شود با تمرکز بر ویژگی‌های نامربوط و نویز، در حالی که ویژگی‌های مهم‌تر و غالب که برای تشخیص دقیق چهره‌ها حیاتی هستند نادیده گرفته می‌شوند. بنابراین، معمولاً استفاده از مقادیر ویژه بزرگ ترجیح داده می‌شود تا اطمینان حاصل شود که مهم‌ترین و generalizableترین ویژگی‌های چهره به طور مؤثر capture و نمایش داده می‌شوند.
+
+### کد مربوط به آزمایش با مقادیر ویژه کوچک
+### (این بخش از کد مشابه کد قبلی است اما با مرتب‌سازی معکوس برای انتخاب مقادیر کوچک)
+
+```python
+from sklearn.datasets import fetch_olivetti_faces
+from matplotlib import pyplot as plt
+import numpy as np
+import cv2
+import os
+
+src = './data/'
+files = os.listdir(src)
+lfw_people = []
+for file in files:
+    lfw_people.append(cv2.imread(src+file, 0))
+lfw_people = np.array(lfw_people)
+
+name = ['resized_parvaz.png','resized_mahdieh.jpg']
+test = cv2.imread('./img/'+name[0], 0).reshape(1, 64, 64)
+
+print(test.shape)
+print(lfw_people.shape)
+
+num_pcs = 15
+def pca(X, num_components):
+    mean_face = np.mean(X, axis=0)
+    X_meaned = X - np.mean(X, axis=0)
+    covariance_matrix = np.cov(X_meaned, rowvar=False)
+    print(X.shape)
+    print(covariance_matrix.shape)
+    eigenvalues, eigenvectors = np.linalg.eigh(covariance_matrix)
+    sorted_index = np.argsort(eigenvalues)
+    sorted_eigenvectors = eigenvectors[:, sorted_index]
+    eigenvector_subset = sorted_eigenvectors[:, :num_components]
+    X_reduced = np.dot(X_meaned, eigenvector_subset)
+    return X_reduced, eigenvector_subset, mean_face
+
+# TRAINING
+mnist_reduced, eigenvector_subset, mean_face = pca(lfw_people.reshape(-1, 64*64), num_pcs)
+
+plt.figure(figsize=(12, 8))
+grid_cols = 5  # Adjust grid columns
+grid_rows = (num_pcs + 1) // grid_cols + 1  # Adjust grid rows dynamically
+
+plt.subplot(grid_rows, grid_cols, 1)
+plt.title("Mean Face")
+plt.imshow(mean_face.reshape(64,64), cmap="gray")
+plt.axis("off")
+
+# Plot eigenfaces
+for i in range(num_pcs):
+    plt.subplot(grid_rows, grid_cols, i + 2)
+    plt.title(f"Eigenface {i + 1}")
+    log_image = np.log1p(eigenvector_subset[:, i].reshape(64,64))
+    log_image = np.uint8(log_image / log_image.max() * 255)
+    plt.imshow(log_image, cmap="gray")
+    plt.axis("off")
+
+plt.tight_layout()
+plt.show()
+
+
+# TESTING
+test_reduced = np.dot(test.reshape(-1, 64*64), eigenvector_subset)
+print(eigenvector_subset.shape)
+# plt.figure(figsize=(8, 6))
+# scatter = plt.scatter(mnist_reduced[:, 0], mnist_reduced[:, 1], c=labels, cmap='tab10', alpha=0.7)
+# plt.colorbar(scatter)
+# plt.xlabel('PC1')
+# plt.ylabel('PC2')
+# plt.show()
+
+mnist_decompressed = np.dot(mnist_reduced, eigenvector_subset.T) + np.mean(lfw_people.reshape(-1, 64*64), axis=0)
+test_decompressed = np.dot(test_reduced, eigenvector_subset.T)
+
+def visualize_decompression(original, decompressed, img_shape, num_images=13, title=""):
+    original = original.reshape(-1, *img_shape)
+    decompressed = decompressed.reshape(-1, *img_shape)
+
+    plt.figure(figsize=(10, 4))
+
+    for i in range(num_images):
+        plt.subplot(2, num_images, i + 1)
+        plt.imshow(original[i])
+        plt.axis('off')
+
+        plt.subplot(2, num_images, num_images + i + 1)
+        log_image = np.log1p(decompressed[i])
+        plt.imshow(log_image)
+        plt.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+
+
+visualize_decompression(lfw_people, mnist_decompressed, (64, 64), title="PCA Decompression")
+visualize_decompression(test, test_decompressed, (64, 64), num_images=1, title="PCA Decompression")
+```
+
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/noiseofimage.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> چهره نویز ویژه</em></figcaption>
+</figure>
+
+<figure style="flex:0 0 200px; margin:0; text-align:center;">
+    <img src="/assets/Toolkitimages/pca/smalleigenimage.JPG" alt="denoising_in_crowd1" width="200" style="max-width:50%; height:auto; display:block;" />
+    <figcaption><em> پروجکشن روی چهره نویز ویژه</em></figcaption>
+</figure>
+
+
+## مراجع
+
+[1] M. Soleymani Baghshah, “Machine learning.” Lecture slides.
+
+[2] B. Póczos, “Advanced introduction to machine learning.” Lecture slides.
+CMU-10715.
+
+[3] M. Gormley, “Introduction to machine learning.” Lecture slides.
+10-701.
+
+[4] M. Gormley, “Introduction to machine learning.” Lecture slides.
+10-301/10-601.
+
+[5] F. Seyyedsalehi, “Machine learning and theory of machine learning.” Lecture slides.
+CE-477/CS-828.
+
+[6] G. Strang, “Linear algebra and its applications,” 2000.
