@@ -34,6 +34,11 @@ header:
 رشته: مهندسی کامپیوتر گرایش هوش مصنوعی و رباتیک
 
 
+<iframe src="https://www.aparat.com/video/video/embed/videohash/sbp0m4x/vt/frame"
+        allowFullScreen="true"
+        width="640" height="360"
+        style="max-width: 100%; border: none;">
+</iframe>
 ## مدل‌های زبانی
 
 چند سال پیش مربی یک کلاس برنامه و تفکر الگوریتمی بودم. در بین پروژه‌هایی که دانش‌آموزان انجام می‌دادن یک روز یکی از دانش‌آموزان کلاس ایده ساختن محصولی مشابه <a href="https://en.wikipedia.org/wiki/Cortana_\(virtual_assistant\" style="text-decoration:underline; color:green;" target="_blank">کورتانا</a> ویندوز پیش اومد.
