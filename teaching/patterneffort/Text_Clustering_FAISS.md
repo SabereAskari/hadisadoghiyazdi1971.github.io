@@ -30,8 +30,9 @@ header:
 
 # خوشه‌بندی متن
 
+
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets\patterneffort\Text_Clustering_FAISS\Text Clustering.png" width="700" height="435" alt="STFT-overview" style="object-fit: contain;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/Text Clustering.png" width="700" height="435"  alt="Text Clustering"  style="object-fit: contain;">
 </div>
 
 # مقدمه
@@ -44,9 +45,23 @@ header:
 
 انواع مختلفی از الگوریتم‌های خوشه‌بندی وجود دارد که هر کدام برای سناریوهای خاصی مناسب هستند:
 - **خوشه‌بندی تقسیمی (Partitioning Clustering):** مانند الگوریتم **K-means** که داده‌ها را به k خوشه تقسیم می‌کند و سعی می‌کند واریانس درون‌خوشه‌ای را به حداقل برساند.
+
+<a title="Chire, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" style="display: flex; justify-content: center; align-items: center; gap: 10px;" href="https://commons.wikimedia.org/wiki/File:K-means_convergence.gif" target="_blank" ><img width="512" alt="K-means convergence" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/K-means_convergence.gif/512px-K-means_convergence.gif?20170530143526"></a>
+
 - **خوشه‌بندی سلسله‌مراتبی (Hierarchical Clustering):** یک ساختار درختی از خوشه‌ها ایجاد می‌کند که می‌تواند تجزیه‌شونده (Divisive) یا تجمعی (Agglomerative) باشد.
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/1__ygmiFhggEVolNI-iF9yVA.gif" width="700"   alt="Text Clustering"  style="object-fit: contain;">
+</div>
+
 - **خوشه‌بندی مبتنی بر چگالی (Density-Based Clustering):** مانند الگوریتم **DBSCAN** که خوشه‌ها را به عنوان مناطق پرتراکم از داده‌ها تعریف می‌کند و قادر به شناسایی داده‌های نویز (Outlier) است.
+
+<a  style="display: flex; justify-content: center; align-items: center; gap: 10px;" href="https://commons.wikimedia.org/wiki/File:K-means_convergence.gif" target="_blank" ><img width="512" alt="dbscn" src="https://cdn-images-1.medium.com/max/640/1*tc8UF-h0nQqUfLC8-0uInQ.gif"></a>
+
 - **خوشه‌بندی طیفی (Spectral Clustering):** از تئوری گراف برای خوشه‌بندی استفاده می‌کند و برای داده‌هایی با ساختار پیچیده و غیرمحدب کارآمد است.
+
+<a  style="display: flex; justify-content: center; align-items: center; gap: 10px;" href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSUz35PqAtg-6oSyIaT72eKAwbsz0ALlP8e0VpKZDQHRHgegrSLOuwkdmZ1Lvd_9JMt83-xsvVN2ATR3hzbwSPr5Kt00uPclG90w_dhoZWqHA" target="_blank" ><img width="512" alt="Spectral Clustering" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSUz35PqAtg-6oSyIaT72eKAwbsz0ALlP8e0VpKZDQHRHgegrSLOuwkdmZ1Lvd_9JMt83-xsvVN2ATR3hzbwSPr5Kt00uPclG90w_dhoZWqHA"></a>
+
 
 ## چالش‌های کلیدی در خوشه‌بندی متن
 
@@ -86,7 +101,7 @@ header:
   **محدودیت اصلی:** این روش هیچ درکی از معنای کلمات ندارد. برای مثال، کلمات "خودرو" و "اتومبیل" از نظر این مدل کاملاً متفاوت هستند، در حالی که مترادف هستند. همچنین، ترتیب کلمات نادیده گرفته می‌شود، بنابراین جملات "سگ گربه را تعقیب کرد" و "گربه سگ را تعقیب کرد" دارای نمایش یکسانی خواهند بود.
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets\patterneffort\Text_Clustering_FAISS\BoW.png" width="700" height="435" alt="STFT-overview" style="object-fit: contain;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/BoW.png" width="700" height="435" alt="STFT-overview" style="object-fit: contain;">
 </div>
 
 
@@ -100,7 +115,7 @@ header:
 
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets\patterneffort\Text_Clustering_FAISS\tfidf.jpg" width="700" height="250" alt="STFT-overview" style="object-fit: contain;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/tfidf.jpg" width="700" height="250" alt="tfidf" style="object-fit: contain;">
   </div>
 
 ### روش‌های مدرن: Embedding با استفاده از مدل‌های زبانی
@@ -110,22 +125,21 @@ header:
 - **Embedding چیست؟**  
   یک embedding روشی برای تبدیل کلمات در یک سند به یک لیست از اعداد یا یک بردار است. اگر بردار دو یا سه بعدی باشد، به راحتی می‌توان تصور کرد که یک کلمه در یک فضای دوبعدی یا سه‌بعدی قرار می‌گیرد، جایی که کلمات با معانی مشابه در این "فضای برداری" به یکدیگر نزدیک خواهند بود.
 
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/vectorspacemodel.png" 
-         alt="STFT-overview" 
-         width="1024" 
-         height="358" 
-         style="object-fit: contain;">
-    <p class="wp-caption-text" style="margin-top: 8px; color: #555;">
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/vectorspacemodel.png" alt="vectorspacemodel" style="width: 75%; height: 75%; object-fit: contain;">
+</div>
+<p class="wp-caption-text" style="margin-top: 8px; color: #555; align-items: center; text-align: center;">
         مثالی از فضای برداری
     </p>
-</div>
 
 
 
 - **مدل‌های زبانی تولیدکننده Embedding:**  
-  - **BERT (Bidirectional Encoder Representations from Transformers):** این مدل یک نقطه عطف در NLP بود که با درک دوطرفه زمینه، قادر به تولید نمایش‌های متنی بسیار غنی بود. BERT برای هر کلمه بسته به جمله‌ای که در آن قرار دارد، یک بردار منحصر به فرد تولید می‌کند.
-  - **Sentence Transformers:** این کتابخانه که بر پایه مدل‌هایی مانند BERT ساخته شده، به طور خاص برای تولید یک بردار معنایی باکیفیت برای کل جملات و پاراگراف‌ها تنظیم (Fine-tune) شده است. این ویژگی آن را به ابزاری ایده‌آل برای وظایفی مانند جستجوی معنایی و خوشه‌بندی تبدیل کرده است.
+  - **BERT (Bidirectional Encoder Representations from Transformers):**  
+   این مدل یک نقطه عطف در NLP بود که با درک دوطرفه زمینه، قادر به تولید نمایش‌های متنی بسیار غنی بود. BERT برای هر کلمه بسته به جمله‌ای که در آن قرار دارد، یک بردار منحصر به فرد تولید می‌کند.
+  - **Sentence Transformers:**  
+   این کتابخانه که بر پایه مدل‌هایی مانند BERT ساخته شده، به طور خاص برای تولید یک بردار معنایی باکیفیت برای کل جملات و پاراگراف‌ها تنظیم (Fine-tune) شده است. این ویژگی آن را به ابزاری ایده‌آل برای وظایفی مانند جستجوی معنایی و خوشه‌بندی تبدیل کرده است.
 
 ### نقش Embedding در خوشه‌بندی معنایی
 
@@ -155,48 +169,18 @@ header:
 
 با فرض داشتن مجموعه‌ای از بردارهای `xi` در `d` بعد، FAISS یک ساختار داده بر روی آن‌ها در حافظه RAM ایجاد می‌کند. پس از ساخته شدن این ساختار، هنگامی که یک بردار جدید `x` در `d` بعد به آن داده می‌شود، FAISS به صورت کارآمد عملیات زیر را انجام می‌دهد:
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>j</mi>
-  <mo>=</mo>
-  <mi>a</mi>
-  <mi>r</mi>
-  <mi>g</mi>
-  <mi>m</mi>
-  <mi>i</mi>
-  <msub>
-    <mi>n</mi>
-    <mi>i</mi>
-  </msub>
-  <mo data-mjx-texclass="OPEN" fence="false" stretchy="false">&#x2016;</mo>
-  <mi>x</mi>
-  <mo>&#x2212;</mo>
-  <msub>
-    <mi>x</mi>
-    <mi>i</mi>
-  </msub>
-  <mo data-mjx-texclass="CLOSE" fence="false" stretchy="false">&#x2016;</mo>
-</math>
 
-که در آن `‖⋅‖` فاصله اقلیدسی (<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>L</mi>
-    <mn>2</mn>
-  </msup>
-</math>) است.
+$$
+j = \arg\min_i \| x - x_i \|
+$$
 
-در اصطلاحات FAISS، این ساختار داده یک **شاخص (index)** است، یعنی یک شیء که دارای یک متد `add` برای اضافه کردن بردارهای <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mi>i</mi>
-  </msub>
-</math> است.
 
-توجه داشته باشید که فرض بر این است که بردارهای <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mi>i</mi>
-  </msub>
-</math> ثابت هستند.
+که در آن `‖⋅‖` فاصله اقلیدسی ($L^2$) است.
+
+در اصطلاحات FAISS، این ساختار داده یک **شاخص (index)** است، یعنی یک شیء که دارای یک متد `add` برای اضافه کردن بردارهای $ x_i $
+ است.
+
+توجه داشته باشید که فرض بر این است که بردارهای   $ x_i $ ثابت هستند.
 
 محاسبه آرگ‌مین (argmin) عملیات **جستجو** روی شاخص محسوب می‌شود.
 
@@ -204,25 +188,9 @@ header:
 *   بازگرداندن نه تنها نزدیک‌ترین همسایه، بلکه دوم، سوم، ... و k-اُمین همسایه‌ی نزدیک.
 *   جستجوی چندین بردار به صورت همزمان به جای یک بردار (پردازش دسته‌ای). برای بسیاری از انواع شاخص‌ها، این کار سریع‌تر از جستجوی تک‌تک بردارها است.
 *   معاوضه دقت با سرعت؛ برای مثال، ارائه یک نتیجه نادرست در ۱۰٪ مواقع با استفاده از روشی که ۱۰ برابر سریع‌تر است یا ۱۰ برابر حافظه کمتری مصرف می‌کند.
-*   انجام جستجوی بیشینه حاصل‌ضرب داخلی <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-  <mi>r</mi>
-  <mi>g</mi>
-  <mi>m</mi>
-  <mi>a</mi>
-  <msub>
-    <mi>x</mi>
-    <mi>i</mi>
-  </msub>
-  <mo fence="false" stretchy="false">&#x27E8;</mo>
-  <mi>x</mi>
-  <mo>,</mo>
-  <msub>
-    <mi>x</mi>
-    <mi>i</mi>
-  </msub>
-  <mo fence="false" stretchy="false">&#x27E9;</mo>
-</math> به جای جستجوی حداقل فاصله اقلیدسی. پشتیبانی از معیارهای فاصله دیگر (مانند L1، Linf و غیره) نیز به صورت محدود وجود دارد.
+*   انجام جستجوی بیشینه حاصل‌ضرب داخلی 
+$$\arg\max_{x_i} \langle x, x_i \rangle$$
+ به جای جستجوی حداقل فاصله اقلیدسی. پشتیبانی از معیارهای فاصله دیگر (مانند L1، Linf و غیره) نیز به صورت محدود وجود دارد.
 *   ذخیره شاخص روی دیسک به جای حافظه RAM.
 
 
@@ -280,6 +248,17 @@ HNSW یک رویکرد مبتنی بر گراف است که برای جستجو�
   3.  سپس به لایه پایین‌تر منتقل شده و جستجو از همان نقطه ادامه می‌یابد تا به لایه پایین (که شامل تمام نقاط است) برسد.
 - **مزیت:** تعادل عالی بین سرعت و دقت (Recall).
 - **عیب:** معمولاً مصرف حافظه بیشتری نسبت به IVF+PQ دارد و ساخت شاخص آن ممکن است زمان‌بر باشد.
+
+
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 40px;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/comparison_of_index.png" alt="comparison_of_index" style="width: 75%; height: 75%; object-fit: contain;">
+</div>
+<p class="wp-caption-text" style="margin-top: 8px; color: #555; align-items: center; text-align: center;">
+        مقایسه شاخص‌های متفاوت
+</p>
+
+
 
 ### نقش FAISS در خوشه‌بندی
 
@@ -473,24 +452,28 @@ print("Done.")
 ```
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets\patterneffort\Text_Clustering_FAISS\Text Clustering With FAISS_1.png" alt="STFT-overview" width="700" height="435" style="object-fit: contain;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/Text Clustering With FAISS_1.png" alt="Text Clustering With FAISS_1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px; ">
-    <img src="assets\patterneffort\Text_Clustering_FAISS\Text Clustering With FAISS_2.png" alt="STFT-overview" width="700" height="435" style="object-fit: contain;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/Text Clustering With FAISS_2.png" alt="Text Clustering With FAISS_2" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
+
 <div class="caption" style="text-align: center; margin-top: 8px; direction: rtl; font-size: 20px;">
 نتیجه خوشه‌بندی متن
 </div>
+
 
 ## تحلیل نتایج: تفسیر امتیاز Silhouette و ARI
 
 پس از اجرای الگوریتم خوشه‌بندی روی دیتاست ساختگی، نتایج زیر به دست آمدند:
 
+
+```
 --- Evaluation ---  
 Silhouette Score: 0.1237  
 Adjusted Rand Index (ARI): 0.8588
-
+```
 
 این نتایج در نگاه اول ممکن است متناقض به نظر برسند، اما در واقع یک داستان بسیار مهم و آموزنده در مورد ماهیت داده‌ها و عملکرد الگوریتم‌ها روایت می‌کنند: **خوشه‌بندی شما در تخصیص برچسب‌ها بسیار موفق عمل کرده است، اما خوشه‌های تولید شده از نظر هندسی، مرزهای مشخص و فاصله زیادی از یکدیگر ندارند.** بیایید هر کدام را به تفکیک تحلیل کنیم.
 
@@ -559,11 +542,10 @@ Adjusted Rand Index (ARI): 0.8588
 
 برخلاف جستجوی سنتی که بر اساس تطابق کلمات کلیدی کار می‌کند، جستجوی معنایی بر اساس **معنی** و **مفهوم** متن عمل می‌کند. این نوع جستجو می‌تواند اسنادی را پیدا کند که از نظر معنایی شبیه پرسش ما هستند، حتی اگر کلمات یکسانی نداشته باشند.
 
-<img src="assets\patterneffort\Text_Clustering_FAISS\semantic-search.svg" 
-         alt="STFT-overview" 
-         width="1024" 
-         height="358" 
-         style="object-fit: contain;">
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/Text_Clustering_FAISS/semantic-search.jpeg" alt="semantic-search" style="width: 25%; height: 25%; object-fit: contain;">
+</div>
 
 
 ---
@@ -1020,25 +1002,14 @@ URL: https://github.com/huggingface/datasets/issues/824
 در نهایت، FAISS و مدل‌های Embedding مدرن صرفاً ابزارهایی نیستند، بلکه بلوک‌های سازنده‌ای بنیادین برای نسل آینده سیستم‌های تحلیل متن هوشمند محسوب می‌شوند.
 
 
+##  منابع
 
-## منابع و مراجع
-
-[1] <a href="https://github.com/facebookresearch/faiss/wiki" style="text-decoration:underline; color:green;" target="_blank">
-<strong>FAISS Documentation</strong>
-</a>
-
-[2] <a href="https://huggingface.co/learn/llm-course/en/chapter5/6" style="text-decoration:underline; color:green;" target="_blank">
-<strong> Semantic search with FAISS</strong>
-</a>
-
-[3] <a href="https://medium.com/@vamshiprakash001/an-introduction-to-bag-of-words-bow-c32a65293ccc" style="text-decoration:underline; color:green;" target="_blank">
-<strong>An Introduction to Bag of Words (BoW)</strong>
-</a>
-
-[4] <a href="https://kinder-chen.medium.com/introduction-to-natural-language-processing-tf-idf-1507e907c19" style="text-decoration:underline; color:green;" target="_blank">
-<strong>Introduction to Natural Language Processing — TF-IDF</strong>
-</a>
-
-[5] <a href="https://kahoot.com/tech-blog/text-clustering-using-deep-learning-language-models" style="text-decoration:underline; color:green;" target="_blank">
-<strong>text-clustering-using-deep-learning-language-models</strong>
-</a>
+1. <a href="https://github.com/facebookresearch/faiss/wiki" target="_blank"><strong>FAISS Documentation</strong></a>  
+2. <a href="https://huggingface.co/learn/llm-course/en/chapter5/6" target="_blank"><strong>Semantic Search with FAISS</strong></a>  
+3. <a href="https://medium.com/@vamshiprakash001/an-introduction-to-bag-of-words-bow-c32a65293ccc" target="_blank"><strong>An Introduction to Bag of Words (BoW)</strong></a>  
+4. <a href="https://kinder-chen.medium.com/introduction-to-natural-language-processing-tf-idf-1507e907c19" target="_blank"><strong>Introduction to Natural Language Processing — TF-IDF</strong></a>  
+5. <a href="https://kahoot.com/tech-blog/text-clustering-using-deep-learning-language-models" target="_blank"><strong>Text Clustering Using Deep Learning Language Models</strong></a>  
+6. <a href="https://commons.wikimedia.org/wiki/File:K-means_convergence.gif" target="_blank"><strong>Wikimedia – K-means_convergence.gif</strong></a>  
+7. <a href="https://primo.ai/index.php/Density-Based_Spatial_Clustering_of_Applications_with_Noise_%28DBSCAN%29" target="_blank"><strong>Density-Based Spatial Clustering of Applications with Noise (DBSCAN)</strong></a>  
+8. <a href="https://medium.com/@khushivirpariya/agglomerative-clustering-with-graph-557668ed1f2e" target="_blank"><strong>Agglomerative Clustering with Graph</strong></a>  
+9. <a href="https://medium.com/@VectorWorksAcademy/part-2-understanding-and-using-faiss-examples-of-different-index-types-read-and-write-eb9206753853" target="_blank"><strong>Part 2: Understanding and Using FAISS — Exploring FAISS Index Types with Practical Examples for Reading and Writing</strong></a>
