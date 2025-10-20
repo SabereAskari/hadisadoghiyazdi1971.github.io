@@ -40,7 +40,7 @@ header:
 <div class="english-text">
 <strong>Quadratic Programming</strong>
 </div>
-<a href="/teaching/studenteffort/patterneffort/QP" style="text-decoration:underline; color:green;" target="_blank"><strong> برنامه‌ریزی درجه دوم</strong></a>
+<a href="/teaching/studenteffort/patterneffort/QP1" style="text-decoration:underline; color:green;" target="_blank"><strong> برنامه‌ریزی درجه دوم</strong></a>
 
 <!--3-->
 <div class="english-text">
