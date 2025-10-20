@@ -53,4 +53,9 @@ header:
 <strong>BERT</strong>
 </div>
 <a href="/teaching/studenteffort/patterneffort/BERT" style="text-decoration:underline; color:green;" target="_blank"><strong> بردار ساختن از کلمات به کمک روش BERT</strong></a>
+ <!--5-->
+<div class="english-text">
+<strong>پیاده‌سازی و تحلیل الگوریتم UniForCE</strong>
+</div>
+<a href="/teaching/studenteffort/patterneffort/UniForCE_MinimalMistakes_Final" style="text-decoration:underline; color:green;" target="_blank"><strong> گزارش کامل پیاده‌سازی UniForCE (DeepSeek-derived)، شامل کد، توضیحات خط‌به‌خط، آزمایش‌ها و مقایسه با KMeans.</strong></a>
  
