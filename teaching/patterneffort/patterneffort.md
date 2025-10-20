@@ -58,4 +58,9 @@ header:
 <strong>پیاده‌سازی و تحلیل الگوریتم UniForCE</strong>
 </div>
 <a href="/teaching/studenteffort/patterneffort/UniForCE_MinimalMistakes_Final" style="text-decoration:underline; color:green;" target="_blank"><strong> گزارش کامل پیاده‌سازی UniForCE (DeepSeek-derived)، شامل کد، توضیحات خط‌به‌خط، آزمایش‌ها و مقایسه با KMeans.</strong></a>
- 
+
+<!--6-->
+<div class="english-text">
+<strong>Cross Vslidation</strong>
+</div>
+<a href="/teaching/studenteffort/patterneffort/CrossValidation" style="text-decoration:underline; color:green;" target="_blank"><strong>اعتبارسنجی متقاطع Cross Vslidation </strong></a>
