@@ -362,6 +362,9 @@ jupyter notebook chek_model.ipynb
 
 و خروجی‌ها (embedding و شباهت‌ها) بررسی می‌شوند.
 
+
+## منابع
+
 <!--bundle exec jekyll serve --host 0.0.0.0 --port 8085-->
 
 
