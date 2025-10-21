@@ -1,67 +1,151 @@
 ---
-layout: persian  # یا single با کلاس rtl-layout
+layout: persian
 classes: wide rtl-layout
 dir: rtl
 title: "رویای عمیق"
-permalink: /teaching/studenteffort/patterneffort/DeepDream/
+permalink: /teaching/studenteffort/patterneffort/deepdream
 author_profile: true
 
 header:
   overlay_image: "/assets/images/background.jpg"
   overlay_filter: 0.3
   overlay_color: "#5e616c"
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  caption: "Photo credit: [Unsplash](https://unsplash.com)"
+---
+
+
+
+# Deep Dream   رویای عمیق
 
 ---
 
-# رویای عمیق
+<div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
+    <img src="https://upload.wikimedia.org/wikipedia/fa/e/e3/FUM_Logo.png" width="169" height="217" alt="STFT-overview" style="object-fit: contain;">
+</div>
+
+<div style="display: flex; justify-content: start; align-items: center; gap: 10px; ">
+    <img src="assets/patterneffort/deepdream/images/my photo.jpg" alt="IPS1" style="width: 200px; height: 200px; object-fit: contain;">
+</div>
 
 **نویسنده**: صابره عسکری
 
 - <sabereaskari14@gmail.com>
 
 **دانشگاه فردوسی مشهد**
+**دانشکده مهندسی**
+**گروه کامپیوتر**
+دانشجوی ارشد هوش‌ مصنوعی دانشگاه فردوسی مشهد  
+آزمایشگاه شناسایی الگو دکتر هادی صدوقی یزدی 
+
 ---
 
-# مقدمه
+شبکه‌های عصبی مصنوعی پیشرفت‌های اخیر قابل توجهی را در طبقه‌بندی تصویر و تشخیص گفتار ایجاد کرده‌اند . اما اگرچه این ابزارها بسیار مفید و مبتنی بر روش‌های ریاضی شناخته شده هستند، اما در واقع ما به طرز شگفت‌آوری درک کمی از اینکه چرا برخی مدل‌ها کار می‌کنند و برخی دیگر نه، داریم. بنابراین بیایید نگاهی به چند تکنیک ساده برای بررسی درون این شبکه‌ها بیندازیم.
 
-**رویای عمیق** یک آزمایش است که الگوهای آموخته‌شده توسط یک شبکه‌ی عصبی را به تصویر می‌کشد. مشابه زمانی که یک کودک به ابرها نگاه می‌کند و سعی می‌کند اشکال تصادفی را تفسیر کند، رویای عمیق بیش‌ازحد تفسیر می‌کند و الگوهایی را که در یک تصویر می‌بیند تقویت می‌نماید.
+ما یک شبکه عصبی مصنوعی را با نشان دادن میلیون‌ها مثال آموزشی و تنظیم تدریجی پارامترهای شبکه تا زمانی که طبقه‌بندی‌های مورد نظر ما را ارائه دهد، آموزش می‌دهیم. این شبکه معمولاً از ۱۰ تا ۳۰ لایه انباشته از نورون‌های مصنوعی تشکیل شده است. هر تصویر به لایه ورودی وارد می‌شود که سپس با لایه بعدی ارتباط برقرار می‌کند تا در نهایت به لایه «خروجی» برسد. «پاسخ» شبکه از این لایه خروجی نهایی می‌آید.
 
-این کار با عبور دادن تصویر از شبکه انجام می‌شود، سپس گرادیان تصویر نسبت به فعال‌سازی‌های یک لایه‌ی خاص محاسبه می‌گردد. تصویر بعداً طوری تغییر داده می‌شود که این فعال‌سازی‌ها افزایش پیدا کنند؛ در نتیجه الگوهایی که شبکه تشخیص داده تقویت می‌شوند و خروجی به شکل تصویری شبیه به رؤیا در می‌آید.
-
-این فرایند **"Inceptionism"** نام‌گذاری شد (اشاره‌ای به [InceptionNet](https://arxiv.org/pdf/1409.4842.pdf) و همچنین فیلم [Inception](https://en.wikipedia.org/wiki/Inception)).
+**یکی از چالش‌های شبکه‌های عصبی، درک دقیق آنچه در هر لایه می‌گذرد**، است. ما می‌دانیم که پس از آموزش، هر لایه به تدریج ویژگی‌های سطح بالاتر و بالاتر تصویر را استخراج می‌کند، تا زمانی که لایه نهایی اساساً در مورد آنچه تصویر نشان می‌دهد تصمیمی بگیرد. به عنوان مثال، لایه اول ممکن است به دنبال لبه‌ها یا گوشه‌ها باشد. لایه‌های میانی ویژگی‌های اساسی را تفسیر می‌کنند تا به دنبال اشکال یا اجزای کلی، مانند یک در یا یک برگ، باشند. چند لایه نهایی این ویژگی‌ها را در تفسیرهای کامل جمع می‌کنند - این نورون‌ها در پاسخ به چیزهای بسیار پیچیده‌ای مانند کل ساختمان‌ها یا درختان فعال می‌شوند.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="/assets/patterneffort/deepdream/dogception.png" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="assets/patterneffort/deepdream/images/Screenshot 2025-10-14 0145319.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px; rgba(52, 51, 51, 1)">
+شمای یک شبکه ی عصبی
 </div>
 
-# ریشه‌ها و توسعه‌ی رویای عمیق
+یک راه برای تجسم آنچه اتفاق می‌افتد این است که شبکه را وارونه کنیم و از آن بخواهیم که یک تصویر ورودی را به گونه‌ای بهبود بخشد که تفسیر خاصی را ایجاد کند. فرض کنید می‌خواهید بدانید چه نوع تصویری منجر به "موز" می‌شود. با تصویری پر از نویز تصادفی شروع کنید، سپس به تدریج تصویر را به سمت آنچه شبکه عصبی موز می‌داند، تغییر دهید . این به خودی خود خیلی خوب کار نمی‌کند، اما اگر یک محدودیت قبلی اعمال کنیم که تصویر باید آمار مشابهی با تصاویر طبیعی داشته باشد، مانند پیکسل‌های همسایه که نیاز به همبستگی دارند، این کار را انجام می‌دهد.
 
-**رویای عمیق (Deep Dream)** از تحقیقات گوگل در زمینه‌ی **یادگیری عمیق (Deep Learning)** و **شبکه‌های عصبی (Neural Networks)** سرچشمه گرفت. هدف اصلی این بود که درک و تجسم شود که شبکه‌های عصبی چگونه تصاویر را ادراک و پردازش می‌کنند. با معکوس کردن کاربرد سنتی **CNNها (Convolutional Neural Networks)** که معمولاً برای دسته‌بندی و شناسایی الگوها در تصاویر استفاده می‌شوند، پژوهشگران شبکه‌ها را بازکاربرد دادند تا الگوها را تولید و تقویت کنند.
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image1.png" alt="IPS1" style="object-fit: contain;">
+</div>
 
-نتیجه، مجموعه‌ای از تصاویر شگفت‌انگیز و فراواقعی بود که تخیل عمومی را به خود جلب کرد.
+بنابراین یک نکته‌ی غافلگیرکننده وجود دارد: شبکه‌های عصبی که برای تمایز قائل شدن بین انواع مختلف تصاویر آموزش دیده‌اند، اطلاعات زیادی برای تولید تصاویر نیز دارند. به مثال‌های بیشتری در کلاس‌های مختلف نگاهی بیندازید:
 
-نام **"Deep Dream"** الهام‌گرفته از فیلم *Inception* بود که ماهیت بازگشتی این فرایند را منعکس می‌کند؛ جایی که شبکه در لایه‌های خود "رؤیا می‌بیند" و الگوها را به‌صورت تکراری تقویت می‌کند.
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image2.png" alt="IPS1" style="object-fit: contain;">
+</div>
 
-# درک رویای عمیق
+چرا این مهم است؟ خب، ما شبکه‌ها را با نشان دادن مثال‌های زیادی از آنچه می‌خواهیم یاد بگیرند، آموزش می‌دهیم، به این امید که اصل مطلب را استخراج کنند (مثلاً یک چنگال به یک دسته و ۲الی۴ دندانه نیاز دارد) و یاد بگیرند که آنچه مهم نیست را نادیده بگیرند (یک چنگال می‌تواند هر شکل، اندازه، رنگ یا جهتی داشته باشد). اما چگونه بررسی می‌کنید که شبکه ویژگی‌های صحیح را به درستی یاد گرفته است؟ این می‌تواند به تجسم نمایش شبکه از یک چنگال کمک کند.
 
-تولید تصویر توسط ماشین، یکی از ویژگی‌های **رویای عمیق (Deep Dreaming)** است. این تصاویر فوق‌العاده خلاقانه توسط یک شبکه‌ی عصبی تولید می‌شوند؛ شبکه‌ای که درواقع مجموعه‌ای از مدل‌های یادگیری آماری است که با الگوریتم‌هایی نسبتاً ساده و الهام‌گرفته از فرایندهای تکاملی هدایت می‌شوند.
+در واقع، در برخی موارد، این نشان می‌دهد که شبکه عصبی کاملاً به دنبال چیزی که ما فکر می‌کردیم نیست. به عنوان مثال، در اینجا یک شبکه عصبی که ما طراحی کردیم، دمبل‌ها را به این شکل در نظر گرفتیم:
 
-دانشمندان میلیون‌ها عکس را وارد این شبکه‌ها کرده‌اند تا آن‌ها را **آموزش (Training)** دهند و سپس به‌تدریج پارامترهای شبکه را تغییر داده‌اند تا به دسته‌بندی مطلوب برسند.
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image3.png" alt="IPS1" style="object-fit: contain;">
+</div>
 
-نحوه‌ی آموزش الگوریتم، تأثیر چشمگیری بر کل فرایند بهبود الگوهای تصویری دارد. به‌همین ترتیب، اگر یک الگوریتم برای شناسایی چهره‌ها در تصاویر آموزش دیده باشد، تلاش خواهد کرد تا از هر تصویری چهره استخراج کند. این پدیده به‌نوعی **پَرِیدولیا (Pareidolia)** الگوریتمی است.
+خب، دمبل‌هایی آنجا هستند، اما به نظر می‌رسد هیچ تصویری از دمبل بدون وجود یک وزنه‌بردار عضلانی که آنها را بلند کند، کامل نیست. در این مورد، شبکه نتوانسته است جوهره دمبل را به طور کامل استخراج کند. شاید هرگز دمبلی بدون دستی که آن را نگه داشته باشد، نشان داده نشده باشد. تجسم می‌تواند به ما در اصلاح این نوع اشتباهات آموزشی کمک کند.
+
+به جای اینکه دقیقاً تجویز کنیم که می‌خواهیم کدام ویژگی را شبکه تقویت کند، می‌توانیم به شبکه اجازه دهیم که این تصمیم را بگیرد. در این حالت، ما به سادگی یک تصویر یا عکس دلخواه را به شبکه می‌دهیم و اجازه می‌دهیم شبکه تصویر را تجزیه و تحلیل کند. سپس یک لایه را انتخاب می‌کنیم و از شبکه می‌خواهیم هر آنچه را که تشخیص می‌دهد، بهبود بخشد. هر لایه از شبکه با ویژگی‌هایی در سطح متفاوتی از انتزاع سروکار دارد، بنابراین پیچیدگی ویژگی‌هایی که تولید می‌کنیم به لایه‌ای که برای بهبود انتخاب می‌کنیم بستگی دارد. به عنوان مثال، لایه‌های پایین‌تر تمایل به ایجاد خطوط یا الگوهای ساده تزیینی دارند، زیرا این لایه‌ها به ویژگی‌های اساسی مانند لبه‌ها و جهت‌گیری‌های آنها حساس هستند.
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
+    <img src="assets/patterneffort/deepdream/images/image4.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px; color: rgba(52, 51, 51, 1)">
+چپ: عکس اصلی از زاچی ایونور . راست: پردازش شده توسط گونتر نواک، مهندس نرم‌افزار
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image5.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+چپ: نقاشی اصلی اثر ژرژ سورا . راست: تصاویر پردازش‌شده اثر متیو مک‌ناتون، مهندس نرم‌افزار
+</div>
+
+اگر لایه‌های سطح بالاتر را انتخاب کنیم، که ویژگی‌های پیچیده‌تری را در تصاویر شناسایی می‌کنند، ویژگی‌های پیچیده یا حتی کل اشیاء تمایل به ظهور دارند. باز هم، ما فقط با یک تصویر موجود شروع می‌کنیم و آن را به شبکه عصبی خود می‌دهیم. از شبکه می‌پرسیم: **"هر چیزی که آنجا می‌بینی، من بیشتر از آن می‌خواهم!"** این یک حلقه بازخورد ایجاد می‌کند: اگر ابری کمی شبیه پرنده باشد، شبکه آن را بیشتر شبیه پرنده می‌کند. این به نوبه خود باعث می‌شود شبکه در عبور بعدی پرنده را حتی قوی‌تر تشخیص دهد و به همین ترتیب ادامه یابد، تا زمانی که یک پرنده با جزئیات بسیار بالا، ظاهراً از ناکجاآباد، ظاهر شود.
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image6.png" alt="IPS1" style="object-fit: contain;">
+</div>
+
+نتایج جذاب هستند - حتی یک شبکه عصبی نسبتاً ساده می‌تواند برای تفسیر بیش از حد یک تصویر استفاده شود، درست مانند دوران کودکی که از تماشای ابرها و تفسیر شکل‌های تصادفی لذت می‌بردیم. این شبکه عمدتاً بر روی تصاویر حیوانات آموزش دیده است، بنابراین طبیعتاً تمایل دارد اشکال را به عنوان حیوان تفسیر کند. اما از آنجا که داده‌ها با چنین انتزاع بالایی ذخیره می‌شوند، نتایج ترکیبی جالب از این ویژگی‌های آموخته شده هستند.
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image7.png" alt="IPS1" style="object-fit: contain;">
+</div>
+
+البته، ما می‌توانیم با این تکنیک کارهای بیشتری از تماشای ابرها انجام دهیم. می‌توانیم آن را روی هر نوع تصویری اعمال کنیم. نتایج بسته به نوع تصویر کاملاً متفاوت است، زیرا ویژگی‌هایی که وارد می‌شوند، شبکه را به سمت تفاسیر خاصی سوق می‌دهند. به عنوان مثال، خطوط افق تمایل دارند پر از برج‌ها و بتکده‌ها شوند. سنگ‌ها و درختان به ساختمان تبدیل می‌شوند. پرندگان و حشرات در تصاویر برگ‌ها ظاهر می‌شوند.
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image8.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+تصویر اصلی بر نوع اشیایی که در تصویر پردازش شده شکل می‌گیرند، تأثیر می‌گذارد.
+</div>
+
+این تکنیک به ما یک حس کیفی از سطح انتزاعی که یک لایه خاص در درک تصاویر به آن دست یافته است، می‌دهد. ما این تکنیک را با اشاره به معماری شبکه عصبی مورد استفاده، «Inceptionism» می‌نامیم. برای جفت تصاویر بیشتر و نتایج پردازش شده آنها، به علاوه برخی انیمیشن‌های ویدیویی جالب، به گالری Inceptionism ما مراجعه کنید.
+
+#### باید عمیق‌تر برویم: تکرارها
+
+اگر الگوریتم را به صورت تکراری روی خروجی‌های خودش اعمال کنیم و بعد از هر تکرار مقداری بزرگنمایی اعمال کنیم، جریان بی‌پایانی از برداشت‌های جدید به دست می‌آوریم که مجموعه چیزهایی را که شبکه در مورد آنها می‌داند، بررسی می‌کند. ما حتی می‌توانیم این فرآیند را از یک تصویر با نویز تصادفی شروع کنیم، به طوری که نتیجه کاملاً نتیجه شبکه عصبی شود، همانطور که در تصاویر زیر مشاهده می‌شود:
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/image9.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px; rgba(52, 51, 51, 1)">
+«رویاهای» شبکه عصبی - که صرفاً از نویز تصادفی و با استفاده از شبکه‌ای که توسط <a href="https://www.um.ac.ir/" style="text-decoration:underline; color:green;" target="_blank">
+آزمایشگاه علوم کامپیوتر و هوش مصنوعی MIT روی مکان‌ها آموزش دیده است، تولید شده‌اند. برای مشاهده نسخه‌های با وضوح بالا از تصاویر بالا و موارد دیگر، به
+</a> 
+<a href="https://www.um.ac.ir/" style="text-decoration:underline; color:rgba(114, 230, 5, 1);" target="_blank">
+گالری Inceptionism
+</a> مراجعه کنید  (تصاویر با علامت «Places205-GoogLeNet» با استفاده از این شبکه ساخته شده‌اند).
+</div>
+
+تکنیک‌های ارائه شده در اینجا به ما کمک می‌کنند تا درک و تجسم کنیم که چگونه شبکه‌های عصبی قادر به انجام وظایف دشوار طبقه‌بندی، بهبود معماری شبکه و بررسی آنچه شبکه در طول آموزش آموخته است، هستند. همچنین این موضوع ما را به این فکر می‌اندازد که آیا شبکه‌های عصبی می‌توانند به ابزاری برای هنرمندان تبدیل شوند - راهی جدید برای ترکیب مفاهیم بصری - یا شاید حتی کمی ریشه‌های فرآیند خلاقیت را به طور کلی روشن کنند.
+
+ ایجاد کرده‌اند . اما اگرچه این ابزارها بسیار مفید و مبتنی بر روش‌های ریاضی شناخته شده هستند، اما در واقع ما به طرز شگفت‌آوری درک کمی از اینکه چرا برخی مدل‌ها کار می‌کنند و برخی دیگر نه، داریم. بنابراین بیایید نگاهی به چند تکنیک ساده برای بررسی درون این شبکه‌ها بیندازیم.
+
+ما یک شبکه عصبی مصنوعی را با نشان دادن میلیون‌ها مثال آموزشی و تنظیم تدریجی پارامترهای شبکه تا زمانی که طبقه‌بندی‌های مورد نظر ما را ارائه دهد، آموزش می‌دهیم. این شبکه معمولاً از ۱۰ تا ۳۰ لایه انباشته از نورون‌های مصنوعی تشکیل شده است. هر تصویر به لایه ورودی وارد می‌شود که سپس با لایه بعدی ارتباط برقرار می‌کند تا در نهایت به لایه «خروجی» برسد. «پاسخ» شبکه از این لایه خروجی نهایی می‌آید.
+
+یکی از چالش‌های شبکه‌های عصبی، درک دقیق آنچه در هر لایه می‌گذرد، است. ما می‌دانیم که پس از آموزش، هر لایه به تدریج ویژگی‌های سطح بالاتر و بالاتر تصویر را استخراج می‌کند، تا زمانی که لایه نهایی اساساً در مورد آنچه تصویر نشان می‌دهد تصمیمی بگیرد. به عنوان مثال، لایه اول ممکن است به دنبال لبه‌ها یا گوشه‌ها باشد. لایه‌های میانی ویژگی‌های اساسی را تفسیر می‌کنند تا به دنبال اشکال یا اجزای کلی، مانند یک در یا یک برگ، باشند. چند لایه نهایی این ویژگی‌ها را در تفسیرهای کامل جمع می‌کنند - این نورون‌ها در پاسخ به چیزهای بسیار پیچیده‌ای مانند کل ساختمان‌ها یا درختان فعال می‌شوند.
+
+یک راه برای تجسم آنچه اتفاق می‌افتد این است که شبکه را وارونه کنیم و از آن بخواهیم که یک تصویر ورودی را به گونه‌ای بهبود بخشد که تفسیر خاصی را ایجاد کند. فرض کنید می‌خواهید بدانید چه نوع تصویری منجر به "موز" می‌شود. با تصویری پر از نویز تصادفی شروع کنید، سپس به تدریج تصویر را به سمت آنچه شبکه عصبی موز می‌داند، تغییر دهید (به کارهای مرتبط در  مراجعه کنید ). این به خودی خود خیلی خوب کار نمی‌کند، اما اگر یک محدودیت قبلی اعمال کنیم که تصویر باید آمار مشابهی با تصاویر طبیعی داشته باشد، مانند پیکسل‌های همسایه که نیاز به همبستگی دارند، این کار را انجام می‌دهد.
+
+---
 
 # رویای عمیق چگونه کار می‌کند؟
 
 در هسته‌ی خود، رویای عمیق از یک **CNN** استفاده می‌کند که روی یک مجموعه‌داده‌ی عظیم از تصاویر آموزش دیده است. یک **CNN** از لایه‌هایی از گره‌های به‌هم‌پیوسته یا نورون‌ها تشکیل شده است که هر لایه مسئول تشخیص سطوح مختلفی از ویژگی‌های یک تصویر است—از لبه‌های ساده گرفته تا اشیای پیچیده.
 
 زمانی‌که یک تصویر به رویای عمیق داده می‌شود، برنامه الگوهایی را که یاد گرفته شناسایی کند تقویت می‌کند. این کار از طریق فرایندی به‌نام *"Inceptionism"* انجام می‌شود؛ جایی که شبکه دستور می‌گیرد تشخیص ویژگی‌ها را در لایه‌های مختلف به حداکثر برساند.
-
-<div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom:15px ">
-    <img src="/assets/patterneffort/deepdream/Screenshot-2024-05-26-004105.webp" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
-</div>
-
-برای نمونه، اگر شبکه الگویی شبیه به یک سگ تشخیص دهد، آن الگو را تقویت می‌کند و تصویر به‌گونه‌ای تغییر می‌کند که پر از اشکال و فرم‌های شبیه به سگ به‌نظر برسد.
 
 بیایید نشان دهیم که چگونه می‌توان یک **Neural Network** را وادار کرد تا "Dream" ببیند و الگوهای فراواقعی‌ای را که در یک تصویر مشاهده می‌کند تقویت کند.
 
@@ -77,10 +161,15 @@ import PIL.Image
 
 ## یک تصویر برای Dream-ify انتخاب کنید
 
-برای این آموزش، بیایید از یک تصویر [Labrador](https://commons.wikimedia.org/wiki/) 
+برای این آموزش، بیایید از یک تصویر Labrador استفاده کنیم
+
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="https://storage.googleapis.com/download.tensorflow.org/example_images/YellowLabradorLooking_new.jpg" alt="IPS1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="assets/patterneffort/deepdream/images/D1.png" alt="IPS1" style="object-fit: contain;">
 </div>
+<div class="caption" style="text-align: center; margin-top: 8px; rgba(52, 51, 51, 1)">
+yellow labrador
+</div>
+
 
 ```python
 # Download an image and read it into a NumPy array.
@@ -110,15 +199,24 @@ display.display(display.HTML('Image cc-by: <a "href=https://commons.wikimedia.or
 
 ## آماده‌سازی مدل استخراج ویژگی‌ها
 
-یک مدل **Image Classification** از پیش آموزش‌دیده دانلود و آماده کنید. شما از [InceptionV3](https://keras.io/api/applications/inceptionv3/) استفاده خواهید کرد که مشابه مدلی است که در اصل در **DeepDream** به‌کار رفته بود.
 
-توجه داشته باشید که هر [مدل از پیش آموزش‌دیده](https://keras.io/api/applications/#available-models) دیگری نیز قابل استفاده است، اگرچه در این صورت باید نام لایه‌ها را در ادامه مطابق تغییرات جدید تنظیم کنید.
+
+یک مدل **Image Classification** از پیش آموزش‌دیده دانلود و آماده کنید. شما از <a href="https://keras.io/api/applications/inceptionv3/" style="display:inline-block ;text-decoration:underline; color:rgba(15, 134, 218, 1);" target="_blank">
+InceptionV3
+</a>
+ استفاده خواهید کرد که مشابه مدلی است که در اصل در **DeepDream** به‌کار رفته بود.
+
+توجه داشته باشید که هر <a href="https://keras.io/api/applications/#available-models" style="display:inline-block ;text-decoration:underline; color:rgba(15, 134, 218, 1);" target="_blank">
+مدل از پیش آموزش‌دیده
+</a> دیگری نیز قابل استفاده است، اگرچه در این صورت باید نام لایه‌ها را در ادامه مطابق تغییرات جدید تنظیم کنید.
 
 base_model = tf.keras.applications.InceptionV3(include_top=False, weights='imagenet')
 
 ایده‌ی **DeepDream** این است که یک لایه (یا چند لایه) انتخاب شود و **"Loss"** به‌گونه‌ای به حداکثر برسد که تصویر به‌طور فزاینده‌ای لایه‌ها را "تحریک" کند. پیچیدگی ویژگی‌هایی که در تصویر ایجاد می‌شوند بستگی به لایه‌های انتخاب‌شده توسط شما دارد؛ به‌عبارت دیگر، لایه‌های پایین‌تر **Strokeها** یا الگوهای ساده تولید می‌کنند، در حالی که لایه‌های عمیق‌تر ویژگی‌های پیچیده‌تری در تصاویر ایجاد می‌کنند یا حتی اشیای کامل را نمایان می‌سازند.
 
-معماری **InceptionV3** نسبتاً بزرگ است (برای مشاهده‌ی نمودار معماری مدل به مخزن تحقیقاتی **TensorFlow** مراجعه کنید: [research repo](https://github.com/tensorflow/models/tree/master/research/slim)).
+معماری **InceptionV3** نسبتاً بزرگ است (برای مشاهده‌ی نمودار معماری مدل به مخزن تحقیقاتی **TensorFlow** مراجعه کنید: <a href="https://github.com/tensorflow/models/tree/master/research/slim" style="display:inline-block ;text-decoration:underline; color:rgba(15, 134, 218, 1);" target="_blank">
+research repo
+</a>).
 
 برای **DeepDream**، لایه‌های مورد علاقه آن‌هایی هستند که در آن‌ها **Convolutions** با هم **Concatenate** شده‌اند. در **InceptionV3** یازده لایه از این نوع وجود دارد که با نام‌های `'mixed0'` تا `'mixed10'` شناخته می‌شوند. استفاده از لایه‌های مختلف منجر به تولید تصاویر رؤیایی متفاوت خواهد شد.
 
@@ -164,7 +262,11 @@ def calc_loss(img, model):
 
 افزودن گرادیان‌ها به تصویر، الگوهایی را که شبکه مشاهده می‌کند تقویت می‌کند. در هر مرحله، تصویری ایجاد می‌کنید که به‌طور فزاینده‌ای **Activations** لایه‌های خاصی در شبکه را تحریک می‌کند.
 
-متدی که این کار را انجام می‌دهد، در ادامه داخل یک `tf.function` برای بهبود عملکرد قرار گرفته است. این متد از یک `input_signature` استفاده می‌کند تا اطمینان حاصل شود که تابع برای اندازه‌های مختلف تصویر یا مقادیر `steps`/`step_size` دوباره ردیابی (**retrace**) نمی‌شود. برای جزئیات بیشتر به [Concrete functions guide](../../guide/function.ipynb) مراجعه کنید.
+متدی که این کار را انجام می‌دهد، در ادامه داخل یک `tf.function` برای بهبود عملکرد قرار گرفته است. این متد از یک `input_signature` استفاده می‌کند تا اطمینان حاصل شود که تابع برای اندازه‌های مختلف تصویر یا مقادیر `steps`/`step_size` دوباره ردیابی (**retrace**) نمی‌شود. برای جزئیات بیشتر به <a href="https://www.tensorflow.org/guide/function?_gl=1*zg0fad*_up*MQ..*_ga*ODgxNTAwNzQ5LjE3NjA5ODUxMjc.*_ga_W0YLR4190T*czE3NjA5ODUxMjYkbzEkZzAkdDE3NjA5ODUxMjYkajYwJGwwJGgw" style="display:inline ;text-decoration:underline; color:rgba(15, 134, 218, 1);" target="_blank">
+Concrete functions guide
+</a> مراجعه کنید.
+
+
 
 ```python
 class DeepDream(tf.Module):
@@ -232,6 +334,11 @@ dream_img = run_deep_dream_simple(img=original_img,
                                   steps=100, step_size=0.01)
 
 ```
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/D2.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+</div>
 
 ## افزایش مقیاس (Taking it up an octave)
 
@@ -271,6 +378,12 @@ end = time.time()
 end-start
 ```
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/D3.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+</div>
+
 ## اختیاری: افزایش مقیاس با استفاده از **Tiles**
 
 یکی از مواردی که باید در نظر گرفته شود این است که با افزایش اندازه‌ی تصویر، زمان و حافظه لازم برای محاسبه‌ی گرادیان نیز افزایش می‌یابد. پیاده‌سازی **Octave** بالا روی تصاویر بسیار بزرگ یا تعداد زیادی **Octave** کار نخواهد کرد.
@@ -289,7 +402,16 @@ def random_roll(img, maxroll):
   return shift, img_rolled
 shift, img_rolled = random_roll(np.array(original_img), 512)
 show(img_rolled)
+```
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/D4.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+</div>
+
 در اینجا نسخه‌ی **Tiled** معادل تابع `deepdream` که قبلاً تعریف شده بود، آورده شده است:
+
+```python
 class TiledGradients(tf.Module):
   def __init__(self, model):
     self.model = model
@@ -371,10 +493,41 @@ img = tf.image.resize(img, base_shape)
 img = tf.image.convert_image_dtype(img/255.0, dtype=tf.uint8)
 show(img)
 ```
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/D5.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+</div>
 
 خیلی بهتر شد! با تغییر تعداد **Octaveها**، **Octave Scale** و لایه‌های فعال‌شده، می‌توانید ظاهر تصویر **DeepDream** خود را تغییر دهید.
 
-خوانندگان ممکن است به [TensorFlow Lucid](https://github.com/tensorflow/lucid) نیز علاقه‌مند باشند، که ایده‌های معرفی‌شده در این آموزش را گسترش می‌دهد تا شبکه‌های عصبی را تجسم و تفسیر کنند.
+خوانندگان ممکن است به <a href="https://github.com/tensorflow/lucid" style="display:inline-block ;text-decoration:underline; color:rgba(15, 134, 218, 1);" target="_blank">
+TensorFlow Lucid
+</a> نیز علاقه‌مند باشند، که ایده‌های معرفی‌شده در این آموزش را گسترش می‌دهد تا شبکه‌های عصبی را تجسم و تفسیر کنند.
+
+---
+
+تا الان این آزمایش روی لایه های سطح بالا در  مدل انتخابی انجام شد , همچنین اگر از لایه های سطح پایین در این مدل انتخاب کنیم , خروجی اینگونه تغییر میکند :
+
+کافی است در قسمت تایین نام لایه ها این کد را جایگزین کنیم:
+
+```python
+# Maximize the activations of these layers
+names = ['mixed7', 'mixed8']
+layers = [base_model.get_layer(name).output for name in names]
+
+# Create the feature extraction model
+dream_model = tf.keras.Model(inputs=base_model.input, outputs=layers)
+```
+و میبینیم که در خروجی , ویژگی های سطح پایین مثل خطوط تقویت شده اند :
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="assets/patterneffort/deepdream/images/D6.png" alt="IPS1" style="object-fit: contain;">
+</div>
+<div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
+</div>
+
+---
 
 ## کاربردها و موارد استفاده خلاقانه
 
@@ -405,13 +558,46 @@ show(img)
 
 دیپ دریم همچنین یک ابزار آموزشی است که با ارائه تجربه‌های تعاملی، به درک بهتر شبکه‌های عصبی و اصول هوش مصنوعی کمک می‌کند. این پیشرفت‌ها نشان‌دهنده توانایی رویای عمیق در **نوآوری، الهام‌بخشی و توجه به دغدغه‌های اخلاقی و اجتماعی** در حوزه‌های گوناگون است.
 
-## نتیجه‌گیری
 
-به طور خلاصه، رویای عمیق ترکیبی از **هنر و هوش مصنوعی** است که ظرفیت عظیم خلق بصری ارتقایافته توسط هوش مصنوعی را نشان می‌دهد. تأثیر دگرگون‌کننده آن بر هنر، تصویربرداری پزشکی، واقعیت افزوده و بازی‌ها، توانایی آن در **انطباق‌پذیری و الهام‌بخشی** را به نمایش می‌گذارد. افزون بر این، با هر تصویری که به الگوریتم داده می‌شود، رویای عمیق بهبود یافته و نتایج پیشین خود را پشت سر می‌گذارد.
+### چرا DeepDream این‌قدر جذاب شد:
+
+از منظر علمی، DeepDream ابزار بصری خوبی بود تا پژوهشگران و مهندسین بفهمند چه «ویژگی‌ها» در لایه‌های مختلف شبکه کدگذاری شده‌اند؛ این به شناسایی سوگیری‌ها، خطاها یا نقاط ضعف آموزش کمک می‌کند. 
+
+از منظر فرهنگی و هنری، خروجی‌های آن به‌سرعت در شبکه‌های اجتماعی و گالری‌ها پخش شد و هنرمندان دیجیتال شروع به استفاده و توسعهٔ این تکنیک کردند؛ این باعثِ تقابل جالب میان علومِ کامپیوتر و هنر شد و بحث‌هایی دربارهٔ «خلاقیت» در ماشین‌ها برانگیخت. نمونه‌هایی از آثار ویدئویی و پروژه‌های هنری مبتنی بر DeepDream نیز رسانه‌ها را جذب کردند.
+
+### تکاملِ فنی پس از انتشار اولیه:
+پس از انتشار، پژوهشگران و مهندسان تکنیک‌های مرتبط (مثل guided-backpropagation، regularizationهای مختلف، multi-scale processing یا «octaves») را ترکیب کردند تا کنترل بهتری روی الگوها و نویز داشته باشند و خروجی‌های معنادارتری تولید کنند؛ همین تلاش‌ها بعدها در کارهای گسترده‌تری در حوزهٔ feature visualization و interpretability ادغام شد. منابع آموزشی مثل مقالهٔ تفصیلیِ Distill توسط Chris Olah نیز این مفاهیم را جمع‌بندی و توسعه دادند.
+
+---
 
 # منابع
 
-- <https://www.tensorflow.org/tutorials/generative/deepdream?utm_source=chatgpt.com>
-- <https://research.google/blog/inceptionism-going-deeper-into-neural-networks/>
-- <https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/>
-- <https://en.wikipedia.org/wiki/DeepDream>
+
+
+<a href="https://research.google/blog/inceptionism-going-deeper-into-neural-networks/" style=" display:block ;text-decoration:underline; color:green;" target="_blank">
+ - https://research.google/blog/inceptionism-going-deeper-into-neural-networks
+</a>
+
+<a href="https://www.youtube.com/watch?v=BsSmBPmPeYQ" style="display:block ;text-decoration:underline; color:rgba(104, 211, 4, 1);;" target="_blank">
+- https://www.youtube.com
+</a>
+
+<a href="https://www.wired.com/beyond-the-beyond/2016/09/showtime-gene-kogan-deepdream-densecap/" style="display:block ;text-decoration:underline; color:green;" target="_blank">
+- https://www.wired.com/beyond-the-beyond/2016/09
+</a>
+
+<a href="https://distill.pub/2017/feature-visualization/" style="display:block ;text-decoration:underline; margin-button:10px; color:rgba(104, 211, 4, 1);;" target="_blank">
+- https://distill.pub/2017/feature-visualization
+</a>
+
+<a href="https://www.tensorflow.org/tutorials/generative/deepdream" style="display:block ;text-decoration:underline; color:green;" target="_blank">
+- https://www.tensorflow.org/tutorials/generative/deepdream
+</a>
+
+<a href="https://en.wikipedia.org/wiki/DeepDream" style="display:block ;text-decoration:underline; margin-button:10px; color:rgba(104, 211, 4, 1);;" target="_blank">
+- https://en.wikipedia.org/wiki/DeepDream
+</a>
+
+<a href="https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/" style="display:block ;text-decoration:underline; color:green;" target="_blank">
+- https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/
+</a>
