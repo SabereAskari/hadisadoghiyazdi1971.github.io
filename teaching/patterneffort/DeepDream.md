@@ -135,10 +135,6 @@ header:
 
 ما یک شبکه عصبی مصنوعی را با نشان دادن میلیون‌ها مثال آموزشی و تنظیم تدریجی پارامترهای شبکه تا زمانی که طبقه‌بندی‌های مورد نظر ما را ارائه دهد، آموزش می‌دهیم. این شبکه معمولاً از ۱۰ تا ۳۰ لایه انباشته از نورون‌های مصنوعی تشکیل شده است. هر تصویر به لایه ورودی وارد می‌شود که سپس با لایه بعدی ارتباط برقرار می‌کند تا در نهایت به لایه «خروجی» برسد. «پاسخ» شبکه از این لایه خروجی نهایی می‌آید.
 
-یکی از چالش‌های شبکه‌های عصبی، درک دقیق آنچه در هر لایه می‌گذرد، است. ما می‌دانیم که پس از آموزش، هر لایه به تدریج ویژگی‌های سطح بالاتر و بالاتر تصویر را استخراج می‌کند، تا زمانی که لایه نهایی اساساً در مورد آنچه تصویر نشان می‌دهد تصمیمی بگیرد. به عنوان مثال، لایه اول ممکن است به دنبال لبه‌ها یا گوشه‌ها باشد. لایه‌های میانی ویژگی‌های اساسی را تفسیر می‌کنند تا به دنبال اشکال یا اجزای کلی، مانند یک در یا یک برگ، باشند. چند لایه نهایی این ویژگی‌ها را در تفسیرهای کامل جمع می‌کنند - این نورون‌ها در پاسخ به چیزهای بسیار پیچیده‌ای مانند کل ساختمان‌ها یا درختان فعال می‌شوند.
-
-یک راه برای تجسم آنچه اتفاق می‌افتد این است که شبکه را وارونه کنیم و از آن بخواهیم که یک تصویر ورودی را به گونه‌ای بهبود بخشد که تفسیر خاصی را ایجاد کند. فرض کنید می‌خواهید بدانید چه نوع تصویری منجر به "موز" می‌شود. با تصویری پر از نویز تصادفی شروع کنید، سپس به تدریج تصویر را به سمت آنچه شبکه عصبی موز می‌داند، تغییر دهید (به کارهای مرتبط در  مراجعه کنید ). این به خودی خود خیلی خوب کار نمی‌کند، اما اگر یک محدودیت قبلی اعمال کنیم که تصویر باید آمار مشابهی با تصاویر طبیعی داشته باشد، مانند پیکسل‌های همسایه که نیاز به همبستگی دارند، این کار را انجام می‌دهد.
-
 ---
 
 # رویای عمیق چگونه کار می‌کند؟
@@ -162,9 +158,7 @@ header:
 ```python
 import tensorflow as tf
 import numpy as np
-
 import matplotlib as mpl
-
 import IPython.display as display
 import PIL.Image
 ```
@@ -182,6 +176,8 @@ yellow labrador
 
 
 ```python
+url = 'https://storage.googleapis.com/download.tensorflow.org/example_images/YellowLabradorLooking_new.jpg'
+
 # Download an image and read it into a NumPy array.
 def download(url, max_dim=None):
   name = url.split('/')[-1]
@@ -220,7 +216,10 @@ InceptionV3
 مدل از پیش آموزش‌دیده
 </a> دیگری نیز قابل استفاده است، اگرچه در این صورت باید نام لایه‌ها را در ادامه مطابق تغییرات جدید تنظیم کنید.
 
+```python
 base_model = tf.keras.applications.InceptionV3(include_top=False, weights='imagenet')
+
+```
 
 ایده‌ی **DeepDream** این است که یک لایه (یا چند لایه) انتخاب شود و **"Loss"** به‌گونه‌ای به حداکثر برسد که تصویر به‌طور فزاینده‌ای لایه‌ها را "تحریک" کند. پیچیدگی ویژگی‌هایی که در تصویر ایجاد می‌شوند بستگی به لایه‌های انتخاب‌شده توسط شما دارد؛ به‌عبارت دیگر، لایه‌های پایین‌تر **Strokeها** یا الگوهای ساده تولید می‌کنند، در حالی که لایه‌های عمیق‌تر ویژگی‌های پیچیده‌تری در تصاویر ایجاد می‌کنند یا حتی اشیای کامل را نمایان می‌سازند.
 
@@ -311,8 +310,16 @@ class DeepDream(tf.Module):
         img = tf.clip_by_value(img, -1, 1)
 
       return loss, img
+```
+
+```python      
 deepdream = DeepDream(dream_model)
+```
+
 ## Main Loop
+
+```python
+
 def run_deep_dream_simple(img, steps=100, step_size=0.01):
   # Convert from uint8 to the range expected by the model.
   img = tf.keras.applications.inception_v3.preprocess_input(img)
@@ -340,6 +347,9 @@ def run_deep_dream_simple(img, steps=100, step_size=0.01):
   show(result)
 
   return result
+```
+
+```python
 dream_img = run_deep_dream_simple(img=original_img, 
                                   steps=100, step_size=0.01)
 
@@ -410,6 +420,9 @@ def random_roll(img, maxroll):
   shift = tf.random.uniform(shape=[2], minval=-maxroll, maxval=maxroll, dtype=tf.int32)
   img_rolled = tf.roll(img, shift=shift, axis=[0,1])
   return shift, img_rolled
+```
+
+```python
 shift, img_rolled = random_roll(np.array(original_img), 512)
 show(img_rolled)
 ```
@@ -467,9 +480,16 @@ class TiledGradients(tf.Module):
     # Normalize the gradients.
     gradients /= tf.math.reduce_std(gradients) + 1e-8 
 
-    return gradients 
+    return gradients
+```
+
+```python
 get_tiled_gradients = TiledGradients(dream_model)
+```
+
 با کنار هم قرار دادن این بخش‌ها، یک پیاده‌سازی **DeepDream** مقیاس‌پذیر و **Octave-aware** به‌دست می‌آید:
+
+```python
 def run_deep_dream_with_octaves(img, steps_per_octave=100, step_size=0.01, 
                                 octaves=range(-2,3), octave_scale=1.3):
   base_shape = tf.shape(img)
@@ -496,6 +516,9 @@ def run_deep_dream_with_octaves(img, steps_per_octave=100, step_size=0.01,
     
   result = deprocess(img)
   return result
+```
+
+```python
 img = run_deep_dream_with_octaves(img=original_img, step_size=0.01)
 
 display.clear_output(wait=True)
