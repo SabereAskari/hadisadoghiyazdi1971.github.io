@@ -147,6 +147,16 @@ header:
 
 زمانی‌که یک تصویر به رویای عمیق داده می‌شود، برنامه الگوهایی را که یاد گرفته شناسایی کند تقویت می‌کند. این کار از طریق فرایندی به‌نام *"Inceptionism"* انجام می‌شود؛ جایی که شبکه دستور می‌گیرد تشخیص ویژگی‌ها را در لایه‌های مختلف به حداکثر برساند.
 
+#### مراحل ایجاد DeepDream
+
+1. ابتدا با یک تصویر شروع می‌کنیم و آن را به یک شبکه‌ی عصبی پیچشی (Convolutional Neural Network) از پیش آموزش‌دیده مانند Inception وارد می‌کنیم.
+
+2. به‌جای اینکه فقط فعال‌سازی یک فیلتر خاص را بیشینه کنیم، تلاش می‌کنیم فعال‌سازیِ کلِ یک لایه را بیشینه کنیم. برای این منظور، یک تابع هزینه (Loss Function) ساده تعریف می‌کنیم که مقدار میانگین فعال‌سازی‌های آن لایه را محاسبه کرده و سعی می‌کند آن را افزایش دهد.
+
+3. سپس ورودی خود (یعنی تصویر) را تغییر می‌دهیم؛ به این صورت که گرادیان تابع هزینه را نسبت به تصویر محاسبه کرده و آن را روی تصویر اعمال می‌کنیم. این کار باعث می‌شود تصویر به سمتی تغییر کند که تابع هزینه (و در نتیجه فعال‌سازی‌ها) بیشینه شود.
+
+4. در نهایت، برای کار با تصاویر بزرگ و بهینه‌سازی مصرف حافظه  و همچنین دستیابی به نتایج بهتر، از تکنیک‌هایی مانند تقسیم تصویر به کاشی‌ها (Tiling) و چند مقیاسی یا اکتاوها (Octaves) استفاده می‌شود.
+
 بیایید نشان دهیم که چگونه می‌توان یک **Neural Network** را وادار کرد تا "Dream" ببیند و الگوهای فراواقعی‌ای را که در یک تصویر مشاهده می‌کند تقویت کند.
 
 ```python
@@ -580,32 +590,40 @@ dream_model = tf.keras.Model(inputs=base_model.input, outputs=layers)
         Inceptionism: Going Deeper into Neural Networks
     </a>
   </li>
+
+  <li>
+    <a href="https://www.youtube.com/watch?v=BsSmBPmPeYQ" style="text-decoration:underline; color:green;" target="_blank">
+        Deep Dream (Google) - Computerphile
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.wired.com/beyond-the-beyond/2016/09/showtime-gene-kogan-deepdream-densecap/" style="text-decoration:underline; color:green;" target="_blank">
+        https://www.wired.com/beyond-the-beyond/2016/09
+    </a>
+  </li>
+
+  <li>
+    <a href="https://distill.pub/2017/feature-visualization/" style="text-decoration:underline; color:green;" target="_blank">
+        https://distill.pub/2017/feature-visualization
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.tensorflow.org/tutorials/generative/deepdream" style="text-decoration:underline; color:green;" target="_blank">
+        https://www.tensorflow.org/tutorials/generative/deepdream
+    </a>
+  </li>
+
+   <li>
+    <a href="https://en.wikipedia.org/wiki/DeepDream" style="text-decoration:underline; color:green;" target="_blank">
+        https://en.wikipedia.org/wiki/DeepDream
+    </a>
+  </li>
+
+   <li>
+    <a href="https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/" style="text-decoration:underline; color:green;" target="_blank">
+        https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/
+    </a>
+  </li>
 </ul>
-
-<a href="https://research.google/blog/inceptionism-going-deeper-into-neural-networks/" style=" display:block ;text-decoration:underline; color:green;" target="_blank">
- - https://research.google/blog/inceptionism-going-deeper-into-neural-networks
-</a>
-
-<a href="https://www.youtube.com/watch?v=BsSmBPmPeYQ" style="display:block ;text-decoration:underline; color:rgba(104, 211, 4, 1);;" target="_blank">
-- https://www.youtube.com
-</a>
-
-<a href="https://www.wired.com/beyond-the-beyond/2016/09/showtime-gene-kogan-deepdream-densecap/" style="display:block ;text-decoration:underline; color:green;" target="_blank">
-- https://www.wired.com/beyond-the-beyond/2016/09
-</a>
-
-<a href="https://distill.pub/2017/feature-visualization/" style="display:block ;text-decoration:underline; margin-button:10px; color:rgba(104, 211, 4, 1);;" target="_blank">
-- https://distill.pub/2017/feature-visualization
-</a>
-
-<a href="https://www.tensorflow.org/tutorials/generative/deepdream" style="display:block ;text-decoration:underline; color:green;" target="_blank">
-- https://www.tensorflow.org/tutorials/generative/deepdream
-</a>
-
-<a href="https://en.wikipedia.org/wiki/DeepDream" style="display:block ;text-decoration:underline; margin-button:10px; color:rgba(104, 211, 4, 1);;" target="_blank">
-- https://en.wikipedia.org/wiki/DeepDream
-</a>
-
-<a href="https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/" style="display:block ;text-decoration:underline; color:green;" target="_blank">
-- https://www.geeksforgeeks.org/computer-vision/deep-dream-an-in-depth-exploration/
-</a>
