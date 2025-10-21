@@ -1251,3 +1251,42 @@ CMU-10715.
 CE-477/CS-828.
 
 [6] G. Strang, “Linear algebra and its applications,” 2000.
+
+
+
+## our proposed  
+
+
+### Proposed Mathematical Formulation: Denoising-Enhanced Semantic Projection for Robust Retrieval
+
+#### 1. Problem Formulation
+
+Let $\mathcal{D} = \{d_1, d_2, \ldots, d_N\}$ represent a corpus of text documents, where each document $d_i$ may be corrupted by noise $\eta_i$, yielding the observed noisy document $\tilde{d}_i = d_i + \eta_i$. This noise may manifest as informal language, abbreviations, typographical errors, or other perturbations that degrade semantic coherence.
+
+In a standard RAG pipeline, a pre-trained encoder model $\mathcal{E}: \mathcal{X} \to \mathbb{R}^m$ maps a document to a high-dimensional embedding vector $\mathbf{x}_i = \mathcal{E}(\tilde{d}_i) \in \mathbb{R}^m$, where $m$ is typically large (e.g., 1024 or 3072). The retrieval function $\mathcal{R}(\mathbf{q}, \{\mathbf{x}_i\})$ then computes the similarity between a query embedding $\mathbf{q} = \mathcal{E}(q)$ and the corpus embeddings $\{\mathbf{x}_i\}$ to retrieve the most relevant documents.
+
+The core problem we address is that the noise $\eta_i$ in $\tilde{d}_i$ induces a perturbation $\boldsymbol{\epsilon}_i$ in the embedding space, such that $\mathbf{x}_i = \mathbf{x}_i^* + \boldsymbol{\epsilon}_i$, where $\mathbf{x}_i^* = \mathcal{E}(d_i)$ is the ideal, noise-free embedding. This perturbation misaligns the embeddings from their true semantic positions, leading to suboptimal retrieval performance.
+
+#### 2. Proposed Denoising-Enabled Embedding Projection
+
+We propose to learn a **Denoising Projection Layer** $\mathcal{P}: \mathbb{R}^m \to \mathbb{R}^k$, which maps the noisy, high-dimensional embedding $\mathbf{x}_i$ to a purified, lower-dimensional representation $\mathbf{z}_i \in \mathbb{R}^k$, with $k \ll m$. The objective of $\mathcal{P}$ is to minimize the effect of the noise perturbation while preserving the essential semantic information.
+
+This can be formulated as an optimization problem. Let $\mathbf{X} \in \mathbb{R}^{N \times m}$ be the matrix of noisy embeddings. We seek a projection matrix $\mathbf{W} \in \mathbb{R}^{m \times k}$ such that the projected embeddings $\mathbf{Z} = \mathbf{X} \mathbf{W}$ satisfy:
+
+$$
+\min_{\mathbf{W}} \quad \underbrace{\left\|\mathbf{X}^* - \mathbf{X} \mathbf{W} \mathbf{W}^\top\right\|_F^2}_{\text{Reconstruction Error}} + \lambda_1 \underbrace{\operatorname{tr}\left(\mathbf{W}^\top \boldsymbol{\Sigma}_\eta \mathbf{W}\right)}_{\text{Noise Suppression}} - \lambda_2 \underbrace{\operatorname{tr}\left(\mathbf{W}^\top \mathbf{X}^\top \mathbf{X} \mathbf{W}\right)}_{\text{Semantic Variance Maximization}}
+$$
+
+**Subject to:** $\mathbf{W}^\top \mathbf{W} = \mathbf{I}_k$
+
+Where:
+- $\mathbf{X}^*$ is the (unobservable) matrix of ideal, noise-free embeddings. In practice, this is approximated using a robust estimator or a contrastive learning objective.
+- $\boldsymbol{\Sigma}_\eta$ is the covariance matrix of the noise $\boldsymbol{\epsilon}_i$, estimated from a corpus of noisy-clean text pairs or via data augmentation.
+- The first term aims to reconstruct the clean semantic manifold.
+- The second term penalizes the projection of directions with high noise variance, actively suppressing noisy components.
+- The third term acts as a regularizer that encourages the projected space $\mathbf{Z}$ to retain high variance, thereby preserving discriminative semantic features.
+- The orthogonality constraint $\mathbf{W}^\top \mathbf{W} = \mathbf{I}_k$ ensures the projection does not arbitrarily stretch or shrink the space.
+
+The hyperparameters $\lambda_1, \lambda_2 \geq 0$ control the trade-off between noise removal and information retention. The resulting purified embedding for retrieval is $\mathbf{z}_i = \mathbf{x}_i \mathbf{W}$.
+
+This formulation generalizes classical PCA (which would only consider the third term and the constraint) by explicitly incorporating a noise model, thereby enabling a more principled and targeted approach to building noise-resilient semantic representations for efficient and accurate retrieval.
