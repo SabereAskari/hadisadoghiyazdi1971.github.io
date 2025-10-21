@@ -32,7 +32,7 @@ header:
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/Text Clustering.png" width="700" height="435"  alt="Text Clustering"  style="object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/Text Clustering.png" width="700" height="435"  alt="Text Clustering"  style="object-fit: contain;">
 </div>
 
 # مقدمه
@@ -51,7 +51,7 @@ header:
 - **خوشه‌بندی سلسله‌مراتبی (Hierarchical Clustering):** یک ساختار درختی از خوشه‌ها ایجاد می‌کند که می‌تواند تجزیه‌شونده (Divisive) یا تجمعی (Agglomerative) باشد.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/1__ygmiFhggEVolNI-iF9yVA.gif" width="700"   alt="Text Clustering"  style="object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/1__ygmiFhggEVolNI-iF9yVA.gif" width="700"   alt="Text Clustering"  style="object-fit: contain;">
 </div>
 
 - **خوشه‌بندی مبتنی بر چگالی (Density-Based Clustering):** مانند الگوریتم **DBSCAN** که خوشه‌ها را به عنوان مناطق پرتراکم از داده‌ها تعریف می‌کند و قادر به شناسایی داده‌های نویز (Outlier) است.
@@ -101,7 +101,7 @@ header:
   **محدودیت اصلی:** این روش هیچ درکی از معنای کلمات ندارد. برای مثال، کلمات "خودرو" و "اتومبیل" از نظر این مدل کاملاً متفاوت هستند، در حالی که مترادف هستند. همچنین، ترتیب کلمات نادیده گرفته می‌شود، بنابراین جملات "سگ گربه را تعقیب کرد" و "گربه سگ را تعقیب کرد" دارای نمایش یکسانی خواهند بود.
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/BoW.png" width="700" height="435" alt="STFT-overview" style="object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/BoW.png" width="700" height="435" alt="STFT-overview" style="object-fit: contain;">
 </div>
 
 
@@ -115,7 +115,7 @@ header:
 
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/tfidf.jpg" width="700" height="250" alt="tfidf" style="object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/tfidf.jpg" width="700" height="250" alt="tfidf" style="object-fit: contain;">
   </div>
 
 ### روش‌های مدرن: Embedding با استفاده از مدل‌های زبانی
@@ -127,7 +127,7 @@ header:
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/vectorspacemodel.png" alt="vectorspacemodel" style="width: 75%; height: 75%; object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/vectorspacemodel.png" alt="vectorspacemodel" style="width: 75%; height: 75%; object-fit: contain;">
 </div>
 <p class="wp-caption-text" style="margin-top: 8px; color: #555; align-items: center; text-align: center;">
         مثالی از فضای برداری
@@ -252,7 +252,7 @@ HNSW یک رویکرد مبتنی بر گراف است که برای جستجو�
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 40px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/comparison_of_index.png" alt="comparison_of_index" style="width: 75%; height: 75%; object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/comparison_of_index.png" alt="comparison_of_index" style="width: 75%; height: 75%; object-fit: contain;">
 </div>
 <p class="wp-caption-text" style="margin-top: 8px; color: #555; align-items: center; text-align: center;">
         مقایسه شاخص‌های متفاوت
@@ -452,11 +452,11 @@ print("Done.")
 ```
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/Text Clustering With FAISS_1.png" alt="Text Clustering With FAISS_1" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/Text Clustering With FAISS_1.png" alt="Text Clustering With FAISS_1" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px; ">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/Text Clustering With FAISS_2.png" alt="Text Clustering With FAISS_2" style="width: 50%; height: 50%; object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/Text Clustering With FAISS_2.png" alt="Text Clustering With FAISS_2" style="width: 50%; height: 50%; object-fit: contain;">
 </div>
 
 <div class="caption" style="text-align: center; margin-top: 8px; direction: rtl; font-size: 20px;">
@@ -544,7 +544,7 @@ Adjusted Rand Index (ARI): 0.8588
 
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/Text_Clustering_FAISS/semantic-search.jpeg" alt="semantic-search" style="width: 25%; height: 25%; object-fit: contain;">
+    <img src="/assets/patterneffort/Text_Clustering_FAISS/semantic-search.jpeg" alt="semantic-search" style="width: 25%; height: 25%; object-fit: contain;">
 </div>
 
 
