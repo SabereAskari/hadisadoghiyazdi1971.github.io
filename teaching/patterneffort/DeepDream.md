@@ -3,7 +3,7 @@ layout: persian
 classes: wide rtl-layout
 dir: rtl
 title: "رویای عمیق"
-permalink: /teaching/studenteffort/patterneffort/deepdream
+permalink: /teaching/studenteffort/patterneffort/DeepDream
 author_profile: true
 
 header:
@@ -24,7 +24,7 @@ header:
 </div>
 
 <div style="display: flex; justify-content: start; align-items: center; gap: 10px; ">
-    <img src="assets/patterneffort/deepdream/images/my photo.jpg" alt="IPS1" style="width: 200px; height: 200px; object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/my photo.jpg" alt="IPS1" style="width: 200px; height: 200px; object-fit: contain;">
 </div>
 
 **نویسنده**: صابره عسکری
@@ -46,7 +46,7 @@ header:
 **یکی از چالش‌های شبکه‌های عصبی، درک دقیق آنچه در هر لایه می‌گذرد**، است. ما می‌دانیم که پس از آموزش، هر لایه به تدریج ویژگی‌های سطح بالاتر و بالاتر تصویر را استخراج می‌کند، تا زمانی که لایه نهایی اساساً در مورد آنچه تصویر نشان می‌دهد تصمیمی بگیرد. به عنوان مثال، لایه اول ممکن است به دنبال لبه‌ها یا گوشه‌ها باشد. لایه‌های میانی ویژگی‌های اساسی را تفسیر می‌کنند تا به دنبال اشکال یا اجزای کلی، مانند یک در یا یک برگ، باشند. چند لایه نهایی این ویژگی‌ها را در تفسیرهای کامل جمع می‌کنند - این نورون‌ها در پاسخ به چیزهای بسیار پیچیده‌ای مانند کل ساختمان‌ها یا درختان فعال می‌شوند.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/Screenshot 2025-10-14 0145319.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/Screenshot 2025-10-14 0145319.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px; rgba(52, 51, 51, 1)">
 شمای یک شبکه ی عصبی
@@ -55,13 +55,13 @@ header:
 یک راه برای تجسم آنچه اتفاق می‌افتد این است که شبکه را وارونه کنیم و از آن بخواهیم که یک تصویر ورودی را به گونه‌ای بهبود بخشد که تفسیر خاصی را ایجاد کند. فرض کنید می‌خواهید بدانید چه نوع تصویری منجر به "موز" می‌شود. با تصویری پر از نویز تصادفی شروع کنید، سپس به تدریج تصویر را به سمت آنچه شبکه عصبی موز می‌داند، تغییر دهید . این به خودی خود خیلی خوب کار نمی‌کند، اما اگر یک محدودیت قبلی اعمال کنیم که تصویر باید آمار مشابهی با تصاویر طبیعی داشته باشد، مانند پیکسل‌های همسایه که نیاز به همبستگی دارند، این کار را انجام می‌دهد.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image1.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image1.png" alt="IPS1" style="object-fit: contain;">
 </div>
 
 بنابراین یک نکته‌ی غافلگیرکننده وجود دارد: شبکه‌های عصبی که برای تمایز قائل شدن بین انواع مختلف تصاویر آموزش دیده‌اند، اطلاعات زیادی برای تولید تصاویر نیز دارند. به مثال‌های بیشتری در کلاس‌های مختلف نگاهی بیندازید:
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image2.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image2.png" alt="IPS1" style="object-fit: contain;">
 </div>
 
 چرا این مهم است؟ خب، ما شبکه‌ها را با نشان دادن مثال‌های زیادی از آنچه می‌خواهیم یاد بگیرند، آموزش می‌دهیم، به این امید که اصل مطلب را استخراج کنند (مثلاً یک چنگال به یک دسته و ۲الی۴ دندانه نیاز دارد) و یاد بگیرند که آنچه مهم نیست را نادیده بگیرند (یک چنگال می‌تواند هر شکل، اندازه، رنگ یا جهتی داشته باشد). اما چگونه بررسی می‌کنید که شبکه ویژگی‌های صحیح را به درستی یاد گرفته است؟ این می‌تواند به تجسم نمایش شبکه از یک چنگال کمک کند.
@@ -69,7 +69,7 @@ header:
 در واقع، در برخی موارد، این نشان می‌دهد که شبکه عصبی کاملاً به دنبال چیزی که ما فکر می‌کردیم نیست. به عنوان مثال، در اینجا یک شبکه عصبی که ما طراحی کردیم، دمبل‌ها را به این شکل در نظر گرفتیم:
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image3.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image3.png" alt="IPS1" style="object-fit: contain;">
 </div>
 
 خب، دمبل‌هایی آنجا هستند، اما به نظر می‌رسد هیچ تصویری از دمبل بدون وجود یک وزنه‌بردار عضلانی که آنها را بلند کند، کامل نیست. در این مورد، شبکه نتوانسته است جوهره دمبل را به طور کامل استخراج کند. شاید هرگز دمبلی بدون دستی که آن را نگه داشته باشد، نشان داده نشده باشد. تجسم می‌تواند به ما در اصلاح این نوع اشتباهات آموزشی کمک کند.
@@ -77,14 +77,14 @@ header:
 به جای اینکه دقیقاً تجویز کنیم که می‌خواهیم کدام ویژگی را شبکه تقویت کند، می‌توانیم به شبکه اجازه دهیم که این تصمیم را بگیرد. در این حالت، ما به سادگی یک تصویر یا عکس دلخواه را به شبکه می‌دهیم و اجازه می‌دهیم شبکه تصویر را تجزیه و تحلیل کند. سپس یک لایه را انتخاب می‌کنیم و از شبکه می‌خواهیم هر آنچه را که تشخیص می‌دهد، بهبود بخشد. هر لایه از شبکه با ویژگی‌هایی در سطح متفاوتی از انتزاع سروکار دارد، بنابراین پیچیدگی ویژگی‌هایی که تولید می‌کنیم به لایه‌ای که برای بهبود انتخاب می‌کنیم بستگی دارد. به عنوان مثال، لایه‌های پایین‌تر تمایل به ایجاد خطوط یا الگوهای ساده تزیینی دارند، زیرا این لایه‌ها به ویژگی‌های اساسی مانند لبه‌ها و جهت‌گیری‌های آنها حساس هستند.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
-    <img src="assets/patterneffort/deepdream/images/image4.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image4.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px; color: rgba(52, 51, 51, 1)">
 چپ: عکس اصلی از زاچی ایونور . راست: پردازش شده توسط گونتر نواک، مهندس نرم‌افزار
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image5.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image5.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 چپ: نقاشی اصلی اثر ژرژ سورا . راست: تصاویر پردازش‌شده اثر متیو مک‌ناتون، مهندس نرم‌افزار
@@ -93,19 +93,19 @@ header:
 اگر لایه‌های سطح بالاتر را انتخاب کنیم، که ویژگی‌های پیچیده‌تری را در تصاویر شناسایی می‌کنند، ویژگی‌های پیچیده یا حتی کل اشیاء تمایل به ظهور دارند. باز هم، ما فقط با یک تصویر موجود شروع می‌کنیم و آن را به شبکه عصبی خود می‌دهیم. از شبکه می‌پرسیم: **"هر چیزی که آنجا می‌بینی، من بیشتر از آن می‌خواهم!"** این یک حلقه بازخورد ایجاد می‌کند: اگر ابری کمی شبیه پرنده باشد، شبکه آن را بیشتر شبیه پرنده می‌کند. این به نوبه خود باعث می‌شود شبکه در عبور بعدی پرنده را حتی قوی‌تر تشخیص دهد و به همین ترتیب ادامه یابد، تا زمانی که یک پرنده با جزئیات بسیار بالا، ظاهراً از ناکجاآباد، ظاهر شود.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image6.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image6.png" alt="IPS1" style="object-fit: contain;">
 </div>
 
 نتایج جذاب هستند - حتی یک شبکه عصبی نسبتاً ساده می‌تواند برای تفسیر بیش از حد یک تصویر استفاده شود، درست مانند دوران کودکی که از تماشای ابرها و تفسیر شکل‌های تصادفی لذت می‌بردیم. این شبکه عمدتاً بر روی تصاویر حیوانات آموزش دیده است، بنابراین طبیعتاً تمایل دارد اشکال را به عنوان حیوان تفسیر کند. اما از آنجا که داده‌ها با چنین انتزاع بالایی ذخیره می‌شوند، نتایج ترکیبی جالب از این ویژگی‌های آموخته شده هستند.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image7.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image7.png" alt="IPS1" style="object-fit: contain;">
 </div>
 
 البته، ما می‌توانیم با این تکنیک کارهای بیشتری از تماشای ابرها انجام دهیم. می‌توانیم آن را روی هر نوع تصویری اعمال کنیم. نتایج بسته به نوع تصویر کاملاً متفاوت است، زیرا ویژگی‌هایی که وارد می‌شوند، شبکه را به سمت تفاسیر خاصی سوق می‌دهند. به عنوان مثال، خطوط افق تمایل دارند پر از برج‌ها و بتکده‌ها شوند. سنگ‌ها و درختان به ساختمان تبدیل می‌شوند. پرندگان و حشرات در تصاویر برگ‌ها ظاهر می‌شوند.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image8.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image8.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 تصویر اصلی بر نوع اشیایی که در تصویر پردازش شده شکل می‌گیرند، تأثیر می‌گذارد.
@@ -118,7 +118,7 @@ header:
 اگر الگوریتم را به صورت تکراری روی خروجی‌های خودش اعمال کنیم و بعد از هر تکرار مقداری بزرگنمایی اعمال کنیم، جریان بی‌پایانی از برداشت‌های جدید به دست می‌آوریم که مجموعه چیزهایی را که شبکه در مورد آنها می‌داند، بررسی می‌کند. ما حتی می‌توانیم این فرآیند را از یک تصویر با نویز تصادفی شروع کنیم، به طوری که نتیجه کاملاً نتیجه شبکه عصبی شود، همانطور که در تصاویر زیر مشاهده می‌شود:
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/image9.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/image9.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px; rgba(52, 51, 51, 1)">
 «رویاهای» شبکه عصبی - که صرفاً از نویز تصادفی و با استفاده از شبکه‌ای که توسط <a href="https://www.um.ac.ir/" style="text-decoration:underline; color:green;" target="_blank">
@@ -164,7 +164,7 @@ import PIL.Image
 برای این آموزش، بیایید از یک تصویر Labrador استفاده کنیم
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/D1.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/D1.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px; rgba(52, 51, 51, 1)">
 yellow labrador
@@ -335,7 +335,7 @@ dream_img = run_deep_dream_simple(img=original_img,
 
 ```
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/D2.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/D2.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 </div>
@@ -379,7 +379,7 @@ end-start
 ```
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/D3.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/D3.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 </div>
@@ -404,7 +404,7 @@ shift, img_rolled = random_roll(np.array(original_img), 512)
 show(img_rolled)
 ```
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/D4.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/D4.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 </div>
@@ -494,7 +494,7 @@ img = tf.image.convert_image_dtype(img/255.0, dtype=tf.uint8)
 show(img)
 ```
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/D5.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/D5.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 </div>
@@ -522,7 +522,7 @@ dream_model = tf.keras.Model(inputs=base_model.input, outputs=layers)
 و میبینیم که در خروجی , ویژگی های سطح پایین مثل خطوط تقویت شده اند :
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="assets/patterneffort/deepdream/images/D6.png" alt="IPS1" style="object-fit: contain;">
+    <img src="/assets/patterneffort/deepdream/images/D6.png" alt="IPS1" style="object-fit: contain;">
 </div>
 <div class="caption" style="text-align: center; margin-top: 8px;color: rgba(52, 51, 51, 1)">
 </div>
@@ -573,6 +573,14 @@ dream_model = tf.keras.Model(inputs=base_model.input, outputs=layers)
 # منابع
 
 
+
+<ul>
+  <li>
+    <a href="https://research.google/blog/inceptionism-going-deeper-into-neural-networks/" style="text-decoration:underline; color:green;" target="_blank">
+        Inceptionism: Going Deeper into Neural Networks
+    </a>
+  </li>
+</ul>
 
 <a href="https://research.google/blog/inceptionism-going-deeper-into-neural-networks/" style=" display:block ;text-decoration:underline; color:green;" target="_blank">
  - https://research.google/blog/inceptionism-going-deeper-into-neural-networks
