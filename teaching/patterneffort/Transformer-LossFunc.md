@@ -77,9 +77,9 @@ header:
 - مکانیزمی برای محاسبه ارتباط هر توکن با سایر توکن‌ها در توالی.
 - فرمول اصلی Attention:
 
-$\[
+$\
 Attention(Q, K, V) = softmax\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-\]$
+\$
 
 که در آن:
 - $\(Q\)$: Query  
